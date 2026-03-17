@@ -3,7 +3,7 @@
 The main dataset used in this project comes from the Satellite Catalog (SATCAT) provided by [CelesTrak](https://celestrak.org/satcat/).
 
 This catalog contains information about objects currently present in Earth orbit. The objects are categorized into several groups, including active satellites, inactive satellites, rocket bodies, and unidentified objects.
-For each object, the dataset includes orbital information in the form of Two-Line Element sets (TLEs), which allow the orbit of the object to be reconstructed. In addition, the dataset provides metadata such as:
+For every active satellites, the dataset includes orbital information in the form of Two-Line Element sets (TLEs), which allow the orbit of the object to be reconstructed. In addition and for all objects the dataset provides metadata such as:
 
 - Operational status
 - Decay rate
