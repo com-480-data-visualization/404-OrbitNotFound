@@ -11,7 +11,10 @@
 ## Milestone 1 (20th March, 5pm)
 
 **10% of the final grade**
-[report-1report](.reports/Milestone_1/img/report.md/)
+
+[milestone 1 report](.reports/Milestone_1/img/report.md/)
+
+
 ## Milestone 2 (17th April, 5pm)
 
 **10% of the final grade**
