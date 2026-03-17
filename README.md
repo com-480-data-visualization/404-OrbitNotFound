@@ -28,6 +28,7 @@ For each object, the dataset includes orbital information in the form of Two-Lin
 * Owner or operating country/organization
 * Launch site
 * Launch date
+
 These attributes make the dataset suitable for both orbital analysis and statistical exploration of space activity.
 
 
@@ -35,9 +36,9 @@ These attributes make the dataset suitable for both orbital analysis and statist
 
 The goal of this project is to give a general audience interested in space traffic and satellite activity a better understanding of the number of objects currently orbiting Earth. While satellites are frequently mentioned in the media, it is often difficult for the public to visualize how many objects are actually present in space and how they are distributed.
 One objective is therefore to provide a clear visual representation of how crowded different orbital regions are, such as:
-> Low Earth Orbit (LEO)
-> Medium Earth Orbit (MEO)
-> Geostationary Orbit (GEO)
+* Low Earth Orbit (LEO)
+* Medium Earth Orbit (MEO)
+* Geostationary Orbit (GEO)
 Another important aspect concerns the allocation of orbital space. In most orbital regions, access to orbit effectively follows a first-come, first-served principle (with stricter regulations mainly applying to GEO). Satellites cannot simply be placed anywhere; operators must avoid collision trajectories and respect orbital dynamics constraints.
 As a result, launching satellites also implies occupying and managing orbital space. By visualizing the number of satellites owned or operated by different countries or organizations, it becomes possible to highlight which actors currently occupy the largest share of orbital resources. This can provide insight into the relative influence of different countries in space activities.
 
