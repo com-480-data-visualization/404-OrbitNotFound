@@ -10,6 +10,7 @@ For every active satellites, the dataset includes orbital information in the for
 - Owner or operating country/organization
 - Launch site
 - Launch date
+- apogee and perigee
 
 These attributes make the dataset suitable for both orbital analysis and statistical exploration of space activity.
 
