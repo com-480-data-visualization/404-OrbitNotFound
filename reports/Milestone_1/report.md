@@ -64,6 +64,10 @@ The majority of objects are concentrated in Low Earth Orbit (LEO), making it the
 
 ![image](./img/objects_by_type_bar.png)
 
+The distribution of object types in orbit shows that a significant proportion of space objects are not active satellites but rather debris and rocket bodies. This highlights the long-term accumulation of inactive material in orbit, resulting from decades of space activity.
+
+While active satellites represent the functional part of space infrastructure, the large presence of debris and defunct objects raises important concerns regarding collision risks and space sustainability. This imbalance illustrates that the growth of space activity is not only increasing operational assets but also contributing to orbital congestion and potential hazards.
+
 These analyses will help reveal trends in space activity, such as the growth of satellite constellations or the accumulation of debris in certain orbital regimes.
 
 # Related work
