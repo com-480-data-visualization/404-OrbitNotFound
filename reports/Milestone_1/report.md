@@ -41,11 +41,19 @@ Several exploratory analyses will be performed to better understand the dataset 
 
 ![image](./img/launch_sites_map.png)
 
+The distribution of satellites per launch site highlights a strong concentration of activity in a limited number of locations. A few major spaceports dominate global launch activity. This uneven distribution suggests that access to space is still controlled by a small number of key players.
+
 ![image](./img/launches_per_year.png)
+
+The number of satellites launched per year shows a clear increasing trend, with a significant acceleration in recent years. This growth is largely driven by the emergence of large satellite constellations and increased commercial activity in space. The trend illustrates the rapid intensification of space traffic and raises concerns about long-term sustainability and congestion in orbit.
 
 ![image](./img/debris_per_owner_bar.png)
 
+The proportion of active satellites versus debris varies significantly between owners. Some actors maintain a high ratio of operational satellites, while others have accumulated a larger amount of inactive objects or debris. This disparity may reflect differences in mission lifecycle management, technological maturity, or historical legacy in space operations.
+
 ![image](./img/satellites_per_orbit_pie.png)
+
+The majority of objects are concentrated in Low Earth Orbit (LEO), making it the most congested orbital region. This is expected due to its accessibility and suitability for communication and Earth observation missions. In contrast, MEO and GEO host fewer objects but remain strategically important due to their specific orbital characteristics. This distribution highlights the increasing pressure on LEO as the primary region for modern satellite deployment
 
 These analyses will help reveal trends in space activity, such as the growth of satellite constellations or the accumulation of debris in certain orbital regimes.
 
