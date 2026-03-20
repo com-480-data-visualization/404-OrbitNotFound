@@ -49,6 +49,8 @@ Several exploratory analyses will be performed to better understand the dataset 
 
 These analyses will help reveal trends in space activity, such as the growth of satellite constellations or the accumulation of debris in certain orbital regimes.
 
+All the figures shown above were produced in this Jupyter Notebook: [EDA.ipynb](./EDA.ipynb).
+
 # Related work
 
 One example of related work: https://nattybumppo.github.io/rocket-launch-history/
