@@ -1,0 +1,16 @@
+name: DataViz
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - ipython
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - openpyxl
+  - scipy
+  - pyarrow
+  - jupyterlab
+  - geopandas
