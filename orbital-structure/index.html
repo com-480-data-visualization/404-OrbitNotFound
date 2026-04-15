@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Satellite Visualization</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Title -->
+    <h1>Satellite Visualization</h1>
+
+    <!-- Controls -->
+    <div class="controls">
+        <label for="owner-select">Select country:</label>
+        <select id="owner-select">
+            <option value="">-- Choose a country --</option>
+        </select>
+    </div>
+
+    <!-- Main visualization -->
+    <div id="viz"></div>
+
+    <div class="controls">
+        <label for="orbit-select">Orbit:</label>
+        <select id="orbit-select">
+            <option value="ALL">All</option>
+            <option value="LEO">LEO</option>
+            <option value="MEO">MEO</option>
+            <option value="GEO">GEO</option>
+        </select>
+    </div>
+
+    <!-- Secondary visualization -->
+    <div id="leo-viz"></div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>

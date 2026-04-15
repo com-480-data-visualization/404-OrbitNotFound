@@ -1,44 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Satellite Visualization</title>
-
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas of Space Activity</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-    <!-- Title -->
-    <h1>Satellite Visualization</h1>
-
-    <!-- Controls -->
-    <div class="controls">
-        <label for="owner-select">Select country:</label>
-        <select id="owner-select">
-            <option value="">-- Choose a country --</option>
-        </select>
+  <header class="topbar">
+    <div class="title-block">
+      <h1>Atlas of Space Activity</h1>
     </div>
 
-    <!-- Main visualization -->
-    <div id="viz"></div>
-
-    <div class="controls">
-        <label for="orbit-select">Orbit:</label>
-        <select id="orbit-select">
-            <option value="ALL">All</option>
-            <option value="LEO">LEO</option>
-            <option value="MEO">MEO</option>
-            <option value="GEO">GEO</option>
-        </select>
-    </div>
-
-    <!-- Secondary visualization -->
-    <div id="leo-viz"></div>
-
-    <!-- JS -->
-    <script src="script.js"></script>
-
+    <nav class="topnav">
+      <ul>
+        <li><a href="./orbital-structure/">Orbital Structure</a></li>
+        <li><a href="./space-actors/">Space Actors</a></li>
+      </ul>
+    </nav>
+  </header>
 </body>
 </html>
