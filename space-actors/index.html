@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actors of space activity</title>
+  <meta name="author" content="Alexandre Spiess" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Actors of Space Activity</h1>
+  </header>
+
+  <main>
+
+    <!-- Main country selection -->
+    <section class="controls">
+      <label for="countrySelect">Select a country:</label>
+      <select id="countrySelect">
+        <option>China</option>
+        <option>USA</option>
+        <option>Russia / CIS</option>
+        <option>France</option>
+        <option>India</option>
+      </select>
+
+      <p>
+        Currently viewing:
+        <span class="country-name" id="selectedCountry">China</span>
+      </p>
+    </section>
+
+    <!-- Top dashboard area -->
+    <section class="top-grid">
+
+      <!-- Temporal activity -->
+      <div class="chart-box">
+        <h2>Temporal activity</h2>
+        <p>
+          Number of objects created per year for the selected country
+        </p>
+
+        <div class="placeholder">
+          (objects created per year)
+        </div>
+      </div>
+
+      <!-- KPI panel -->
+      <div class="chart-box">
+        <h2 id="detailsTitle">Global overview (All years)</h2>
+        <p id="detailsSubtitle">
+          Summary of the selected country across all years.
+        </p>
+
+        <section class="info-cards">
+          <div class="card card-wide">
+            <h3>Total objects created</h3>
+            <div class="card-number">--</div>
+          </div>
+
+          <div class="card">
+            <h3>Payloads</h3>
+            <div class="card-number">--</div>
+          </div>
+
+          <div class="card">
+            <h3>Debris</h3>
+            <div class="card-number">--</div>
+          </div>
+
+          <div class="card">
+            <h3>Rocket bodies</h3>
+            <div class="card-number">--</div>
+          </div>
+
+          <div class="card">
+            <h3>Unknown</h3>
+            <div class="card-number">--</div>
+          </div>
+        </section>
+
+      </div>
+
+    </section>
+
+    <!-- World Ranking -->
+    <section class="chart-box">
+      <div class="chart-box-header">
+        <div>
+          <h2>World Ranking</h2>
+          <p id="rankingSubtitle">
+            Ranking of countries based on the selected metric
+          </p>
+        </div>
+
+        <div class="metric-control">
+          <label for="metricSelect">Metric:</label>
+          <select id="metricSelect">
+            <option value="total">Total objects</option>
+            <option value="debris">Debris</option>
+            <option value="payloads">Payloads</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="placeholder">
+        Comparison between countries
+      </div>
+    </section>
+
+  </main>
+
+
+</body>
+</html>
