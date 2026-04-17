@@ -19,6 +19,14 @@
 
 **10% of the final grade**
 
+- Website: [Open the project website](https://com-480-data-visualization.github.io/404-OrbitNotFound/)
+- Report: [Read the Milestone 2 report](./reports/Milestone_2/Milestone_2_report.pdf)
+
+## Visualizations
+
+- [Orbital Structure](./orbital-structure/)
+- [Space Actors](./space-actors/)
+
 
 ## Milestone 3 (29th May, 5pm)
 
