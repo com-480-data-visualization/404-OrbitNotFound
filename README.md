@@ -6,7 +6,7 @@
 |Shen Kaifun Kevin|326034|
 |Spiess Alexandre|342757|
 
-[Milestone 1](./reports/Milestone_1/report.md) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
+[Milestone 1](./reports/Milestone_1/report.md) • [Milestone 2](./reports/Milestone_2/Milestone_2_report.pdf) • [Milestone 3](#milestone-3)
 
 ## Milestone 1 (20th March, 5pm)
 
