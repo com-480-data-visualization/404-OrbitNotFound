@@ -33,10 +33,216 @@ select {
     border-radius: 12px;
 }
 
-#leo-viz {
+svg {
+  font-family: Arial, sans-serif;
+}
+
+.orbit-zone {
+  opacity: 0.1;
+}
+
+.zone-leo {
+  fill: #4cc9f0;
+}
+
+.zone-meo {
+  fill: #9d4edd;
+}
+
+.zone-geo {
+  fill: #f4a261;
+}
+
+.orbit-cutout {
+  fill: #101935;
+}
+
+.orbit-boundary {
+  fill: none;
+  stroke-width: 1.2;
+  stroke-dasharray: 5, 5;
+}
+
+.boundary-leo {
+  stroke: #4cc9f0;
+}
+
+.boundary-meo {
+  stroke: #9d4edd;
+}
+
+.boundary-geo {
+  stroke: #f4a261;
+}
+
+.earth {
+  fill: #1d3557;
+  stroke: #e0e1dd;
+  stroke-width: 1;
+}
+
+.satellite-dot {
+  fill: #e0e1dd;
+  opacity: 0.8;
+}
+
+.label {
+  text-anchor: middle;
+}
+
+.orbit-label {
+  font-size: 14px;
+}
+
+.label-earth {
+  fill: white;
+}
+
+.label-leo {
+  fill: #4cc9f0;
+}
+
+.label-meo {
+  fill: #9d4edd;
+}
+
+.label-geo {
+  fill: #f4a261;
+}
+
+.note {
+  fill: #adb5bd;
+  font-size: 11px;
+  text-anchor: middle;
+  opacity: 0.8;
+}
+
+.leo-title {
+  fill: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-anchor: middle;
+}
+
+.leo-subtitle,
+.leo-altitude-text {
+  fill: #adb5bd;
+  font-size: 14px;
+}
+
+.leo-guide-line {
+  stroke: white;
+  stroke-width: 2;
+}
+
+.leo-segment {
+  fill: #4cc9f0;
+  stroke: white;
+  stroke-opacity: 0.35;
+  stroke-width: 1;
+}
+
+.leo-segment-even {
+  fill-opacity: 0.22;
+}
+
+.leo-segment-odd {
+  fill-opacity: 0.14;
+}
+
+.leo-owner-text {
+  fill: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-anchor: middle;
+}
+
+.leo-small-text {
+  fill: #cbd5e1;
+  font-size: 11px;
+  text-anchor: middle;
+}
+
+.altitude-label {
+  fill: white;
+  font-size: 16px;
+  text-anchor: middle;
+}
+
+.zoom-viz {
     height: 700px;
     width: 520px;
     margin: 20px auto;
     background-color: #101935;
     border-radius: 12px;
+}
+
+.geo-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  background-color: #101935;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.geo-line {
+  stroke: #f4a261;
+  stroke-width: 1;
+  opacity: 0.4;
+}
+
+.geo-title {
+  fill: white;
+  font-size: 18px;
+  text-anchor: middle;
+}
+
+.geo-map {
+  fill: #0b132b;
+  stroke: #1d3557;
+  stroke-width: 1.5;
+  rx: 10;
+}
+.geo-world-map {
+  opacity: 1;
+}
+
+.geo-grid-line {
+  stroke: #1d3557;
+  stroke-width: 1;
+  opacity: 0.7;
+}
+
+.geo-equator {
+  stroke: #4cc9f0;
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+.geo-longitude-label {
+  fill: #adb5bd;
+  font-size: 13px;
+  text-anchor: middle;
+  letter-spacing: 1px;
+}
+
+.geo-satellite-dot {
+  fill: #f4a261;
+  opacity: 0.3;
+}
+.geo-satellite-dot-selected {
+  fill: #4cc9f0;
+  opacity: 1;
+}
+
+.geo-projection-line {
+  stroke: #f4a261;
+  stroke-width: 0.6;
+  opacity: 0.18;
+}
+
+.geo-ground-dot {
+  fill: #4cc9f0;
+  opacity: 0.65;
 }

@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Satellite Visualization</title>
-
-    <!-- Link CSS -->
+    <meta name="author" content="Kaifun Shen" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,27 +14,26 @@
 
     <!-- Controls -->
     <div class="controls">
-        <label for="owner-select">Select country:</label>
+        <label for="owner-select">Satellite Owner:</label>
         <select id="owner-select">
-            <option value="">-- Choose a country --</option>
+            <option value="">Select a Owner/Country to plot</option>
         </select>
     </div>
 
-    <!-- Main visualization -->
+    <!-- visualization -->
     <div id="viz"></div>
 
+    <div id="leo-viz" class="zoom-viz"></div>
+
+    <div id="meo-viz" class="zoom-viz"></div>
+
     <div class="controls">
-        <label for="orbit-select">Orbit:</label>
-        <select id="orbit-select">
-            <option value="ALL">All</option>
-            <option value="LEO">LEO</option>
-            <option value="MEO">MEO</option>
-            <option value="GEO">GEO</option>
+        <label for="geo-select">GEO Satellite Owner:</label>
+        <select id="geo-select">
+            <option value="">Select an Owner/Country to plot</option><!-- a modifier mdr -->
         </select>
     </div>
-
-    <!-- Secondary visualization -->
-    <div id="leo-viz"></div>
+    <div id="geo-viz" class="geo-container"></div>
 
     <!-- JS -->
     <script src="script.js"></script>
