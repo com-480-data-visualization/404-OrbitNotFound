@@ -25,13 +25,20 @@ Promise.all([
     // -------------------------
     // 1. Fill dropdown
     // -------------------------
-    const owners = [...new Set(data.map(d => d.owner))].sort();
+    const ownerCounts = {};
+
+    data.forEach(d => {
+    if (!d.owner) return;
+    ownerCounts[d.owner] = (ownerCounts[d.owner] || 0) + 1;
+    });
+
+    const owners = Object.keys(ownerCounts).sort();
 
     owners.forEach(owner => {
-        const option = document.createElement("option");
-        option.value = owner;
-        option.textContent = owner;
-        ownerSelect.appendChild(option);
+    const option = document.createElement("option");
+    option.value = owner;
+    option.textContent = `${owner} (${ownerCounts[owner]})`;
+    ownerSelect.appendChild(option);
     });
 
     // -------------------------
@@ -210,7 +217,10 @@ Promise.all([
             dot.setAttribute("cx", pos.x);
             dot.setAttribute("cy", pos.y);
             dot.setAttribute("r", 2.5);
-            dot.setAttribute("class", "satellite-dot");
+            dot.setAttribute(
+            "class",
+            `satellite-dot satellite-${sat.ORBIT_CLASS.toLowerCase()}`
+            );
 
             svg.appendChild(dot);
         });

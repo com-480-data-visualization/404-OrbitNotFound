@@ -5,23 +5,110 @@
     <title>Satellite Visualization</title>
     <meta name="author" content="Kaifun Shen" />
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- nav bar -->
+    <header class="top-nav">
+    <div class="brand">
+        <div class="brand-icon">
+        <svg viewBox="0 0 64 64" fill="none">
+            <ellipse
+            cx="32"
+            cy="32"
+            rx="27"
+            ry="10"
+            stroke="currentColor"
+            stroke-width="3"
+            transform="rotate(-30 32 32)"
+            />
+            
+            <ellipse
+            cx="32"
+            cy="32"
+            rx="27"
+            ry="9"
+            stroke="currentColor"
+            stroke-width="3"
+            transform="rotate(30 32 32)"
+            />
 
-    <!-- Title -->
-    <h1>Satellite Visualization</h1>
-
-    <!-- Controls -->
-    <div class="controls">
-        <label for="owner-select">Satellite Owner:</label>
-        <select id="owner-select">
-            <option value="">Select a Owner/Country to plot</option>
-        </select>
+            <circle
+            cx="32"
+            cy="32"
+            r="5"
+            fill="currentColor"
+            />
+        </svg>
+        </div>
+        <span class="brand-name">404 ORBITNOTFOUND</span>
     </div>
 
-    <!-- visualization -->
-    <div id="viz"></div>
+    <nav class="nav-links">
+        <a href="#orbital-structure" class="active">Orbital Structure</a>
+        <a href="#data">Space Actors</a>
+        <a href="#about">Overfilghts</a>
+    </nav>
+    </header>
+
+    <!-- Section hero -->
+    <section class="hero">
+
+    <div class="hero-content">
+
+        <p class="hero-eyebrow">
+        SATELLITE ORBIT DATA EXPLORATION
+        </p>
+
+        <h1>
+        Satellite <br>
+        Distributions Around Earth
+        </h1>
+
+        <p class="hero-description">
+        An interactive visualization of satellite populations across LEO, MEO
+        and GEO, highlighting how orbital altitude, ownership and geostationary
+        longitude structure the space around Earth.
+        </p>
+
+    </div>  
+
+    <div class="hero-earth">
+        <img src="assets/earth.png" alt="Earth">
+    </div>
+
+
+    <section id="orbital-structure" class="feature-card">
+    <div class="feature-viz">
+        <!-- Title -->
+        <h2>Orbital Distribution of Satellites</h2>
+
+        <div class="controls">
+        <label for="owner-select">Satellite Owner:</label>
+        <select id="owner-select">
+            <option value="">Select an owner to visualize</option>
+        </select>
+        </div>
+        <!-- visualization -->
+        <div id="viz"></div>
+    </div>
+
+    <div class="feature-copy">
+        <p class="section-kicker">ORBITAL STRUCTURE</p>
+        <h2>A Layered View of Earth Orbits</h2>
+        <p>
+        Satellites are grouped into Low, Medium and Geostationary Earth Orbits
+        using average altitude derived from apogee and perigee.<br>
+        Selecting an owner reveals how its satellites are distributed across these orbital
+        regions.
+        </p>
+    </div>
+    </section>
+    </section>
 
     <div id="leo-viz" class="zoom-viz"></div>
 
