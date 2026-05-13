@@ -4,7 +4,7 @@ from skyfield.api import load, EarthSatellite
 
 base_dir = os.path.dirname(__file__)
 
-input_path = os.path.join(base_dir, "..", "geo_celestrak_snapshot.json")
+
 output_path = os.path.join(base_dir, "..", "geo_celestrak_longitude.json")
 clean_path = os.path.join(base_dir, "..", "satellites_clean.json")
 
