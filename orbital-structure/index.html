@@ -14,7 +14,7 @@
 <body>
     <!-- nav bar -->
     <header class="top-nav">
-    <div class="brand">
+    <a href="../" class="brand">
         <div class="brand-icon">
         <svg viewBox="0 0 64 64" fill="none">
             <ellipse
@@ -46,11 +46,12 @@
         </svg>
         </div>
         <span class="brand-name">404 ORBITNOTFOUND</span>
-    </div>
+    </a>
 
     <nav class="nav-links">
+        
         <a href="#orbital-structure" class="active">Orbital Structure</a>
-        <a href="#data">Space Actors</a>
+        <a href="../space-actors/">Space Actors</a>
         <a href="#about">Overfilghts</a>
     </nav>
     </header>
@@ -121,6 +122,34 @@
         </select>
     </div>
     <div id="geo-viz" class="geo-container"></div>
+    <!-- Popup -->
+    <div id="orbit-zoom-popup" class="orbit-zoom-popup">
+        <div class="popup-orbit-preview">
+            <div class="popup-orbit-ring"></div>
+            <img src="assets/earthpopup.png" alt="Earth orbit preview">
+        </div>
+
+        <div class="popup-content">
+            <div class="popup-focus">
+                <span></span>
+                FOCUS
+                <span></span>
+            </div>
+
+            <h3 id="orbit-zoom-title">Zoom into GEO?</h3>
+
+            <p id="orbit-zoom-text">
+                Dive into this orbital region and explore the satellites in more detail.
+            </p>
+
+            <div class="popup-actions">
+                <button id="orbit-zoom-yes" class="popup-primary">Yes, zoom in</button>
+                <button id="orbit-zoom-no" class="popup-secondary">Not now</button>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- JS -->
     <script src="script.js"></script>

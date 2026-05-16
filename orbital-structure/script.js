@@ -13,6 +13,13 @@ Promise.all([
     const leoViz = document.getElementById("leo-viz");
     const meoViz = document.getElementById("meo-viz");
     const geoViz = document.getElementById("geo-viz");
+    const zoomPopup = document.getElementById("orbit-zoom-popup");
+    const zoomPopupText = document.getElementById("orbit-zoom-text");
+    const zoomYes = document.getElementById("orbit-zoom-yes");
+    const zoomNo = document.getElementById("orbit-zoom-no");
+    let activeOrbitTarget = null;
+    let activeOrbitClass = null;
+
 
     const geoOwners = [...new Set(geoSatellites.map(d => d.owner))].sort();
     geoOwners.forEach(owner => {
@@ -86,6 +93,50 @@ Promise.all([
         return document.createElementNS("http://www.w3.org/2000/svg", tag);
     }
 
+    // Popup
+
+    function showOrbitPopup(event, orbitClass, targetId) {
+        if (activeOrbitClass === orbitClass) return;
+
+        activeOrbitClass = orbitClass;
+        activeOrbitTarget = targetId;
+        zoomPopup.classList.remove("popup-leo", "popup-meo", "popup-geo");
+        zoomPopup.classList.add(`popup-${orbitClass.toLowerCase()}`);
+
+
+        document.getElementById("orbit-zoom-title").textContent = `Zoom into ${orbitClass}?`;
+        zoomPopupText.textContent = `Dive into the ${orbitClass} region and explore the satellites in more detail.`;
+
+        zoomPopup.style.left = "auto";
+        zoomPopup.style.right = "56px";
+        zoomPopup.style.top = "50%";
+        zoomPopup.style.transform = "translateY(-50%)";
+        zoomPopup.style.display = "grid";
+
+    }
+
+
+    function hideOrbitPopup() {
+        zoomPopup.style.display = "none";
+        activeOrbitTarget = null;
+        activeOrbitClass = null;
+    }
+
+    zoomYes.addEventListener("click", () => {
+        if (!activeOrbitTarget) return;
+
+        document.getElementById(activeOrbitTarget).scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        hideOrbitPopup();
+    });
+
+    zoomNo.addEventListener("click", hideOrbitPopup);
+
+
+
     // -------------------------
     // 4. Main draw function
     // -------------------------
@@ -95,6 +146,28 @@ Promise.all([
         const svg = createSvgElement("svg");
         svg.setAttribute("width", width);
         svg.setAttribute("height", height);
+
+        // for the mouse hover
+        svg.addEventListener("mousemove", event => {
+            const rect = svg.getBoundingClientRect();
+
+            const mouseX = event.clientX - rect.left;
+            const mouseY = event.clientY - rect.top;
+
+            const distance = Math.sqrt(
+                (mouseX - cx) ** 2 +
+                (mouseY - cy) ** 2
+            );
+
+            if (distance >= leoInner && distance <= leoOuter) {
+                showOrbitPopup(event, "LEO", "leo-viz");
+            } else if (distance > meoInner && distance <= meoOuter) {
+                showOrbitPopup(event, "MEO", "meo-viz");
+            } else if (distance > meoOuter && distance <= geoRadius + 10) {
+                showOrbitPopup(event, "GEO", "geo-viz");
+            } 
+        });
+
 
         // --- GEO zone
         const geo = createSvgElement("circle");
@@ -144,9 +217,9 @@ Promise.all([
 
         // --- Orbit boundaries
         const boundaryRadii = [
-        { r: leoOuter, className: "boundary-leo" },
-        { r: meoOuter, className: "boundary-meo" },
-        { r: geoRadius, className: "boundary-geo" }
+            { r: leoOuter, className: "boundary-leo", orbit: "LEO", target: "leo-viz" },
+            { r: meoOuter, className: "boundary-meo", orbit: "MEO", target: "meo-viz" },
+            { r: geoRadius, className: "boundary-geo", orbit: "GEO", target: "geo-viz" }
         ];
 
         boundaryRadii.forEach(item => {
@@ -156,6 +229,10 @@ Promise.all([
             boundary.setAttribute("r", item.r);
             boundary.setAttribute("class", `orbit-boundary ${item.className}`);
             svg.appendChild(boundary);
+            boundary.addEventListener("mousemove", event => {
+                showOrbitPopup(event, item.orbit, item.target);
+            });
+            
         });
 
         // --- Earth
@@ -250,8 +327,8 @@ Promise.all([
         const { minAlt, maxAlt, title: zoomTitle } = orbitBounds[orbitClass];
         const nSegments = 10;
 
-        const xLeft = 160;
-        const xRight = 360;
+        const xLeft = 90;
+        const xRight = 450;
         const xCenter = (xLeft + xRight) / 2;
 
         const yTop = 80;
@@ -337,35 +414,50 @@ Promise.all([
 
             const rect = createSvgElement("rect");
             rect.setAttribute("x", xLeft);
-            rect.setAttribute("y", y);
+            rect.setAttribute("y", y + 4);
             rect.setAttribute("width", xRight - xLeft);
-            rect.setAttribute("height", segmentHeight);
-            rect.setAttribute("fill", "#4cc9f0");
-            rect.setAttribute("fill-opacity", i % 2 === 0 ? "0.22" : "0.14");
-            rect.setAttribute("stroke", "white");
-            rect.setAttribute("stroke-opacity", "0.35");
-            rect.setAttribute("stroke-width", "1");
+            rect.setAttribute("height", segmentHeight - 8);
+            rect.setAttribute("rx", 9);
+            rect.setAttribute("class", "zoom-row-box");
             svg.appendChild(rect);
+
+            const edgeGlow = createSvgElement("rect");
+            edgeGlow.setAttribute("x", xLeft);
+            edgeGlow.setAttribute("y", y + 4);
+            edgeGlow.setAttribute("width", 3);
+            edgeGlow.setAttribute("height", segmentHeight - 8);
+            edgeGlow.setAttribute("rx", 2);
+            edgeGlow.setAttribute("class", "zoom-row-edge");
+            svg.appendChild(edgeGlow);
+
 
             // Owner + ratio
             const mainText = createSvgElement("text");
-            mainText.setAttribute("x", xCenter);
-            mainText.setAttribute("y", y + segmentHeight / 2 - 5);
+            mainText.setAttribute("x", xLeft + 36);
+            mainText.setAttribute("y", y + segmentHeight / 2 + 8);
             mainText.setAttribute("class", "leo-owner-text");
 
             if (totalCount > 0) {
-                mainText.textContent = `${dominantOwner} ${dominantCount}/${totalCount}`;
+                mainText.textContent = dominantOwner;
+
             } else {
                 mainText.textContent = "None";
             }
 
             svg.appendChild(mainText);
+            const countText = createSvgElement("text");
+            countText.setAttribute("x", xLeft + 95);
+            countText.setAttribute("y", y + segmentHeight / 2 + 6);
+            countText.setAttribute("class", "zoom-row-count");
+            countText.textContent = totalCount > 0 ? `${dominantCount} / ${totalCount}` : "0 / 0";
+            svg.appendChild(countText);
+
 
             // Small subtitle
             if (totalCount > 0) {
                 const smallText = createSvgElement("text");
-                smallText.setAttribute("x", xCenter);
-                smallText.setAttribute("y", y + segmentHeight / 2 + 16);
+                smallText.setAttribute("x", xRight - 36);
+                smallText.setAttribute("y", y + segmentHeight / 2 + 6);
                 smallText.setAttribute("class", "leo-small-text");
                 smallText.textContent = "satellites";
                 svg.appendChild(smallText);

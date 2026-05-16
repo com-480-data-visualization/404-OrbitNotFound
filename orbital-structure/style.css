@@ -6,6 +6,7 @@
     font-family: "Space Grotesk", sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
 
 h1 {
@@ -49,8 +50,11 @@ svg {
 .brand {
   display: flex;
   align-items: center;
+  color: white;
   gap: 12px;
+  text-decoration: none;
 }
+
 
 .brand-icon {
   width: 34px;
@@ -113,10 +117,10 @@ svg {
    ==================================================*/
 
 
-.hero-orbit {
+.hero {
   position: relative;
   overflow: hidden;
-  padding: 120px 80px 64px;
+  padding: 120px 0 64px;
   background: transparent;
 }
 
@@ -124,9 +128,9 @@ svg {
   position: relative;
   z-index: 2;
 
-  max-width: 700px;
+  width: min(1200px, calc(100% - 48px));
   text-align: left;
-  margin-left: 40px;
+  margin: 0 auto;
 }
 
 .hero-eyebrow {
@@ -163,14 +167,10 @@ svg {
 
 .hero-earth {
   position: absolute;
-
   right: -500px;
   top: 20px;
-
   width: 1700px;
-
   opacity: 0.75;
-
   pointer-events: none;
 }
 
@@ -197,7 +197,7 @@ svg {
   align-items: center;
 
   background: rgba(5, 10, 25, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.18);
+  border: 1px solid rgba(148, 190, 230, 0.55);
   border-radius: 3px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
 }
@@ -207,18 +207,20 @@ svg {
 }
 
 .feature-viz h2 {
+  
   margin: 0 0 18px;
   font-size: 26px;
 }
 
 .feature-copy {
+  
   text-align: left;
 }
 
 .section-kicker {
   margin: 0 0 16px;
   color: #7dd3fc;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.22em;
 }
@@ -229,7 +231,7 @@ svg {
   font-weight: 500;
 }
 
-.feature-copy p {
+.feature-copy p:not(.section-kicker) {
   color: #cbd5e1;
   font-size: 18px;
   line-height: 1.7;
@@ -261,6 +263,7 @@ svg {
   stroke-width: 0.8;
   stroke-dasharray: 4, 6;
   opacity: 0.45;
+  cursor: pointer;
 }
 
 .boundary-leo {
@@ -329,6 +332,168 @@ svg {
 
 
 /* ==================================================
+  Popup
+   ==================================================*/
+.orbit-zoom-popup {
+  position: fixed;
+  display: none;
+  z-index: 50;
+
+  width: 560px;
+  max-width: calc(100vw - 48px);
+  padding: 32px;
+
+  grid-template-columns: 180px 1fr;
+  gap: 22px;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 25% 50%, rgba(76, 201, 240, 0.12), transparent 35%),
+    rgba(5, 10, 25, 0.88);
+
+  border: 1px solid rgba(148, 190, 230, 0.55);
+  border-radius: 22px;
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.55),
+    inset 0 0 40px rgba(76, 201, 240, 0.04);
+
+  color: white;
+}
+
+.popup-orbit-preview {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-orbit-preview img {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  z-index: 2;
+  object-fit: contain;
+  filter: drop-shadow(0 0 28px rgba(76, 201, 240, 0.45));
+  transform: translate(-6px, 5px);
+
+}
+
+.popup-orbit-ring {
+  position: absolute;
+  width: 178px;
+  height: 178px;
+  border-radius: 50%;
+
+  border: 1px solid #4cc9f0;
+  box-shadow:
+    0 0 22px rgba(76, 201, 240, 0.35),
+    inset 0 0 18px rgba(76, 201, 240, 0.08);
+
+  opacity: 0.95;
+}
+
+.popup-leo .popup-orbit-ring {
+  width: 135px;
+  height: 135px;
+  border-color: #4cc9f0;
+  box-shadow:
+    0 0 22px rgba(76, 201, 240, 0.35),
+    inset 0 0 18px rgba(76, 201, 240, 0.08);
+}
+
+.popup-meo .popup-orbit-ring {
+  width: 165px;
+  height: 165px;
+  border-color: #9d4edd;
+  box-shadow:
+    0 0 22px rgba(157, 78, 221, 0.38),
+    inset 0 0 18px rgba(157, 78, 221, 0.1);
+}
+
+.popup-geo .popup-orbit-ring {
+  width: 195px;
+  height: 195px;
+  border-color: #f4a261;
+  box-shadow:
+    0 0 22px rgba(244, 162, 97, 0.38),
+    inset 0 0 18px rgba(244, 162, 97, 0.1);
+}
+
+
+.popup-focus {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: #9bcfff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  margin-bottom: 22px;
+}
+
+.popup-focus span {
+  width: 42px;
+  height: 1px;
+  background: rgba(125, 211, 252, 0.55);
+}
+
+.orbit-zoom-popup h3 {
+  margin: 0 0 18px;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.orbit-zoom-popup p {
+  margin: 0 0 34px;
+  color: #aeb8c8;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 18px;
+}
+
+.popup-actions button {
+  min-width: 170px;
+  padding: 14px 22px;
+
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.popup-primary {
+  color: #7dd3fc;
+  background: rgba(76, 201, 240, 0.08);
+  border: 1px solid #4cc9f0;
+
+  box-shadow:
+    0 0 22px rgba(76, 201, 240, 0.28),
+    inset 0 0 18px rgba(76, 201, 240, 0.08);
+}
+
+.popup-secondary {
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(148, 190, 230, 0.55);
+
+
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.28),
+    inset 0 0 16px rgba(255, 255, 255, 0.025);
+}
+
+/* ==================================================
   second plot
    ==================================================*/
 
@@ -350,21 +515,6 @@ svg {
   stroke-width: 2;
 }
 
-.leo-segment {
-  fill: #4cc9f0;
-  stroke: white;
-  stroke-opacity: 0.35;
-  stroke-width: 1;
-}
-
-.leo-segment-even {
-  fill-opacity: 0.22;
-}
-
-.leo-segment-odd {
-  fill-opacity: 0.14;
-}
-
 .leo-owner-text {
   fill: white;
   font-size: 16px;
@@ -384,13 +534,55 @@ svg {
   text-anchor: middle;
 }
 
-.zoom-viz {
-    height: 700px;
-    width: 520px;
-    margin: 20px auto;
-    background-color: #101935;
-    border-radius: 12px;
+
+.zoom-row-box {
+  fill: rgba(5, 18, 42, 0.92);
+  stroke: rgba(76, 201, 240, 0.24);
+  stroke-width: 1;
+  filter: drop-shadow(0 0 8px rgba(76, 201, 240, 0.22));
 }
+
+.zoom-row-edge {
+  fill: #4cc9f0;
+  filter: drop-shadow(0 0 12px rgba(76, 201, 240, 0.95));
+}
+
+.leo-owner-text {
+  fill: #86c9ff;
+  font-size: 22px;
+  font-weight: 700;
+  text-anchor: start;
+}
+
+.zoom-row-count {
+  fill: #afc2e5;
+  font-size: 16px;
+  text-anchor: start;
+}
+
+.leo-small-text {
+  fill: #86a4d8;
+  font-size: 14px;
+  text-anchor: end;
+}
+
+.zoom-viz {
+  height: 700px;
+  width: min(1100px, calc(100% - 48px));
+  margin: 52px auto;
+  background:
+    radial-gradient(circle at 12% 92%, rgba(76, 201, 240, 0.16), transparent 28%),
+    rgba(5, 10, 25, 0.72);
+  border: 1px solid rgba(148, 190, 230, 0.55);
+  border-radius: 3px;
+  box-shadow:
+    0 32px 100px rgba(0, 0, 0, 0.45),
+    inset 0 0 48px rgba(76, 201, 240, 0.025);
+}
+
+/* ==================================================
+  third plot
+   ==================================================*/
 
 .geo-container {
   width: 90%;
@@ -461,3 +653,5 @@ svg {
   fill: #4cc9f0;
   opacity: 0.65;
 }
+
+

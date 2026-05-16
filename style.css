@@ -1,38 +1,87 @@
 body {
   background-color: #0b132b;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   margin: 0;
 }
 
-.topbar {
+/* ==================================================
+   NAVBAR
+   ==================================================*/
+
+.top-nav {
+  height: 72px;
+  padding: 0 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5, 10, 25, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  color: #9d8cff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.nav-links a {
   position: relative;
-  height: 100vh;
-  text-align: center;
-}
-
-.title-block {
-  padding-top: 200px;
-}
-
-.topnav {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.topnav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.topnav li {
-  display: inline;
-  margin-left: 15px;
-}
-
-.topnav a {
-  color: white;
+  color: #cbd5e1;
   text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 28px 0 22px;
+}
+
+.nav-links a.active {
+  color: white;
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  height: 2px;
+  background: #4cc9f0;
+  border-radius: 99px;
+}
+
+.nav-links a:hover {
+  color: white;
 }
