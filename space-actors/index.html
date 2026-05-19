@@ -3,85 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Actors of space activity</title>
+
+  <title>Actors of Space Activity</title>
   <meta name="author" content="Alexandre Spiess" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <header>
-    <h1>Actors of Space Activity</h1>
+  <!-- Navbar -->
+  <header class="top-nav">
+    <a href="../" class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 64 64" fill="none">
+          <ellipse cx="32" cy="32" rx="27" ry="10" stroke="currentColor" stroke-width="3" transform="rotate(-30 32 32)" />
+          <ellipse cx="32" cy="32" rx="27" ry="9" stroke="currentColor" stroke-width="3" transform="rotate(30 32 32)" />
+          <circle cx="32" cy="32" r="5" fill="currentColor" />
+        </svg>
+      </div>
+
+      <span class="brand-name">404 ORBITNOTFOUND</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="../orbital-structure/">Orbital Structure</a>
+      <a href="../space-actors/" class="active">Space Actors</a>
+      <a href="../overflights/">Overflights</a>
+    </nav>
   </header>
+
+    <!-- Hero section -->
+    <section class="hero actors-hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">SATELLITE OWNERSHIP DATA EXPLORATION</p>
+
+        <h1>
+          Actors of<br>
+          Space Activity
+        </h1>
+
+        <p class="hero-description">
+          Explore how countries and organizations shaped Earth orbit over time:
+          from useful payloads to rocket bodies, debris and unknown objects.
+        </p>
+      </div>
+
+      
+    </section>
 
   <main>
 
     <!-- Main country selection -->
     <section class="controls">
       <label for="countrySelect">Select a country:</label>
+
       <select id="countrySelect">
-        <option>China</option>
-        <option>USA</option>
-        <option>Russia / CIS</option>
-        <option>France</option>
-        <option>India</option>
+        <option value="">Loading countries...</option>
       </select>
 
       <p>
         Currently viewing:
-        <span class="country-name" id="selectedCountry">China</span>
+        <span class="country-name" id="selectedCountry">--</span>
       </p>
     </section>
 
     <!-- Top dashboard area -->
     <section class="top-grid">
 
-      <!-- Temporal activity -->
-      <div class="chart-box">
-        <h2>Temporal activity</h2>
-        <p>
-          Number of objects created per year for the selected country
-        </p>
-
-        <div class="placeholder">
-          (objects created per year)
-        </div>
-      </div>
-
       <!-- KPI panel -->
       <div class="chart-box">
-        <h2 id="detailsTitle">Global overview (All years)</h2>
+        <h2 id="detailsTitle">Global overview</h2>
         <p id="detailsSubtitle">
           Summary of the selected country across all years.
         </p>
 
         <section class="info-cards">
-          <div class="card card-wide">
-            <h3>Total objects created</h3>
-            <div class="card-number">--</div>
+
+          <div class="card">
+            <h3>Total objects</h3>
+            <div class="card-number" id="totalObjects">--</div>
           </div>
 
           <div class="card">
             <h3>Payloads</h3>
-            <div class="card-number">--</div>
+            <div class="card-number" id="payloads">--</div>
           </div>
 
           <div class="card">
             <h3>Debris</h3>
-            <div class="card-number">--</div>
+            <div class="card-number" id="debris">--</div>
           </div>
 
           <div class="card">
             <h3>Rocket bodies</h3>
-            <div class="card-number">--</div>
+            <div class="card-number" id="rocketBodies">--</div>
           </div>
 
           <div class="card">
             <h3>Unknown</h3>
-            <div class="card-number">--</div>
+            <div class="card-number" id="unknown">--</div>
           </div>
+
         </section>
 
       </div>
+
+       <!-- Temporal activity -->
+          <div class="chart-box">
+            <h2>Temporal activity</h2>
+            <p>
+              Number of objects created per year for the selected country.
+            </p>
+
+            <div class="object-legend">
+              <span><i class="legend-dot payload"></i>Payloads</span>
+              <span><i class="legend-dot debris"></i>Debris</span>
+              <span><i class="legend-dot rocket"></i>Rocket bodies</span>
+              <span><i class="legend-dot unknown"></i>Unknown</span>
+            </div>
+
+            <div class="placeholder" id="timeChart">
+
+            </div>
+          </div>
 
     </section>
 
@@ -91,27 +139,31 @@
         <div>
           <h2>World Ranking</h2>
           <p id="rankingSubtitle">
-            Ranking of countries based on the selected metric
+            Ranking of countries based on the selected metric.
           </p>
         </div>
 
         <div class="metric-control">
           <label for="metricSelect">Metric:</label>
+
           <select id="metricSelect">
             <option value="total">Total objects</option>
-            <option value="debris">Debris</option>
             <option value="payloads">Payloads</option>
+            <option value="debris">Debris</option>
+            <option value="rocket_bodies">Rocket bodies</option>
+            <option value="unknown">Unknown</option>
           </select>
         </div>
       </div>
 
-      <div class="placeholder">
-        Comparison between countries
+      <div class="placeholder" id="rankingChart">
+      
       </div>
     </section>
 
   </main>
 
-
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
