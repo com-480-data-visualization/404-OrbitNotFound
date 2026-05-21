@@ -424,7 +424,7 @@ Promise.all([
 
         // Layout constants for the row boxes, labels, and altitude axis.
         const xLeft = 160;
-        const xRight = 450;
+        const xRight = 500;
         const altitudeOffsetX = 18;
         const altitudeLabelOffsetX = 12;
 
@@ -559,7 +559,7 @@ Promise.all([
             svg.appendChild(mainText);
             // Dominant-owner count compared with all satellites in this segment.
             const countText = createSvgElement("text");
-            countText.setAttribute("x", xLeft + 95);
+            countText.setAttribute("x", xLeft + 118);
             countText.setAttribute("y", y + segmentHeight / 2 + 6);
             countText.setAttribute("class", "zoom-row-count");
             countText.textContent = totalCount > 0 ? `${dominantCount} / ${totalCount}` : "0 / 0";
