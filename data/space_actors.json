@@ -568,8 +568,8 @@
     },
     {
       "country": "CIS",
-      "full_name": "Commonwealth of Independent States (former USSR)",
-      "display_name": "Russia / CIS",
+      "full_name": "Russia",
+      "display_name": "Russia",
       "total": 25189,
       "payloads": 3910,
       "debris": 17259,
@@ -1141,7 +1141,7 @@
     },
     {
       "country": "PRC",
-      "full_name": "People's Republic of China",
+      "full_name": "China",
       "display_name": "China",
       "total": 9051,
       "payloads": 1824,
@@ -3220,7 +3220,7 @@
     {
       "country": "ESA",
       "full_name": "European Space Agency",
-      "display_name": "ESA",
+      "display_name": "European Space Agency",
       "total": 178,
       "payloads": 129,
       "debris": 39,
@@ -4194,7 +4194,7 @@
     },
     {
       "country": "ITSO",
-      "full_name": "International Telecommunications Satellite Organization (INTELSAT)",
+      "full_name": "INTELSAT",
       "display_name": "INTELSAT",
       "total": 139,
       "payloads": 101,
@@ -6414,7 +6414,7 @@
     },
     {
       "country": "EUTE",
-      "full_name": "European Telecommunications Satellite Organization (EUTELSAT)",
+      "full_name": "EUTELSAT",
       "display_name": "EUTELSAT",
       "total": 62,
       "payloads": 62,
@@ -8438,7 +8438,7 @@
     },
     {
       "country": "IM",
-      "full_name": "International Mobile Satellite Organization (INMARSAT)",
+      "full_name": "INMARSAT",
       "display_name": "INMARSAT",
       "total": 20,
       "payloads": 20,
@@ -8563,7 +8563,7 @@
     },
     {
       "country": "EUME",
-      "full_name": "European Organization for the Exploitation of Meteorological Satellites (EUMETSAT)",
+      "full_name": "EUMETSAT",
       "display_name": "EUMETSAT",
       "total": 20,
       "payloads": 12,
@@ -8657,7 +8657,7 @@
     {
       "country": "AB",
       "full_name": "Arab Satellite Communications Organization",
-      "display_name": "AB",
+      "display_name": "Arab Satellite Communications Organization",
       "total": 18,
       "payloads": 18,
       "debris": 0,
@@ -9364,7 +9364,7 @@
     {
       "country": "CZCH",
       "full_name": "Czech Republic (former Czechoslovakia)",
-      "display_name": "CZCH",
+      "display_name": "Czech Republic (former Czechoslovakia)",
       "total": 15,
       "payloads": 15,
       "debris": 0,
@@ -10166,7 +10166,7 @@
     {
       "country": "ESRO",
       "full_name": "European Space Research Organization",
-      "display_name": "ESRO",
+      "display_name": "European Space Research Organization",
       "total": 10,
       "payloads": 7,
       "debris": 3,
@@ -10279,8 +10279,8 @@
     },
     {
       "country": "RP",
-      "full_name": "Philippines (Republic of the Philippines)",
-      "display_name": "RP",
+      "full_name": "Philippines",
+      "display_name": "Philippines",
       "total": 10,
       "payloads": 10,
       "debris": 0,
@@ -10378,7 +10378,7 @@
     {
       "country": "NATO",
       "full_name": "North Atlantic Treaty Organization",
-      "display_name": "NATO",
+      "display_name": "North Atlantic Treaty Organization",
       "total": 8,
       "payloads": 8,
       "debris": 0,
@@ -10455,7 +10455,7 @@
     {
       "country": "NKOR",
       "full_name": "Democratic People's Republic of Korea",
-      "display_name": "NKOR",
+      "display_name": "Democratic People's Republic of Korea",
       "total": 8,
       "payloads": 3,
       "debris": 2,
@@ -10544,8 +10544,8 @@
     },
     {
       "country": "AC",
-      "full_name": "Asia Satellite Telecommunications Company (ASIASAT)",
-      "display_name": "AC",
+      "full_name": "ASIASAT",
+      "display_name": "ASIASAT",
       "total": 8,
       "payloads": 8,
       "debris": 0,
@@ -11492,7 +11492,7 @@
     {
       "country": "BGD",
       "full_name": "Peoples Republic of Bangladesh",
-      "display_name": "BGD",
+      "display_name": "Peoples Republic of Bangladesh",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11960,7 +11960,7 @@
     {
       "country": "NPL",
       "full_name": "Federal Democratic Republic of Nepal",
-      "display_name": "NPL",
+      "display_name": "Federal Democratic Republic of Nepal",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12107,7 +12107,7 @@
     {
       "country": "MMR",
       "full_name": "Republic of the Union of Myanmar",
-      "display_name": "MMR",
+      "display_name": "Republic of the Union of Myanmar",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12380,7 +12380,7 @@
     {
       "country": "LKA",
       "full_name": "Democratic Socialist Republic of Sri Lanka",
-      "display_name": "LKA",
+      "display_name": "Democratic Socialist Republic of Sri Lanka",
       "total": 1,
       "payloads": 1,
       "debris": 0,
