@@ -10,9 +10,35 @@ OUTPUT_PATH = os.path.join(BASE_DIR, "data", "space_actors.json")
 OWNER_LABELS_PATH = os.path.join(BASE_DIR, "data", "satcat_owners.json")
 
 
+MAX_DISPLAY_NAME_LENGTH = 28
+
+SHORT_OWNER_LABELS = {
+    "CIS": "Russia / CIS",
+    "PRC": "China",
+    "US": "United States",
+    "UK": "United Kingdom",
+    "ESA": "ESA",
+    "EUME": "EUMETSAT",
+    "EUTE": "EUTELSAT",
+    "ITSO": "INTELSAT",
+    "IM": "INMARSAT"
+}
+
+
 def load_owner_labels():
     with open(OWNER_LABELS_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
+    
+def get_display_name(owner_code, owner_labels):
+    full_name = owner_labels.get(owner_code, owner_code)
+
+    if owner_code in SHORT_OWNER_LABELS:
+        return SHORT_OWNER_LABELS[owner_code]
+
+    if len(full_name) > MAX_DISPLAY_NAME_LENGTH:
+        return owner_code
+
+    return full_name
 
 
 def extract_year(value):
@@ -136,7 +162,8 @@ def main():
 
         countries.append({
             "country": owner,
-            "display_name": owner_labels.get(owner, owner),
+            "full_name": owner_labels.get(owner, owner),
+            "display_name": get_display_name(owner, owner_labels),
             "total": int(row["total"]),
             "payloads": int(row["payloads"]),
             "debris": int(row["debris"]),
