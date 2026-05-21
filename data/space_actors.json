@@ -567,7 +567,7 @@
     },
     {
       "country": "CIS",
-      "display_name": "Russia / CIS",
+      "display_name": "Commonwealth of Independent States (former USSR)",
       "total": 25189,
       "payloads": 3910,
       "debris": 17259,
@@ -1139,7 +1139,7 @@
     },
     {
       "country": "PRC",
-      "display_name": "China",
+      "display_name": "People's Republic of China",
       "total": 9051,
       "payloads": 1824,
       "debris": 6509,
@@ -3119,7 +3119,7 @@
     },
     {
       "country": "TBD",
-      "display_name": "TBD",
+      "display_name": "To Be Determined",
       "total": 291,
       "payloads": 228,
       "debris": 0,
@@ -3543,7 +3543,7 @@
     },
     {
       "country": "IT",
-      "display_name": "IT",
+      "display_name": "Italy",
       "total": 142,
       "payloads": 138,
       "debris": 2,
@@ -3835,7 +3835,7 @@
     },
     {
       "country": "GER",
-      "display_name": "GER",
+      "display_name": "Germany",
       "total": 141,
       "payloads": 139,
       "debris": 2,
@@ -4183,7 +4183,7 @@
     },
     {
       "country": "ITSO",
-      "display_name": "Intelsat",
+      "display_name": "International Telecommunications Satellite Organization (INTELSAT)",
       "total": 139,
       "payloads": 101,
       "debris": 38,
@@ -4595,7 +4595,7 @@
     },
     {
       "country": "ISS",
-      "display_name": "ISS",
+      "display_name": "International Space Station",
       "total": 135,
       "payloads": 6,
       "debris": 129,
@@ -4639,7 +4639,7 @@
     },
     {
       "country": "CA",
-      "display_name": "CA",
+      "display_name": "Canada",
       "total": 118,
       "payloads": 110,
       "debris": 8,
@@ -4955,7 +4955,7 @@
     },
     {
       "country": "SPN",
-      "display_name": "SPN",
+      "display_name": "Spain",
       "total": 100,
       "payloads": 100,
       "debris": 0,
@@ -5175,7 +5175,7 @@
     },
     {
       "country": "ORB",
-      "display_name": "ORB",
+      "display_name": "ORBCOMM",
       "total": 95,
       "payloads": 60,
       "debris": 35,
@@ -5259,7 +5259,7 @@
     },
     {
       "country": "CHBZ",
-      "display_name": "CHBZ",
+      "display_name": "China/Brazil",
       "total": 92,
       "payloads": 5,
       "debris": 87,
@@ -5311,7 +5311,7 @@
     },
     {
       "country": "GLOB",
-      "display_name": "GLOB",
+      "display_name": "Globalstar",
       "total": 86,
       "payloads": 84,
       "debris": 2,
@@ -5379,7 +5379,7 @@
     },
     {
       "country": "SKOR",
-      "display_name": "SKOR",
+      "display_name": "Republic of Korea",
       "total": 83,
       "payloads": 78,
       "debris": 0,
@@ -5551,7 +5551,7 @@
     },
     {
       "country": "ARGN",
-      "display_name": "ARGN",
+      "display_name": "Argentina",
       "total": 73,
       "payloads": 72,
       "debris": 1,
@@ -5747,7 +5747,7 @@
     },
     {
       "country": "AUS",
-      "display_name": "AUS",
+      "display_name": "Australia",
       "total": 71,
       "payloads": 69,
       "debris": 0,
@@ -6211,7 +6211,7 @@
     },
     {
       "country": "ISRA",
-      "display_name": "ISRA",
+      "display_name": "Israel",
       "total": 68,
       "payloads": 56,
       "debris": 1,
@@ -6391,7 +6391,7 @@
     },
     {
       "country": "EUTE",
-      "display_name": "Eutelsat",
+      "display_name": "European Telecommunications Satellite Organization (EUTELSAT)",
       "total": 62,
       "payloads": 62,
       "debris": 0,
@@ -6683,7 +6683,7 @@
     },
     {
       "country": "TURK",
-      "display_name": "TURK",
+      "display_name": "T\u00fcrkiye",
       "total": 52,
       "payloads": 52,
       "debris": 0,
@@ -6847,7 +6847,7 @@
     },
     {
       "country": "ROC",
-      "display_name": "ROC",
+      "display_name": "Taiwan (Republic of China)",
       "total": 47,
       "payloads": 45,
       "debris": 2,
@@ -6963,7 +6963,7 @@
     },
     {
       "country": "FIN",
-      "display_name": "FIN",
+      "display_name": "Finland",
       "total": 45,
       "payloads": 45,
       "debris": 0,
@@ -7063,7 +7063,7 @@
     },
     {
       "country": "SEAL",
-      "display_name": "SEAL",
+      "display_name": "Sea Launch",
       "total": 37,
       "payloads": 1,
       "debris": 3,
@@ -7179,7 +7179,7 @@
     },
     {
       "country": "IRAN",
-      "display_name": "IRAN",
+      "display_name": "Iran",
       "total": 36,
       "payloads": 20,
       "debris": 2,
@@ -7279,7 +7279,7 @@
     },
     {
       "country": "BRAZ",
-      "display_name": "BRAZ",
+      "display_name": "Brazil",
       "total": 32,
       "payloads": 32,
       "debris": 0,
@@ -7467,7 +7467,7 @@
     },
     {
       "country": "UAE",
-      "display_name": "UAE",
+      "display_name": "United Arab Emirates",
       "total": 32,
       "payloads": 32,
       "debris": 0,
@@ -7615,7 +7615,7 @@
     },
     {
       "country": "O3B",
-      "display_name": "O3B",
+      "display_name": "O3b Networks",
       "total": 30,
       "payloads": 30,
       "debris": 0,
@@ -7691,7 +7691,7 @@
     },
     {
       "country": "NOR",
-      "display_name": "NOR",
+      "display_name": "Norway",
       "total": 29,
       "payloads": 29,
       "debris": 0,
@@ -7831,7 +7831,7 @@
     },
     {
       "country": "SING",
-      "display_name": "SING",
+      "display_name": "Singapore",
       "total": 26,
       "payloads": 26,
       "debris": 0,
@@ -7915,7 +7915,7 @@
     },
     {
       "country": "NZ",
-      "display_name": "NZ",
+      "display_name": "New Zealand",
       "total": 25,
       "payloads": 25,
       "debris": 0,
@@ -7967,7 +7967,7 @@
     },
     {
       "country": "POL",
-      "display_name": "POL",
+      "display_name": "Poland",
       "total": 25,
       "payloads": 25,
       "debris": 0,
@@ -8067,7 +8067,7 @@
     },
     {
       "country": "LUXE",
-      "display_name": "LUXE",
+      "display_name": "Luxembourg",
       "total": 25,
       "payloads": 25,
       "debris": 0,
@@ -8143,7 +8143,7 @@
     },
     {
       "country": "INDO",
-      "display_name": "INDO",
+      "display_name": "Indonesia",
       "total": 23,
       "payloads": 23,
       "debris": 0,
@@ -8331,7 +8331,7 @@
     },
     {
       "country": "SWTZ",
-      "display_name": "SWTZ",
+      "display_name": "Switzerland",
       "total": 22,
       "payloads": 22,
       "debris": 0,
@@ -8399,7 +8399,7 @@
     },
     {
       "country": "IM",
-      "display_name": "Inmarsat",
+      "display_name": "International Mobile Satellite Organization (INMARSAT)",
       "total": 20,
       "payloads": 20,
       "debris": 0,
@@ -8523,7 +8523,7 @@
     },
     {
       "country": "EUME",
-      "display_name": "EUMETSAT",
+      "display_name": "European Organization for the Exploitation of Meteorological Satellites (EUMETSAT)",
       "total": 20,
       "payloads": 12,
       "debris": 8,
@@ -8615,7 +8615,7 @@
     },
     {
       "country": "AB",
-      "display_name": "AB",
+      "display_name": "Arab Satellite Communications Organization",
       "total": 18,
       "payloads": 18,
       "debris": 0,
@@ -8739,7 +8739,7 @@
     },
     {
       "country": "DEN",
-      "display_name": "DEN",
+      "display_name": "Denmark",
       "total": 18,
       "payloads": 18,
       "debris": 0,
@@ -8839,7 +8839,7 @@
     },
     {
       "country": "BEL",
-      "display_name": "BEL",
+      "display_name": "Belgium",
       "total": 17,
       "payloads": 17,
       "debris": 0,
@@ -8923,7 +8923,7 @@
     },
     {
       "country": "SAUD",
-      "display_name": "SAUD",
+      "display_name": "Saudi Arabia",
       "total": 17,
       "payloads": 17,
       "debris": 0,
@@ -8999,7 +8999,7 @@
     },
     {
       "country": "NETH",
-      "display_name": "NETH",
+      "display_name": "Netherlands",
       "total": 16,
       "payloads": 16,
       "debris": 0,
@@ -9107,7 +9107,7 @@
     },
     {
       "country": "THAI",
-      "display_name": "THAI",
+      "display_name": "Thailand",
       "total": 16,
       "payloads": 16,
       "debris": 0,
@@ -9231,7 +9231,7 @@
     },
     {
       "country": "EGYP",
-      "display_name": "EGYP",
+      "display_name": "Egypt",
       "total": 15,
       "payloads": 15,
       "debris": 0,
@@ -9315,7 +9315,7 @@
     },
     {
       "country": "CZCH",
-      "display_name": "CZCH",
+      "display_name": "Czech Republic (former Czechoslovakia)",
       "total": 15,
       "payloads": 15,
       "debris": 0,
@@ -9423,7 +9423,7 @@
     },
     {
       "country": "MALA",
-      "display_name": "MALA",
+      "display_name": "Malaysia",
       "total": 14,
       "payloads": 14,
       "debris": 0,
@@ -9515,7 +9515,7 @@
     },
     {
       "country": "SWED",
-      "display_name": "SWED",
+      "display_name": "Sweden",
       "total": 14,
       "payloads": 14,
       "debris": 0,
@@ -9615,7 +9615,7 @@
     },
     {
       "country": "PAKI",
-      "display_name": "PAKI",
+      "display_name": "Pakistan",
       "total": 13,
       "payloads": 13,
       "debris": 0,
@@ -9699,7 +9699,7 @@
     },
     {
       "country": "RWA",
-      "display_name": "RWA",
+      "display_name": "Republic of Rwanda",
       "total": 13,
       "payloads": 13,
       "debris": 0,
@@ -9751,7 +9751,7 @@
     },
     {
       "country": "MEX",
-      "display_name": "MEX",
+      "display_name": "Mexico",
       "total": 13,
       "payloads": 13,
       "debris": 0,
@@ -9843,7 +9843,7 @@
     },
     {
       "country": "GREC",
-      "display_name": "GREC",
+      "display_name": "Greece",
       "total": 13,
       "payloads": 13,
       "debris": 0,
@@ -9903,7 +9903,7 @@
     },
     {
       "country": "LTU",
-      "display_name": "LTU",
+      "display_name": "Lithuania",
       "total": 13,
       "payloads": 13,
       "debris": 0,
@@ -9971,7 +9971,7 @@
     },
     {
       "country": "HUN",
-      "display_name": "HUN",
+      "display_name": "Hungary",
       "total": 11,
       "payloads": 11,
       "debris": 0,
@@ -10031,7 +10031,7 @@
     },
     {
       "country": "SAFR",
-      "display_name": "SAFR",
+      "display_name": "South Africa",
       "total": 11,
       "payloads": 11,
       "debris": 0,
@@ -10107,7 +10107,7 @@
     },
     {
       "country": "ESRO",
-      "display_name": "ESRO",
+      "display_name": "European Space Research Organization",
       "total": 10,
       "payloads": 7,
       "debris": 3,
@@ -10143,7 +10143,7 @@
     },
     {
       "country": "UKR",
-      "display_name": "UKR",
+      "display_name": "Ukraine",
       "total": 10,
       "payloads": 10,
       "debris": 0,
@@ -10219,7 +10219,7 @@
     },
     {
       "country": "RP",
-      "display_name": "RP",
+      "display_name": "Philippines (Republic of the Philippines)",
       "total": 10,
       "payloads": 10,
       "debris": 0,
@@ -10263,7 +10263,7 @@
     },
     {
       "country": "KAZ",
-      "display_name": "KAZ",
+      "display_name": "Kazakhstan",
       "total": 9,
       "payloads": 9,
       "debris": 0,
@@ -10315,7 +10315,7 @@
     },
     {
       "country": "NATO",
-      "display_name": "NATO",
+      "display_name": "North Atlantic Treaty Organization",
       "total": 8,
       "payloads": 8,
       "debris": 0,
@@ -10391,7 +10391,7 @@
     },
     {
       "country": "NKOR",
-      "display_name": "NKOR",
+      "display_name": "Democratic People's Republic of Korea",
       "total": 8,
       "payloads": 3,
       "debris": 2,
@@ -10427,7 +10427,7 @@
     },
     {
       "country": "ALG",
-      "display_name": "ALG",
+      "display_name": "Algeria",
       "total": 8,
       "payloads": 8,
       "debris": 0,
@@ -10479,7 +10479,7 @@
     },
     {
       "country": "AC",
-      "display_name": "AC",
+      "display_name": "Asia Satellite Telecommunications Company (ASIASAT)",
       "total": 8,
       "payloads": 8,
       "debris": 0,
@@ -10547,7 +10547,7 @@
     },
     {
       "country": "ABS",
-      "display_name": "ABS",
+      "display_name": "Asia Broadcast Satellite",
       "total": 8,
       "payloads": 8,
       "debris": 0,
@@ -10615,7 +10615,7 @@
     },
     {
       "country": "BUL",
-      "display_name": "BUL",
+      "display_name": "Bulgaria",
       "total": 8,
       "payloads": 8,
       "debris": 0,
@@ -10683,7 +10683,7 @@
     },
     {
       "country": "CHLE",
-      "display_name": "CHLE",
+      "display_name": "Chile",
       "total": 7,
       "payloads": 7,
       "debris": 0,
@@ -10735,7 +10735,7 @@
     },
     {
       "country": "VTNM",
-      "display_name": "VTNM",
+      "display_name": "Vietnam",
       "total": 6,
       "payloads": 6,
       "debris": 0,
@@ -10787,7 +10787,7 @@
     },
     {
       "country": "NIG",
-      "display_name": "NIG",
+      "display_name": "Nigeria",
       "total": 6,
       "payloads": 6,
       "debris": 0,
@@ -10831,7 +10831,7 @@
     },
     {
       "country": "POR",
-      "display_name": "POR",
+      "display_name": "Portugal",
       "total": 5,
       "payloads": 5,
       "debris": 0,
@@ -10875,7 +10875,7 @@
     },
     {
       "country": "BELA",
-      "display_name": "BELA",
+      "display_name": "Belarus",
       "total": 5,
       "payloads": 5,
       "debris": 0,
@@ -10919,7 +10919,7 @@
     },
     {
       "country": "PERU",
-      "display_name": "PERU",
+      "display_name": "Peru",
       "total": 4,
       "payloads": 4,
       "debris": 0,
@@ -10955,7 +10955,7 @@
     },
     {
       "country": "MA",
-      "display_name": "MA",
+      "display_name": "Morroco",
       "total": 4,
       "payloads": 4,
       "debris": 0,
@@ -10991,7 +10991,7 @@
     },
     {
       "country": "ASRA",
-      "display_name": "ASRA",
+      "display_name": "Austria",
       "total": 4,
       "payloads": 4,
       "debris": 0,
@@ -11063,7 +11063,7 @@
     },
     {
       "country": "COL",
-      "display_name": "COL",
+      "display_name": "Colombia",
       "total": 3,
       "payloads": 3,
       "debris": 0,
@@ -11099,7 +11099,7 @@
     },
     {
       "country": "VENZ",
-      "display_name": "VENZ",
+      "display_name": "Venezuela",
       "total": 3,
       "payloads": 3,
       "debris": 0,
@@ -11135,7 +11135,7 @@
     },
     {
       "country": "AZER",
-      "display_name": "AZER",
+      "display_name": "Azerbaijan",
       "total": 3,
       "payloads": 3,
       "debris": 0,
@@ -11171,7 +11171,7 @@
     },
     {
       "country": "SVN",
-      "display_name": "SVN",
+      "display_name": "Slovenia",
       "total": 3,
       "payloads": 3,
       "debris": 0,
@@ -11235,7 +11235,7 @@
     },
     {
       "country": "RASC",
-      "display_name": "RASC",
+      "display_name": "RascomStar-QAF",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11263,7 +11263,7 @@
     },
     {
       "country": "SGJP",
-      "display_name": "SGJP",
+      "display_name": "Singapore/Japan",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11291,7 +11291,7 @@
     },
     {
       "country": "ROM",
-      "display_name": "ROM",
+      "display_name": "Romania",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11319,7 +11319,7 @@
     },
     {
       "country": "STCT",
-      "display_name": "STCT",
+      "display_name": "Singapore/Taiwan",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11347,7 +11347,7 @@
     },
     {
       "country": "ZWE",
-      "display_name": "ZWE",
+      "display_name": "Republic of Zimbabwe",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11375,7 +11375,7 @@
     },
     {
       "country": "FRIT",
-      "display_name": "FRIT",
+      "display_name": "France/Italy",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11403,7 +11403,7 @@
     },
     {
       "country": "BGD",
-      "display_name": "BGD",
+      "display_name": "Peoples Republic of Bangladesh",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11431,7 +11431,7 @@
     },
     {
       "country": "EST",
-      "display_name": "EST",
+      "display_name": "Estonia",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11459,7 +11459,7 @@
     },
     {
       "country": "ECU",
-      "display_name": "ECU",
+      "display_name": "Ecuador",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11479,7 +11479,7 @@
     },
     {
       "country": "DJI",
-      "display_name": "DJI",
+      "display_name": "Republic of Djibouti",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11507,7 +11507,7 @@
     },
     {
       "country": "FGER",
-      "display_name": "FGER",
+      "display_name": "France/Germany",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11535,7 +11535,7 @@
     },
     {
       "country": "KEN",
-      "display_name": "KEN",
+      "display_name": "Republic of Kenya",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11563,7 +11563,7 @@
     },
     {
       "country": "ANG",
-      "display_name": "ANG",
+      "display_name": "Angola",
       "total": 2,
       "payloads": 2,
       "debris": 0,
@@ -11591,7 +11591,7 @@
     },
     {
       "country": "URY",
-      "display_name": "URY",
+      "display_name": "Uruguay",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11611,7 +11611,7 @@
     },
     {
       "country": "BHR",
-      "display_name": "BHR",
+      "display_name": "The Kingdom of Bahrain",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11631,7 +11631,7 @@
     },
     {
       "country": "BHUT",
-      "display_name": "BHUT",
+      "display_name": "The Kingdom of Bhutan",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11651,7 +11651,7 @@
     },
     {
       "country": "USBZ",
-      "display_name": "USBZ",
+      "display_name": "United States/Brazil",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11691,7 +11691,7 @@
     },
     {
       "country": "BOL",
-      "display_name": "BOL",
+      "display_name": "Bolivia",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11711,7 +11711,7 @@
     },
     {
       "country": "BWA",
-      "display_name": "BWA",
+      "display_name": "Republic of Botswana",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11731,7 +11731,7 @@
     },
     {
       "country": "TUN",
-      "display_name": "TUN",
+      "display_name": "Republic of Tunisia",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11751,7 +11751,7 @@
     },
     {
       "country": "TMMC",
-      "display_name": "TMMC",
+      "display_name": "Turkmenistan/Monaco",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11771,7 +11771,7 @@
     },
     {
       "country": "CRI",
-      "display_name": "CRI",
+      "display_name": "Republic of Costa Rica",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11791,7 +11791,7 @@
     },
     {
       "country": "VAT",
-      "display_name": "VAT",
+      "display_name": "Vatican City State",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11811,7 +11811,7 @@
     },
     {
       "country": "ARM",
-      "display_name": "ARM",
+      "display_name": "Republic of Armenia",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11831,7 +11831,7 @@
     },
     {
       "country": "ETH",
-      "display_name": "ETH",
+      "display_name": "Ethiopia",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11851,7 +11851,7 @@
     },
     {
       "country": "NPL",
-      "display_name": "NPL",
+      "display_name": "Federal Democratic Republic of Nepal",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11871,7 +11871,7 @@
     },
     {
       "country": "NICO",
-      "display_name": "NICO",
+      "display_name": "New ICO",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11891,7 +11891,7 @@
     },
     {
       "country": "GHA",
-      "display_name": "GHA",
+      "display_name": "Republic of Ghana",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11911,7 +11911,7 @@
     },
     {
       "country": "MUS",
-      "display_name": "MUS",
+      "display_name": "Mauritius",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11931,7 +11931,7 @@
     },
     {
       "country": "MNG",
-      "display_name": "MNG",
+      "display_name": "Mongolia",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11951,7 +11951,7 @@
     },
     {
       "country": "PRY",
-      "display_name": "PRY",
+      "display_name": "Republic of Paraguay",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11971,7 +11971,7 @@
     },
     {
       "country": "MNE",
-      "display_name": "MNE",
+      "display_name": "Montenegro",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -11991,7 +11991,7 @@
     },
     {
       "country": "MMR",
-      "display_name": "MMR",
+      "display_name": "Republic of the Union of Myanmar",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12011,7 +12011,7 @@
     },
     {
       "country": "MDA",
-      "display_name": "MDA",
+      "display_name": "Republic of Moldova",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12031,7 +12031,7 @@
     },
     {
       "country": "MCO",
-      "display_name": "MCO",
+      "display_name": "Principality of Monaco",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12051,7 +12051,7 @@
     },
     {
       "country": "LAOS",
-      "display_name": "LAOS",
+      "display_name": "Laos",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12091,7 +12091,7 @@
     },
     {
       "country": "SDN",
-      "display_name": "SDN",
+      "display_name": "Republic of Sudan",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12111,7 +12111,7 @@
     },
     {
       "country": "IRL",
-      "display_name": "IRL",
+      "display_name": "Ireland",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12131,7 +12131,7 @@
     },
     {
       "country": "SEN",
-      "display_name": "SEN",
+      "display_name": "Republic of Senegal",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12151,7 +12151,7 @@
     },
     {
       "country": "IRAQ",
-      "display_name": "IRAQ",
+      "display_name": "Iraq",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12171,7 +12171,7 @@
     },
     {
       "country": "HRV",
-      "display_name": "HRV",
+      "display_name": "Republic of Croatia",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12191,7 +12191,7 @@
     },
     {
       "country": "GUAT",
-      "display_name": "GUAT",
+      "display_name": "Guatemala",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12211,7 +12211,7 @@
     },
     {
       "country": "GRSA",
-      "display_name": "GRSA",
+      "display_name": "Greece/Saudi Arabia",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12231,7 +12231,7 @@
     },
     {
       "country": "SLB",
-      "display_name": "SLB",
+      "display_name": "Solomon Islands",
       "total": 1,
       "payloads": 1,
       "debris": 0,
@@ -12251,7 +12251,7 @@
     },
     {
       "country": "LKA",
-      "display_name": "LKA",
+      "display_name": "Democratic Socialist Republic of Sri Lanka",
       "total": 1,
       "payloads": 1,
       "debris": 0,

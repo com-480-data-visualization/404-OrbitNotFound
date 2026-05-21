@@ -7,22 +7,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 RAW_PATH = os.path.join(BASE_DIR, "data", "raw", "satcat_raw.csv")
 OUTPUT_PATH = os.path.join(BASE_DIR, "data", "space_actors.json")
+OWNER_LABELS_PATH = os.path.join(BASE_DIR, "data", "satcat_owners.json")
 
 
-OWNER_LABELS = {
-    "US": "United States",
-    "PRC": "China",
-    "CIS": "Russia / CIS",
-    "FR": "France",
-    "IND": "India",
-    "JPN": "Japan",
-    "UK": "United Kingdom",
-    "ESA": "European Space Agency",
-    "EUME": "EUMETSAT",
-    "EUTE": "Eutelsat",
-    "ITSO": "Intelsat",
-    "IM": "Inmarsat",
-}
+def load_owner_labels():
+    with open(OWNER_LABELS_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 
 def extract_year(value):
@@ -59,6 +49,9 @@ def normalize_object_type(value):
 
 
 def main():
+
+    owner_labels = load_owner_labels()
+
     df = pd.read_csv(RAW_PATH)
 
      # Keep only useful columns
@@ -121,9 +114,6 @@ def main():
     actors_df = actors_df.sort_values("total", ascending=False).reset_index(drop=True)
 
 
-
-
-
     countries = []
 
     for index, row in actors_df.iterrows():
@@ -146,7 +136,7 @@ def main():
 
         countries.append({
             "country": owner,
-            "display_name": OWNER_LABELS.get(owner, owner),
+            "display_name": owner_labels.get(owner, owner),
             "total": int(row["total"]),
             "payloads": int(row["payloads"]),
             "debris": int(row["debris"]),
