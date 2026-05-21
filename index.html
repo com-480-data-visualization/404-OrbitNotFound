@@ -3,55 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Atlas of Space Activity</title>
-  <link rel="stylesheet" href="style.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- nav bar -->
+  <!-- Navbar -->
   <header class="top-nav">
-  <div class="brand">
+    <a href="./" class="brand">
       <div class="brand-icon">
-      <svg viewBox="0 0 64 64" fill="none">
+        <svg viewBox="0 0 64 64" fill="none">
           <ellipse
-          cx="32"
-          cy="32"
-          rx="27"
-          ry="10"
-          stroke="currentColor"
-          stroke-width="3"
-          transform="rotate(-30 32 32)"
-          />
-          
-          <ellipse
-          cx="32"
-          cy="32"
-          rx="27"
-          ry="9"
-          stroke="currentColor"
-          stroke-width="3"
-          transform="rotate(30 32 32)"
+            cx="32"
+            cy="32"
+            rx="27"
+            ry="10"
+            stroke="currentColor"
+            stroke-width="3"
+            transform="rotate(-30 32 32)"
           />
 
-          <circle
-          cx="32"
-          cy="32"
-          r="5"
-          fill="currentColor"
+          <ellipse
+            cx="32"
+            cy="32"
+            rx="27"
+            ry="9"
+            stroke="currentColor"
+            stroke-width="3"
+            transform="rotate(30 32 32)"
           />
-      </svg>
+
+          <circle cx="32" cy="32" r="5" fill="currentColor" />
+        </svg>
       </div>
-      <span class="brand-name">404 ORBITNOTFOUND</span>
-  </div>
 
-  <nav class="nav-links">
-    <a href="./orbital-structure/">Orbital Structure</a>
-    <a href="./space-actors/">Space Actors</a>
-  </nav>
+      <span class="brand-name">404 ORBITNOTFOUND</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="./orbital-structure/">Orbital Structure</a>
+      <a href="./space-actors/">Space Actors</a>
+      <a href="./overflights/">Overflights</a>
+    </nav>
   </header>
-  
+
+  <!-- Landing page -->
+  <main class="landing">
+
+    <section class="landing-hero">
+      <p class="hero-eyebrow">SATELLITE DATA VISUALIZATION</p>
+
+      <h1>
+        Atlas of<br>
+        Space Activity
+      </h1>
+
+      <p class="hero-description">
+        Explore how artificial objects populate Earth orbit, who placed them there,
+        and how space activity has evolved over time.
+      </p>
+
+      <button id="startButton" class="start-button">
+        Start exploration
+      </button>
+    </section>
+
+    <section id="choicePanel" class="choice-panel">
+
+      <a href="./orbital-structure/" class="choice-card">
+        <span>01</span>
+        <h2>Orbital Structure</h2>
+        <p>
+          Explore how satellites are distributed across LEO, MEO and GEO.
+        </p>
+      </a>
+
+      <a href="./space-actors/" class="choice-card">
+        <span>02</span>
+        <h2>Space Actors</h2>
+        <p>
+          Compare countries and organizations by payloads, debris and activity over time.
+        </p>
+      </a>
+
+      <a href="./overflights/" class="choice-card">
+        <span>03</span>
+        <h2>Overflights</h2>
+        <p>
+          Discover which satellites pass above selected regions of the Earth.
+        </p>
+      </a>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
