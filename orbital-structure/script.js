@@ -26,6 +26,7 @@ Promise.all([
     const zoomPopupText = document.getElementById("orbit-zoom-text");
     const zoomYes = document.getElementById("orbit-zoom-yes");
     const zoomNo = document.getElementById("orbit-zoom-no");
+    const ownerTooltip = document.getElementById("owner-tooltip");
     let activeOrbitTarget = null;
     let activeOrbitClass = null;
 
@@ -141,6 +142,38 @@ Promise.all([
     // Display a human-readable owner name in dropdowns while keeping the owner code as value.
     function getOwnerDisplayName(owner) {
         return ownerNames[owner] || owner;
+    }
+
+    // Position the owner tooltip near the cursor without covering the row being inspected.
+    function moveOwnerTooltip(event) {
+        ownerTooltip.style.left = `${event.clientX + 14}px`;
+        ownerTooltip.style.top = `${event.clientY + 14}px`;
+    }
+
+    // Show the owner acronym and, when available, its full SATCAT owner name.
+    function showOwnerTooltip(event, ownerCode) {
+        if (!ownerCode || ownerCode === "None") return;
+
+        ownerTooltip.innerHTML = "";
+
+        const code = document.createElement("strong");
+        code.textContent = ownerCode;
+        ownerTooltip.appendChild(code);
+
+        const ownerName = getOwnerDisplayName(ownerCode);
+        if (ownerName !== ownerCode) {
+            const name = document.createElement("span");
+            name.textContent = ownerName;
+            ownerTooltip.appendChild(name);
+        }
+
+        moveOwnerTooltip(event);
+        ownerTooltip.classList.add("visible");
+    }
+
+    // Fade the tooltip away. CSS handles the actual transition.
+    function hideOwnerTooltip() {
+        ownerTooltip.classList.remove("visible");
     }
 
     // -------------------------
@@ -404,6 +437,7 @@ Promise.all([
     function drawOrbitZoom(orbitClass, container) {
         // Clear only the inner plot area, leaving the dropdown and explanatory text intact.
         container.innerHTML = "";
+        hideOwnerTooltip();
 
         const width = 520;
         const height = 700;
@@ -574,6 +608,22 @@ Promise.all([
                 smallText.setAttribute("class", "leo-small-text");
                 smallText.textContent = "satellites";
                 svg.appendChild(smallText);
+
+                const hoverTarget = createSvgElement("rect");
+                hoverTarget.setAttribute("x", xLeft);
+                hoverTarget.setAttribute("y", y + 4);
+                hoverTarget.setAttribute("width", xRight - xLeft);
+                hoverTarget.setAttribute("height", segmentHeight - 8);
+                hoverTarget.setAttribute("rx", 9);
+                hoverTarget.setAttribute("fill", "transparent");
+                hoverTarget.setAttribute("pointer-events", "all");
+                hoverTarget.setAttribute("class", "zoom-row-hover-target");
+                hoverTarget.addEventListener("mouseenter", event => {
+                    showOwnerTooltip(event, dominantOwner);
+                });
+                hoverTarget.addEventListener("mousemove", moveOwnerTooltip);
+                hoverTarget.addEventListener("mouseleave", hideOwnerTooltip);
+                svg.appendChild(hoverTarget);
             }
         }
 

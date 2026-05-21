@@ -510,6 +510,47 @@ svg {
     inset 0 0 16px rgba(255, 255, 255, 0.025);
 }
 
+.owner-tooltip {
+  position: fixed;
+  z-index: 80;
+  max-width: 220px;
+  padding: 10px 12px;
+
+  background: rgba(5, 10, 25, 0.9);
+  border: 1px solid rgba(76, 201, 240, 0.38);
+  border-radius: 8px;
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.38),
+    0 0 20px rgba(76, 201, 240, 0.16),
+    inset 0 0 18px rgba(76, 201, 240, 0.035);
+  backdrop-filter: blur(10px);
+
+  color: #cbd5e1;
+  font-size: 13px;
+  line-height: 1.35;
+
+  opacity: 0;
+  transform: translate(12px, 12px);
+  pointer-events: none;
+  transition: opacity 0.16s ease;
+}
+
+.owner-tooltip.visible {
+  opacity: 1;
+}
+
+.owner-tooltip strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #7dd3fc;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.zoom-row-hover-target {
+  cursor: help;
+}
+
 /* ==================================================
   second plot
    ==================================================*/
