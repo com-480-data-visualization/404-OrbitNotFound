@@ -18,14 +18,7 @@ class SatelliteDataProcessor:
     def load_csv(self):
         self.df = pd.read_csv(self.file_path, low_memory=False)
         return self.df
-    """
-    def inspect_data(self):
-        print("Columns in dataset:")
-        print(self.df.columns)
-
-        print("\nFirst rows:")
-        print(self.df.head())
-    """
+    
     def classify_orbit(self, row):
         if pd.isna(row["PERIGEE"]) or pd.isna(row["APOGEE"]):
             return "UNKNOWN"
@@ -46,6 +39,7 @@ class SatelliteDataProcessor:
             "OBJECT_NAME",
             "NORAD_CAT_ID",
             "OWNER",
+            "OPS_STATUS_CODE",
             "PERIOD",
             "APOGEE",
             "PERIGEE"
@@ -64,6 +58,7 @@ class SatelliteDataProcessor:
             "OBJECT_NAME": "name",
             "NORAD_CAT_ID": "norad",
             "OWNER": "owner",
+            "OPS_STATUS_CODE": "status",
             "PERIOD": "period",
             "APOGEE": "apogee",
             "PERIGEE": "perigee"

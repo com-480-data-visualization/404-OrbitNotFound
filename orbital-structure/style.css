@@ -14,14 +14,23 @@ h1 {
 }
 
 .controls {
-    margin: 20px;
+  margin: 20px;
+}
+
+.controls label {
+  color: #aeb8c8;
+  font-size: 13px;
+  margin-right: 8px;
 }
 
 select {
-    margin: 10px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    border: none;
+  margin: 10px;
+  padding: 5px 8px;
+  background: rgba(5, 18, 42, 0.92);
+  color: #cbd5e1;
+  border: 1px solid rgba(76, 201, 240, 0.28);
+  border-radius: 6px;
+  font-family: inherit;
 }
 
 
@@ -139,9 +148,7 @@ svg {
   font-size: 14px;
   letter-spacing: 0.22em;
   font-weight: 700;
-
-  margin-bottom: 24px;
-  margin-bottom: 72px;
+  margin-top: 172px;
 }
 
 .hero h1 {
@@ -202,6 +209,16 @@ svg {
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
 }
 
+.feature-card .feature-viz > .controls {
+  position: absolute;
+  top: 60px;
+  right: 36px;
+  width: 480px;
+  z-index: 4;
+  margin: 0;
+  text-align: left;
+}
+
 .feature-viz {
   text-align: center;
 }
@@ -213,12 +230,12 @@ svg {
 }
 
 .feature-copy {
-  
   text-align: left;
+  transform: translateY(38px);
 }
 
 .section-kicker {
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   color: #7dd3fc;
   font-size: 18px;
   font-weight: 700;
@@ -504,28 +521,20 @@ svg {
   text-anchor: middle;
 }
 
-.leo-subtitle,
-.leo-altitude-text {
+.leo-subtitle {
   fill: #adb5bd;
   font-size: 14px;
+}
+
+.leo-altitude-text {
+  fill: #adb5bd;
+  font-size: 13px;
+  text-anchor: end;
 }
 
 .leo-guide-line {
   stroke: white;
   stroke-width: 2;
-}
-
-.leo-owner-text {
-  fill: white;
-  font-size: 16px;
-  font-weight: bold;
-  text-anchor: middle;
-}
-
-.leo-small-text {
-  fill: #cbd5e1;
-  font-size: 11px;
-  text-anchor: middle;
 }
 
 .altitude-label {
@@ -567,8 +576,9 @@ svg {
 }
 
 .zoom-viz {
+  position: relative;
   height: 700px;
-  width: min(1100px, calc(100% - 48px));
+  width: min(1200px, calc(100% - 48px));
   margin: 52px auto;
   background:
     radial-gradient(circle at 12% 92%, rgba(76, 201, 240, 0.16), transparent 28%),
@@ -580,17 +590,117 @@ svg {
     inset 0 0 48px rgba(76, 201, 240, 0.025);
 }
 
+.zoom-controls {
+  position: absolute;
+  top: 50px;
+  right: 58px;
+  width: 440px;
+  z-index: 2;
+  text-align: left;
+}
+
+.zoom-controls label {
+  color: #aeb8c8;
+  font-size: 19px;
+  margin-right: 8px;
+}
+
+.zoom-controls select {
+  background: rgba(5, 18, 42, 0.92);
+  color: #cbd5e1;
+  border: px solid rgba(76, 201, 240, 0.28);
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+.zoom-copy {
+  position: absolute;
+  top: 118px;
+  right: 58px;
+  width: 440px;
+  text-align: left;
+}
+
+.zoom-copy .section-kicker {
+  margin: 0 0 16px;
+  font-size: 15px;
+}
+
+.zoom-copy h2 {
+  margin: 0 0 20px;
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.zoom-copy p:not(.section-kicker) {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
 /* ==================================================
   third plot
    ==================================================*/
 
 .geo-container {
+  position: relative;
   width: 90%;
   max-width: 1200px;
   margin: 40px auto;
-  background-color: #101935;
-  border-radius: 12px;
+  background:
+    radial-gradient(circle at 12% 92%, rgba(76, 201, 240, 0.16), transparent 28%),
+    rgba(5, 10, 25, 0.72);
+  border: 1px solid rgba(148, 190, 230, 0.55);
+  border-radius: 3px;
   padding: 20px;
+}
+
+.geo-controls {
+  position: absolute;
+  top: 35px;
+  right: 18px;
+  z-index: 2;
+}
+
+.geo-controls label {
+  color: #aeb8c8;
+  font-size: 19px;
+  margin-right: 8px;
+}
+
+.geo-copy {
+  position: absolute;
+  top: 150px;
+  right: 42px;
+  width: 300px;
+  text-align: left;
+  z-index: 2;
+}
+
+.geo-copy .section-kicker {
+  margin: 0 0 16px;
+  font-size: 13px;
+}
+
+.geo-copy h2 {
+  margin: 0 0 22px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.geo-copy p:not(.section-kicker) {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.geo-copy .geo-data-note {
+  margin-top: 24px;
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .geo-line {
@@ -601,8 +711,9 @@ svg {
 
 .geo-title {
   fill: white;
-  font-size: 18px;
+  font-size: 24px;
   text-anchor: middle;
+  font-weight: bold;
 }
 
 .geo-map {
@@ -644,9 +755,9 @@ svg {
 }
 
 .geo-projection-line {
-  stroke: #f4a261;
-  stroke-width: 0.6;
-  opacity: 0.18;
+  stroke: #4cc9f0;
+  stroke-width: 0.8;
+  opacity: 0.32;
 }
 
 .geo-ground-dot {

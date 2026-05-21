@@ -1,18 +1,27 @@
+// Load both datasets before drawing anything.
+// satellites_clean.json drives the overview and LEO/MEO zoom plots.
+// geo_celestrak_longitude.json drives the GEO longitude/map plot.
 Promise.all([
     fetch("../data/satellites_clean.json").then(response => response.json()),
-    fetch("../data/geo_celestrak_longitude.json").then(response => response.json())
+    fetch("../data/geo_celestrak_longitude.json").then(response => response.json()),
+    fetch("../data/satcat_owners.json").then(response => response.json())
 ])
-.then(([data, geoSnapshot]) => {
+.then(([data, geoSnapshot, ownerNames]) => {
+    // The GEO file has metadata plus a "satellites" array, so keep only the array here.
     const geoSatellites = geoSnapshot.satellites;
     console.log("Loaded data:", data);
     console.log("Loaded GEO data:", geoSatellites);
 
+    // Store all DOM references once, so the rest of the script can reuse them.
     const ownerSelect = document.getElementById("owner-select");
+    const statusSelect = document.getElementById("status-select");
     const geoOwnerSelect = document.getElementById("geo-select");
     const viz = document.getElementById("viz");
-    const leoViz = document.getElementById("leo-viz");
-    const meoViz = document.getElementById("meo-viz");
+    const leoViz = document.getElementById("leo-plot");
+    const meoViz = document.getElementById("meo-plot");
     const geoViz = document.getElementById("geo-viz");
+    const segmentSelect = document.getElementById("segment-select");
+    const meoSegmentSelect = document.getElementById("meo-segment-select");
     const zoomPopup = document.getElementById("orbit-zoom-popup");
     const zoomPopupText = document.getElementById("orbit-zoom-text");
     const zoomYes = document.getElementById("orbit-zoom-yes");
@@ -20,22 +29,42 @@ Promise.all([
     let activeOrbitTarget = null;
     let activeOrbitClass = null;
 
+    // Build a lookup table from NORAD ID to operational status.
+    // The GEO longitude dataset does not contain status, so the GEO plot uses this table
+    // to exclude decayed satellites based on satellites_clean.json.
+    const statusByNorad = {};
+    data.forEach(sat => {
+        if (sat.norad === null || sat.norad === undefined) return;
+        statusByNorad[Number(sat.norad)] = sat.status;
+    });
 
-    const geoOwners = [...new Set(geoSatellites.map(d => d.owner))].sort();
+    // Fill the GEO owner dropdown.
+    // Counts are based on the current CelesTrak GEO snapshot, excluding decayed satellites.
+    const geoOwnerCounts = {};
+    geoSatellites.forEach(sat => {
+        if (!sat.owner) return;
+        if (getStatusGroup(statusByNorad[Number(sat.norad)]) === "excluded") return;
+        geoOwnerCounts[sat.owner] = (geoOwnerCounts[sat.owner] || 0) + 1;
+    });
+
+    const geoOwners = Object.keys(geoOwnerCounts).sort();
     geoOwners.forEach(owner => {
         const option = document.createElement("option");
         option.value = owner;
-        option.textContent = owner;
+        option.textContent = `${getOwnerDisplayName(owner)} (${geoOwnerCounts[owner]})`;
         geoOwnerSelect.appendChild(option);
     });
 
     // -------------------------
-    // 1. Fill dropdown
+    // 1. Fill overview owner dropdown
     // -------------------------
+    // Count non-decayed satellites per owner for the first plot dropdown.
+    // This count is not orbit-specific; the first plot later filters to LEO/MEO/GEO visually.
     const ownerCounts = {};
 
     data.forEach(d => {
     if (!d.owner) return;
+    if (getStatusGroup(d.status) === "excluded") return;
     ownerCounts[d.owner] = (ownerCounts[d.owner] || 0) + 1;
     });
 
@@ -44,13 +73,15 @@ Promise.all([
     owners.forEach(owner => {
     const option = document.createElement("option");
     option.value = owner;
-    option.textContent = `${owner} (${ownerCounts[owner]})`;
+    option.textContent = `${getOwnerDisplayName(owner)} (${ownerCounts[owner]})`;
     ownerSelect.appendChild(option);
     });
 
     // -------------------------
-    // 2. SVG settings
+    // 2. Overview SVG geometry
     // -------------------------
+    // These values define the conceptual orbit diagram dimensions and ring radii.
+    // They are visual radii, not real orbital distances.
     const width = 500;
     const height = 500;
     const cx = width / 2;
@@ -69,6 +100,8 @@ Promise.all([
     // -------------------------
     // 3. Helper functions
     // -------------------------
+    // Pick a random point inside an annulus/ring.
+    // Used to scatter selected LEO and MEO satellites inside their visual zones.
     function randomPositionInRing(rMin, rMax) {
         const angle = Math.random() * 2 * Math.PI;
         const radius = Math.sqrt(
@@ -81,6 +114,8 @@ Promise.all([
         return { x, y };
     }
 
+    // Pick a random point on a circle.
+    // Used for GEO satellites, which are drawn along one belt line around Earth.
     function randomPositionOnCircle(radius) {
         const angle = Math.random() * 2 * Math.PI;
         const x = cx + radius * Math.cos(angle);
@@ -89,12 +124,30 @@ Promise.all([
         return { x, y };
     }
 
+    // Small helper so every SVG shape/text element is created with the SVG namespace.
     function createSvgElement(tag) {
         return document.createElementNS("http://www.w3.org/2000/svg", tag);
     }
 
-    // Popup
+    // Convert raw OPS_STATUS_CODE values into the categories used by the UI.
+    // "+" is operational; -, P, B, S and X are grouped as non-operational.
+    // D and missing/unknown values are excluded from the status-filtered plots.
+    function getStatusGroup(status) {
+        if (status === "+") return "operational";
+        if (["-", "P", "B", "S", "X"].includes(status)) return "non-operational";
+        return "excluded";
+    }
 
+    // Display a human-readable owner name in dropdowns while keeping the owner code as value.
+    function getOwnerDisplayName(owner) {
+        return ownerNames[owner] || owner;
+    }
+
+    // -------------------------
+    // 4. Orbit zoom popup
+    // -------------------------
+    // Show a modal-style popup when the user hovers near an orbit in the overview.
+    // The popup remembers which zoom plot it should scroll to if the user clicks "Yes".
     function showOrbitPopup(event, orbitClass, targetId) {
         if (activeOrbitClass === orbitClass) return;
 
@@ -102,7 +155,6 @@ Promise.all([
         activeOrbitTarget = targetId;
         zoomPopup.classList.remove("popup-leo", "popup-meo", "popup-geo");
         zoomPopup.classList.add(`popup-${orbitClass.toLowerCase()}`);
-
 
         document.getElementById("orbit-zoom-title").textContent = `Zoom into ${orbitClass}?`;
         zoomPopupText.textContent = `Dive into the ${orbitClass} region and explore the satellites in more detail.`;
@@ -115,14 +167,15 @@ Promise.all([
 
     }
 
-
+    // Hide the popup and reset the stored target orbit.
     function hideOrbitPopup() {
         zoomPopup.style.display = "none";
         activeOrbitTarget = null;
         activeOrbitClass = null;
     }
 
-    zoomYes.addEventListener("click", () => {
+    // "Yes" button: scroll smoothly to the active LEO/MEO/GEO section.
+    zoomYes.addEventListener("click", () => { // yess zoom popup button
         if (!activeOrbitTarget) return;
 
         document.getElementById(activeOrbitTarget).scrollIntoView({
@@ -133,21 +186,44 @@ Promise.all([
         hideOrbitPopup();
     });
 
-    zoomNo.addEventListener("click", hideOrbitPopup);
+    zoomNo.addEventListener("click", hideOrbitPopup); //close popup button
+
+    // Close the popup when the user scrolls away from the first/orbit overview plot.
+    // The threshold makes it disappear before the plot is completely off-screen.
+    window.addEventListener("scroll", () => { //close popup when scroll
+    if (zoomPopup.style.display === "none") return;
+
+    const vizRect = viz.getBoundingClientRect();
+
+    const hideThreshold = 400;
+
+    const vizIsOffScreen =
+        vizRect.bottom < hideThreshold ||
+        vizRect.top > window.innerHeight - hideThreshold;
+
+    if (vizIsOffScreen) {
+        hideOrbitPopup();
+    }
+});
 
 
 
     // -------------------------
-    // 4. Main draw function
+    // 5. Main orbit overview plot
     // -------------------------
-    function drawVisualization(selectedOwner) {
+    // Draws the conceptual Earth-orbit diagram.
+    // The owner dropdown controls which satellites appear, and the status dropdown
+    // controls whether operational or non-operational satellites are included.
+    function drawVisualization(selectedOwner, selectedStatus) {
+        // Remove the previous SVG before redrawing.
         viz.innerHTML = "";
 
         const svg = createSvgElement("svg");
         svg.setAttribute("width", width);
         svg.setAttribute("height", height);
 
-        // for the mouse hover
+        // Detect the hovered orbit by measuring cursor distance from Earth's center.
+        // This avoids unreliable hover behavior from overlapping SVG circles.
         svg.addEventListener("mousemove", event => {
             const rect = svg.getBoundingClientRect();
 
@@ -169,7 +245,7 @@ Promise.all([
         });
 
 
-        // --- GEO zone
+        // --- GEO zone: largest orbit layer.
         const geo = createSvgElement("circle");
         geo.setAttribute("cx", cx);
         geo.setAttribute("cy", cy);
@@ -177,7 +253,7 @@ Promise.all([
         geo.setAttribute("class", "orbit-zone zone-geo");
         svg.appendChild(geo);
 
-        // --- MEO zone
+        // --- MEO zone: middle orbit layer.
         const meo = createSvgElement("circle");
         meo.setAttribute("cx", cx);
         meo.setAttribute("cy", cy);
@@ -185,7 +261,7 @@ Promise.all([
         meo.setAttribute("class", "orbit-zone zone-meo");
         svg.appendChild(meo);
 
-        // --- LEO zone
+        // --- LEO zone: innermost orbit layer.
         const leo = createSvgElement("circle");
         leo.setAttribute("cx", cx);
         leo.setAttribute("cy", cy);
@@ -193,7 +269,8 @@ Promise.all([
         leo.setAttribute("class", "orbit-zone zone-leo");
         svg.appendChild(leo);
 
-        // --- Cut out inner rings
+        // --- Cut out inner rings.
+        // These circles mask the inside of larger zones so the diagram reads as layers.
         const cutGeo = createSvgElement("circle");
         cutGeo.setAttribute("cx", cx);
         cutGeo.setAttribute("cy", cy);
@@ -215,7 +292,8 @@ Promise.all([
         cutLeo.setAttribute("class", "orbit-cutout");
         svg.appendChild(cutLeo);
 
-        // --- Orbit boundaries
+        // --- Orbit boundaries.
+        // Dashed circles make the orbit limits visible and provide hover targets.
         const boundaryRadii = [
             { r: leoOuter, className: "boundary-leo", orbit: "LEO", target: "leo-viz" },
             { r: meoOuter, className: "boundary-meo", orbit: "MEO", target: "meo-viz" },
@@ -235,7 +313,7 @@ Promise.all([
             
         });
 
-        // --- Earth
+        // --- Earth marker in the center of the conceptual orbit diagram.
         const earth = createSvgElement("circle");
         earth.setAttribute("cx", cx);
         earth.setAttribute("cy", cy);
@@ -250,7 +328,7 @@ Promise.all([
         note.textContent = "Not to scale • conceptual visualization";
         svg.appendChild(note);
         
-        // --- Orbit labels (LEO, MEO, GEO)
+        // --- Orbit labels (Earth, LEO, MEO, GEO).
         function addLabel(text, x, y, className) {
         const label = createSvgElement("text");
         label.setAttribute("x", x);
@@ -265,20 +343,31 @@ Promise.all([
         addLabel("MEO", cx, cy - meoOuter + 18, "label-meo");
         addLabel("GEO", cx, cy - geoRadius + 18, "label-geo");
 
-        // --- Filter satellites
+        // --- Filter satellites for the overview plot.
+        // If no owner is selected, no satellite dots are drawn.
         let satellites = [];
 
         if (selectedOwner) {
             satellites = data.filter(d => d.owner === selectedOwner);
         }
 
+        // Apply operational/non-operational filtering and exclude decayed satellites.
+        satellites = satellites.filter(d => {
+            const statusGroup = getStatusGroup(d.status);
+            if (statusGroup === "excluded") return false;
+            if (!selectedStatus) return true;
+            return statusGroup === selectedStatus;
+        });
+
+        // Keep only the orbit classes represented by this conceptual overview.
         satellites = satellites.filter(d =>
             d.ORBIT_CLASS === "LEO" ||
             d.ORBIT_CLASS === "MEO" ||
             d.ORBIT_CLASS === "GEO"
         );
 
-        // --- Draw satellites
+        // --- Draw satellites.
+        // Dots are randomly placed within their conceptual orbit region.
         satellites.forEach(sat => {
             let pos;
 
@@ -310,7 +399,10 @@ Promise.all([
     // -------------------------
     // LEO-MEO plot
     // -------------------------
+    // Draw either the LEO or MEO altitude-layer plot.
+    // The selected number of layers comes from the dropdown inside each zoom box.
     function drawOrbitZoom(orbitClass, container) {
+        // Clear only the inner plot area, leaving the dropdown and explanatory text intact.
         container.innerHTML = "";
 
         const width = 520;
@@ -320,35 +412,43 @@ Promise.all([
         svg.setAttribute("width", width);
         svg.setAttribute("height", height);
 
+        // Real altitude ranges used for each orbit zoom.
         const orbitBounds = {
             LEO: { minAlt: 0, maxAlt: 2000, title: "LEO Zoom" },
             MEO: { minAlt: 2000, maxAlt: 35786, title: "MEO Zoom" }
         };
         const { minAlt, maxAlt, title: zoomTitle } = orbitBounds[orbitClass];
-        const nSegments = 10;
+        // LEO and MEO each have their own altitude-layer dropdown.
+        const segmentControl = orbitClass === "MEO" ? meoSegmentSelect : segmentSelect;
+        const nSegments = Number(segmentControl.value);
 
-        const xLeft = 90;
+        // Layout constants for the row boxes, labels, and altitude axis.
+        const xLeft = 160;
         const xRight = 450;
-        const xCenter = (xLeft + xRight) / 2;
+        const altitudeOffsetX = 18;
+        const altitudeLabelOffsetX = 12;
 
         const yTop = 80;
         const yBottom = 640;
         const columnHeight = yBottom - yTop;
         const segmentHeight = columnHeight / nSegments;
 
-        // Keep only satellites from the selected orbit class
-        let orbitData = data.filter(d => d.ORBIT_CLASS === orbitClass);
+        // Keep only non-decayed satellites from the selected orbit class.
+        let orbitData = data.filter(d =>
+            d.ORBIT_CLASS === orbitClass &&
+            getStatusGroup(d.status) !== "excluded"
+        );
 
-        // Compute average altitude
+        // Compute average altitude from perigee and apogee.
         orbitData = orbitData.map(d => ({
             ...d,
             altitude: (d.perigee + d.apogee) / 2
         }));
 
-        // Keep only altitudes in range
+        // Keep only altitudes that belong in the selected orbit zoom range.
         orbitData = orbitData.filter(d => d.altitude >= minAlt && d.altitude <= maxAlt);
 
-        // Title
+        // Title.
         const title = createSvgElement("text");
         title.setAttribute("x", width / 2);
         title.setAttribute("y", 40);
@@ -356,7 +456,7 @@ Promise.all([
         title.textContent = zoomTitle;
         svg.appendChild(title);
 
-        // Subtitle
+        // Subtitle.
         const subtitle = createSvgElement("text");
         subtitle.setAttribute("x", width / 2);
         subtitle.setAttribute("y", 62);
@@ -364,7 +464,7 @@ Promise.all([
         subtitle.textContent = "Dominant owner by altitude segment";
         svg.appendChild(subtitle);
 
-        // Top and bottom guide lines
+        // Top and bottom guide lines framing the altitude layers.
         const topLine = createSvgElement("line");
         topLine.setAttribute("x1", xLeft - 45);
         topLine.setAttribute("x2", xRight + 45);
@@ -382,7 +482,8 @@ Promise.all([
         bottomLine.setAttribute("stroke-width", "2");
         svg.appendChild(bottomLine);
 
-        // Segment rectangles
+        // Draw the altitude segments.
+        // Each row shows the dominant owner in that altitude band.
         for (let i = 0; i < nSegments; i++) {
             const altStart = minAlt + i * (maxAlt - minAlt) / nSegments;
             const altEnd = minAlt + (i + 1) * (maxAlt - minAlt) / nSegments;
@@ -393,6 +494,7 @@ Promise.all([
                 d.altitude >= altStart && d.altitude < altEnd
             );
 
+            // Count satellites by owner in this altitude segment.
             let dominantOwner = "None";
             let dominantCount = 0;
             let totalCount = segmentData.length;
@@ -412,6 +514,7 @@ Promise.all([
                 }
             }
 
+            // Dark rounded row background.
             const rect = createSvgElement("rect");
             rect.setAttribute("x", xLeft);
             rect.setAttribute("y", y + 4);
@@ -421,6 +524,7 @@ Promise.all([
             rect.setAttribute("class", "zoom-row-box");
             svg.appendChild(rect);
 
+            // Glowing left edge that gives the row its visual emphasis.
             const edgeGlow = createSvgElement("rect");
             edgeGlow.setAttribute("x", xLeft);
             edgeGlow.setAttribute("y", y + 4);
@@ -430,8 +534,16 @@ Promise.all([
             edgeGlow.setAttribute("class", "zoom-row-edge");
             svg.appendChild(edgeGlow);
 
+            // Altitude boundary label, placed between row boxes.
+            const altitudeText = createSvgElement("text");
+            altitudeText.setAttribute("x", xLeft - 36 - altitudeOffsetX);
+            altitudeText.setAttribute("y", y + 5);
+            altitudeText.setAttribute("class", "leo-altitude-text");
+            altitudeText.textContent = `${Math.round(altEnd).toLocaleString()} km`;
+            svg.appendChild(altitudeText);
 
-            // Owner + ratio
+
+            // Dominant owner name.
             const mainText = createSvgElement("text");
             mainText.setAttribute("x", xLeft + 36);
             mainText.setAttribute("y", y + segmentHeight / 2 + 8);
@@ -445,6 +557,7 @@ Promise.all([
             }
 
             svg.appendChild(mainText);
+            // Dominant-owner count compared with all satellites in this segment.
             const countText = createSvgElement("text");
             countText.setAttribute("x", xLeft + 95);
             countText.setAttribute("y", y + segmentHeight / 2 + 6);
@@ -453,7 +566,7 @@ Promise.all([
             svg.appendChild(countText);
 
 
-            // Small subtitle
+            // Unit label on the right side of populated rows.
             if (totalCount > 0) {
                 const smallText = createSvgElement("text");
                 smallText.setAttribute("x", xRight - 36);
@@ -464,43 +577,14 @@ Promise.all([
             }
         }
 
-        // Altitude label on left
+        // Rotated altitude axis label on the left.
         const altitudeLabel = createSvgElement("text");
-        altitudeLabel.setAttribute("x", 65);
+        altitudeLabel.setAttribute("x", 65 - altitudeOffsetX - altitudeLabelOffsetX);
         altitudeLabel.setAttribute("y", (yTop + yBottom) / 2);
         altitudeLabel.setAttribute("class", "altitude-label");
-        altitudeLabel.setAttribute("transform", `rotate(-90 65 ${(yTop + yBottom) / 2})`);
+        altitudeLabel.setAttribute("transform", `rotate(-90 ${65 - altitudeOffsetX - altitudeLabelOffsetX} ${(yTop + yBottom) / 2})`);
         altitudeLabel.textContent = "Altitude";
         svg.appendChild(altitudeLabel);
-
-        // 2000 km
-        const topLabel = createSvgElement("text");
-        topLabel.setAttribute("x", xRight + 70);
-        topLabel.setAttribute("y", yTop + 5);
-        topLabel.setAttribute("fill", "#adb5bd");
-        topLabel.setAttribute("font-size", "14");
-        topLabel.setAttribute("font-family", "Arial, sans-serif");
-        topLabel.textContent = "2000 km";
-        svg.appendChild(topLabel);
-
-        // 0 km
-        const bottomLabel = createSvgElement("text");
-        bottomLabel.setAttribute("x", xRight + 70);
-        bottomLabel.setAttribute("y", yBottom + 5);
-        bottomLabel.setAttribute("fill", "#adb5bd");
-        bottomLabel.setAttribute("font-size", "14");
-        bottomLabel.setAttribute("font-family", "Arial, sans-serif");
-        bottomLabel.textContent = "0 km";
-        svg.appendChild(bottomLabel);
-
-        // Disclaimer
-        const note = createSvgElement("text");
-        note.setAttribute("x", width / 2);
-        note.setAttribute("y", height - 18);
-        note.setAttribute("fill", "#adb5bd");
-        note.setAttribute("class", "note");
-        note.textContent = "Not to scale • conceptual visualization";
-        svg.appendChild(note);
 
         container.appendChild(svg);
     }
@@ -510,12 +594,14 @@ Promise.all([
     // GEO plot
     // -------------------------
 
-
-
+    // Draw the geostationary longitude view.
+    // This plot uses the current CelesTrak GEO snapshot, not the altitude-derived SATCAT
+    // classification used in the overview.
     function drawGeoZoom(selectedOwner = null) {
+        // Clear the previous GEO SVG before redrawing.
         geoViz.innerHTML = "";
 
-        const width = 900;
+        const width = 820;
         const height = 600;
 
         const svg = createSvgElement("svg");
@@ -523,8 +609,9 @@ Promise.all([
         svg.setAttribute("height", height);
 
         // -------------------------
-        // 1. GEO belt (ligne en haut)
+        // 1. GEO belt line
         // -------------------------
+        // The horizontal line represents the geostationary belt at about 35,786 km.
         const geoLine = createSvgElement("line");
         geoLine.setAttribute("x1", 50);
         geoLine.setAttribute("x2", width - 50);
@@ -534,18 +621,26 @@ Promise.all([
         svg.appendChild(geoLine);
 
         // -------------------------
-        // 2. petit label GEO
+        // 2. GEO belt label
         // -------------------------
         const geoLabel = createSvgElement("text");
         geoLabel.setAttribute("x", width / 2);
-        geoLabel.setAttribute("y", 80);
-        geoLabel.setAttribute("class", "geo-title");
-        geoLabel.textContent = "GEO Belt (35,786 km)";
+        geoLabel.setAttribute("y", 40);
+        geoLabel.setAttribute("class", "leo-title");
+        geoLabel.textContent = "GEO Zoom";
         svg.appendChild(geoLabel);
 
+        const geoSubtitle = createSvgElement("text");
+        geoSubtitle.setAttribute("x", width / 2);
+        geoSubtitle.setAttribute("y", 72);
+        geoSubtitle.setAttribute("class", "label leo-subtitle");
+        geoSubtitle.textContent = "Geostationary Belt (35'786 km)";
+        svg.appendChild(geoSubtitle);
+
         // -------------------------
-        // 3. zone map (placeholder)
+        // 3. Map area
         // -------------------------
+        // The map gives a longitude reference for the satellite projections.
         
         const mapX = 50;
         const mapY = 150;
@@ -553,6 +648,7 @@ Promise.all([
         const mapH = 350;
 
 
+        // Background rectangle behind the world map.
         const mapRect = createSvgElement("rect");
         mapRect.setAttribute("x", 50);
         mapRect.setAttribute("y", 150);
@@ -561,6 +657,7 @@ Promise.all([
         mapRect.setAttribute("class", "geo-map");
         svg.appendChild(mapRect);
 
+        // World map image placed inside the map rectangle.
         const mapImage = createSvgElement("image");
         mapImage.setAttribute("x", mapX);
         mapImage.setAttribute("y", mapY);
@@ -570,6 +667,7 @@ Promise.all([
         mapImage.setAttribute("class", "geo-world-map");
         svg.appendChild(mapImage);
 
+        // Longitude grid lines and labels every 60 degrees.
         for (let lon = -180; lon <= 180; lon += 60) {
             const x = mapX + ((lon + 180) / 360) * mapW;
 
@@ -597,6 +695,7 @@ Promise.all([
             svg.appendChild(label);
         }
 
+        // Equator line through the middle of the map.
         const equator = createSvgElement("line");
         equator.setAttribute("x1", mapX);
         equator.setAttribute("x2", mapX + mapW);
@@ -609,7 +708,7 @@ Promise.all([
         // -------------------------
         // 4. Plot all GEO satellites on the belt
         // -------------------------
-        // 1. Draw all satellites in orange
+        // Draw every satellite from the current GEO snapshot as a faint orange point.
         geoSatellites.forEach(sat => {
             const lon = sat.longitude;
 
@@ -624,10 +723,11 @@ Promise.all([
             beltDot.setAttribute("class", "geo-satellite-dot");
             svg.appendChild(beltDot);
         });
-        // 2. Draw selected satellites again in blue,so it goes on top
+        // Draw selected owner's satellites again in blue, so they appear on top.
+        // Decayed satellites are excluded using the SATCAT status lookup.
         if (selectedOwner) {
             geoSatellites
-                .filter(sat => sat.owner === selectedOwner)
+                .filter(sat => sat.owner === selectedOwner && getStatusGroup(statusByNorad[Number(sat.norad)]) !== "excluded")
                 .forEach(sat => {
                     const lon = sat.longitude;
                     if (lon === null || lon === undefined || Number.isNaN(lon)) return;
@@ -643,11 +743,13 @@ Promise.all([
                 });
         }
         // -------------------------
-        // 5. Highlight selected owner's satellites on the map
+        // 5. Project selected satellites onto the map
         // -------------------------
+        // For the selected owner, draw vertical projection lines from the GEO belt
+        // down to the corresponding longitude on the map.
         if (selectedOwner) {
             const selectedSatellites = geoSatellites.filter(
-                d => d.owner === selectedOwner
+                d => d.owner === selectedOwner && getStatusGroup(statusByNorad[Number(d.norad)]) !== "excluded"
             );
 
             selectedSatellites.forEach(sat => {
@@ -679,22 +781,37 @@ Promise.all([
 
 
     // -------------------------
-    // 5. Initial draw
+    // 7. Initial draw
     // -------------------------
-    drawVisualization(null);
+    // Render all plots once after the data has loaded.
+    drawVisualization(null, statusSelect.value);
     drawOrbitZoom("LEO", leoViz);
     drawOrbitZoom("MEO", meoViz);
     drawGeoZoom();
 
     // -------------------------
-    // 6. Redraw on selection
+    // 8. Redraw on user input
     // -------------------------
+    // Changing owner or status redraws the first/orbit overview plot.
     ownerSelect.addEventListener("change", () => {
-        drawVisualization(ownerSelect.value);
+        drawVisualization(ownerSelect.value, statusSelect.value);
     });
+    statusSelect.addEventListener("change", () => {
+        drawVisualization(ownerSelect.value, statusSelect.value);
+    });
+
+    // Changing GEO owner redraws the GEO belt/map plot.
     geoOwnerSelect.addEventListener("change", () => {
     drawGeoZoom(geoOwnerSelect.value);
-});
+    });
+
+    // Each altitude-layer dropdown redraws only its own zoom plot.
+    segmentSelect.addEventListener("change", () => {
+        drawOrbitZoom("LEO", leoViz);
+    });
+    meoSegmentSelect.addEventListener("change", () => {
+        drawOrbitZoom("MEO", meoViz);
+    });
 })
 .catch(error => {
     console.error("Error loading JSON:", error);

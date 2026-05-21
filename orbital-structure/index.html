@@ -91,7 +91,14 @@
         <div class="controls">
         <label for="owner-select">Satellite Owner:</label>
         <select id="owner-select">
-            <option value="">Select an owner to visualize</option>
+            <option value="">Select an Owner/Country to visualize</option>
+        </select>
+        <br>
+        <label for="status-select">Satellite Status:</label>
+        <select id="status-select">
+            <option value="">All non-decayed satellites</option>
+            <option value="operational">Operational</option>
+            <option value="non-operational">Non-operational</option>
         </select>
         </div>
         <!-- visualization -->
@@ -111,17 +118,81 @@
     </section>
     </section>
 
-    <div id="leo-viz" class="zoom-viz"></div>
+    <div id="leo-viz" class="zoom-viz">
+        <div class="zoom-controls">
+            <label for="segment-select">Altitude layers:</label>
+            <select id="segment-select">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="15">15</option>
+            </select>
+        </div>
 
-    <div id="meo-viz" class="zoom-viz"></div>
+        <div id="leo-plot"></div>
 
-    <div class="controls">
-        <label for="geo-select">GEO Satellite Owner:</label>
-        <select id="geo-select">
-            <option value="">Select an Owner/Country to plot</option><!-- a modifier mdr -->
-        </select>
+        <div class="zoom-copy">
+            <p class="section-kicker">LOW EARTH ORBIT</p>
+            <h2>LEO Satellite Layers</h2>
+            <p>
+                Low Earth Orbit (LEO) contains the vast majority of active satellites.
+                This region is heavily populated by communication mega-constellations,
+                Earth observation systems and scientific missions operating below
+                2,000 km altitude.<br><br>
+                The visualization divides LEO into altitude segments and highlights
+                the dominant satellite owner in each layer.
+            </p>
+        </div>
     </div>
-    <div id="geo-viz" class="geo-container"></div>
+
+    <div id="meo-viz" class="zoom-viz">
+        <div class="zoom-controls">
+            <label for="meo-segment-select">Altitude layers:</label>
+            <select id="meo-segment-select">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="15">15</option>
+            </select>
+        </div>
+
+        <div id="meo-plot"></div>
+
+        <div class="zoom-copy">
+            <p class="section-kicker">MEDIUM EARTH ORBIT</p>
+            <h2>MEO Ownership Bands</h2>
+            <p>
+                Medium Earth Orbit (MEO) is far less crowded than LEO and is mainly
+                used for navigation and positioning systems such as GPS, Galileo,
+                GLONASS and BeiDou.<br><br>
+                The visualization divides MEO into altitude segments and highlights
+                the dominant satellite owner within each orbital layer between
+                2,000 km and geostationary orbit.
+            </p>
+        </div>
+    </div>
+
+    <div class="geo-container">
+        <div class="geo-controls">
+            <label for="geo-select">GEO Satellite Owner:</label>
+            <select id="geo-select">
+                <option value="">Select an Owner/Country to visualize</option><!-- a modifier mdr -->
+            </select>
+        </div>
+
+        <div class="geo-copy">
+            <p class="section-kicker">GEOSTATIONARY ORBIT</p>
+            <h2>GEO Belt View</h2>
+            <p>
+                GEO satellites remain fixed over longitude, making ownership patterns
+                visible along the equatorial belt.
+            </p>
+            <p class="geo-data-note">
+                This use the current CelesTrak GEO snapshot, so they can differ from
+                the altitude-based overview above, which is derived from CelesTrak SATCAT.
+            </p>
+        </div>
+
+        <div id="geo-viz"></div>
+    </div>
     <!-- Popup -->
     <div id="orbit-zoom-popup" class="orbit-zoom-popup">
         <div class="popup-orbit-preview">

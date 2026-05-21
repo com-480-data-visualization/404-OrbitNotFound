@@ -106,11 +106,10 @@ body {
 }
 
 .landing-hero {
-  min-height: calc(100vh - 72px);
+  padding: 110px 0 72px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   text-align: left;
 }
@@ -170,6 +169,57 @@ body {
 }
 
 /* ==================================================
+   HERO STATS
+   ==================================================*/
+
+.hero-stats {
+  width: min(760px, 100%);
+  margin-top: 34px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-stats.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.stat-block {
+  padding: 22px 20px;
+
+  background: rgba(5, 10, 25, 0.72);
+  border: 1px solid rgba(148, 190, 230, 0.24);
+  border-radius: 8px;
+}
+
+.stat-block strong {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #7dd3fc;
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.stat-block span {
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ==================================================
    CHOICE PANEL
    ==================================================*/
 
@@ -178,7 +228,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 
-  margin: 0 0 90px;
+  margin: 28px 0 90px;
 
   opacity: 0;
   transform: translateY(30px);
@@ -197,9 +247,14 @@ body {
   display: block;
   padding: 32px;
 
-  background: rgba(5, 10, 25, 0.88);
+  background:
+    radial-gradient(circle at top left, rgba(76, 201, 240, 0.1), transparent 42%),
+    rgba(5, 10, 25, 0.88);
   border: 1px solid rgba(148, 190, 230, 0.28);
   border-radius: 12px;
+  box-shadow:
+    0 18px 48px rgba(0, 0, 0, 0.28),
+    inset 0 0 22px rgba(76, 201, 240, 0.025);
 
   color: white;
   text-decoration: none;
@@ -210,7 +265,9 @@ body {
   transition:
     opacity 0.5s ease,
     transform 0.5s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
 .choice-panel.visible .choice-card {
@@ -233,6 +290,13 @@ body {
 .choice-card:hover {
   transform: translateY(-5px);
   border-color: rgba(76, 201, 240, 0.65);
+  background:
+    radial-gradient(circle at top left, rgba(76, 201, 240, 0.18), transparent 42%),
+    rgba(5, 10, 25, 0.92);
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.34),
+    0 0 34px rgba(76, 201, 240, 0.22),
+    inset 0 0 28px rgba(76, 201, 240, 0.06);
 }
 
 .choice-card span {
@@ -277,6 +341,11 @@ body {
 
   .hero-description {
     font-size: 19px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    width: min(420px, 100%);
   }
 
   .choice-panel {
