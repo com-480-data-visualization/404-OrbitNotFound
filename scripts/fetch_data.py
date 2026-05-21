@@ -1,4 +1,13 @@
 import pandas as pd
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+RAW_SATCAT_PATH = os.path.join(BASE_DIR, "data", "raw", "satcat_raw.csv")
+SATELLITES_CLEAN_PATH = os.path.join(BASE_DIR, "data", "satellites_clean.json")
+
+
 
 class SatelliteDataProcessor:
     def __init__(self, file_path):
@@ -67,10 +76,7 @@ class SatelliteDataProcessor:
         print(f"\nCleaned data saved to {output_path}")
         print(self.df_clean.head())
 
-
-processor = SatelliteDataProcessor("../satcat.csv")
+processor = SatelliteDataProcessor(RAW_SATCAT_PATH)
 processor.load_csv()
-#processor.inspect_data()
 processor.clean_data()
-processor.save_to_json("satellites_clean.json")
-
+processor.save_to_json(SATELLITES_CLEAN_PATH)

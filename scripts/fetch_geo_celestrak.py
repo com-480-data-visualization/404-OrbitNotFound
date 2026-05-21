@@ -2,11 +2,10 @@ import os
 import json
 from skyfield.api import load, EarthSatellite
 
-base_dir = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-output_path = os.path.join(base_dir, "..", "geo_celestrak_longitude.json")
-clean_path = os.path.join(base_dir, "..", "satellites_clean.json")
+GEO_LONGITUDE_PATH = os.path.join(BASE_DIR, "data", "geo_celestrak_longitude.json")
+SATELLITES_CLEAN_PATH = os.path.join(BASE_DIR, "data", "satellites_clean.json")
 
 ts = load.timescale()
 t = ts.now()
@@ -21,7 +20,7 @@ with urlopen(URL) as response:
 snapshot_date = t.utc_iso()  
 
 
-with open(clean_path, "r", encoding="utf-8") as f:
+with open(SATELLITES_CLEAN_PATH, "r", encoding="utf-8") as f:
     clean_satellites = json.load(f)
 
 
@@ -59,7 +58,7 @@ output = {
     "satellites": result
 }
 
-with open(output_path, "w", encoding="utf-8") as f:
+with open(GEO_LONGITUDE_PATH, "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2)
 
 print(f"Saved {len(result)} satellites with longitude")

@@ -1,4026 +1,3984 @@
 {
   "source": "CelesTrak",
-  "snapshot_date": "2026-05-05T15:48:37Z",
-  "computed_date": "2026-05-05T15:48:37Z",
-  "count": 574,
+  "snapshot_date": "2026-05-21T09:01:49Z",
+  "computed_date": "2026-05-21T09:01:49Z",
+  "count": 568,
   "satellites": [
     {
       "norad": 19548,
       "name": "TDRS 3",
       "owner": "US",
-      "longitude": -48.795881203542976,
-      "latitude": 11.955470770309466
+      "longitude": -48.75687643329395,
+      "latitude": -3.4131003650265663
     },
     {
       "norad": 20253,
       "name": "FLTSATCOM 8 (USA 46)",
       "owner": "US",
-      "longitude": 125.0315333114537,
-      "latitude": -10.167777722832271
+      "longitude": 126.35477368073003,
+      "latitude": 6.383893175814772
     },
     {
       "norad": 20776,
       "name": "SKYNET 4C",
       "owner": "UK",
-      "longitude": 34.12379506089529,
-      "latitude": 7.810161392158569
+      "longitude": 32.645028698446744,
+      "latitude": 11.289294493777936
     },
     {
       "norad": 21639,
       "name": "TDRS 5",
       "owner": "US",
-      "longitude": -166.92224570900348,
-      "latitude": -12.30016718116916
+      "longitude": -168.26615882471006,
+      "latitude": -7.6320394030502765
     },
     {
       "norad": 22314,
       "name": "TDRS 6",
       "owner": "US",
-      "longitude": -46.65004653852185,
-      "latitude": 11.938713729772124
+      "longitude": -45.29687182645665,
+      "latitude": -6.786785143756323
     },
     {
       "norad": 22787,
       "name": "UFO 2 (USA 95)",
       "owner": "US",
-      "longitude": 29.323309365297,
-      "latitude": 9.63740616512709
+      "longitude": 28.110178470626778,
+      "latitude": 7.544325795395688
     },
     {
       "norad": 22988,
       "name": "USA 99 (MILSTAR-1 1)",
       "owner": "US",
-      "longitude": -115.85582819904015,
-      "latitude": -12.25870738091223
+      "longitude": 156.03421356167829,
+      "latitude": 10.927955568748596
     },
     {
       "norad": 23467,
       "name": "UFO 4 (USA 108)",
       "owner": "US",
-      "longitude": 172.17383194574546,
-      "latitude": -9.561424854363603
+      "longitude": 172.48296445442077,
+      "latitude": 1.077044227672639
     },
     {
       "norad": 23613,
       "name": "TDRS 7",
       "owner": "US",
-      "longitude": 88.77812090395228,
-      "latitude": -4.8880232745770655
+      "longitude": 90.00074535043771,
+      "latitude": 12.078096520706877
     },
     {
       "norad": 23712,
       "name": "USA 115 (MILSTAR-1 2)",
       "owner": "US",
-      "longitude": -108.2810354591271,
-      "latitude": -2.8919406443890847
+      "longitude": -103.34837264605844,
+      "latitude": -14.066824071073173
     },
     {
       "norad": 23839,
       "name": "INMARSAT 3-F1",
       "owner": "IM",
-      "longitude": -51.11361935611573,
-      "latitude": 0.4914812553832159
+      "longitude": -67.3067623265699,
+      "latitude": -10.416694820172284
     },
     {
       "norad": 24307,
       "name": "INMARSAT 3-F2",
       "owner": "IM",
-      "longitude": -169.85126671015388,
-      "latitude": -8.175170587106251
+      "longitude": 175.7431999956552,
+      "latitude": 6.835399957639146
     },
     {
       "norad": 24674,
       "name": "INMARSAT 3-F3",
       "owner": "IM",
-      "longitude": 88.28854651107203,
-      "latitude": 6.752034482216849
+      "longitude": 70.56860160863387,
+      "latitude": 5.970333715592333
     },
     {
       "norad": 24936,
       "name": "AMC-3",
       "owner": "SES",
-      "longitude": -71.74180429589899,
-      "latitude": -4.68841027926889
+      "longitude": -72.28363439188455,
+      "latitude": -6.8673355773053135
     },
     {
       "norad": 25019,
       "name": "USA 134",
       "owner": "US",
-      "longitude": -111.56079260550845,
-      "latitude": -6.999070688455353
+      "longitude": -112.80696507191523,
+      "latitude": -11.084204505846207
     },
     {
       "norad": 25153,
       "name": "INMARSAT 3-F5",
       "owner": "IM",
-      "longitude": -53.93701836151963,
-      "latitude": -1.1506144966474674
+      "longitude": -54.068999943473365,
+      "latitude": -9.63462249249712
     },
     {
       "norad": 25924,
       "name": "ABS-6",
       "owner": "ABS",
-      "longitude": 159.0539998887003,
-      "latitude": -0.0008910746651362505
+      "longitude": 159.08230762486141,
+      "latitude": 0.006040086341009603
     },
     {
       "norad": 25967,
       "name": "UFO 10 (USA 146)",
       "owner": "US",
-      "longitude": -23.147884079594924,
-      "latitude": 7.603980516969386
+      "longitude": -22.506144526589676,
+      "latitude": -5.73782372680762
     },
     {
       "norad": 26107,
       "name": "ASIASTAR",
       "owner": "US",
-      "longitude": 105.36696000078705,
-      "latitude": 4.873695247500327
-    },
-    {
-      "norad": 26356,
-      "name": "USA 149 (DSP 20)",
-      "owner": "US",
-      "longitude": -164.77383016111906,
-      "latitude": -12.78741293176524
+      "longitude": 104.74410128848126,
+      "latitude": 7.949126083147678
     },
     {
       "norad": 26388,
       "name": "TDRS 8",
       "owner": "US",
-      "longitude": 85.36304136438422,
-      "latitude": 5.52445695834982
+      "longitude": 84.44232260046084,
+      "latitude": 11.719379702313931
     },
     {
       "norad": 26554,
       "name": "NSS-11",
       "owner": "SES",
-      "longitude": 175.97005778448863,
-      "latitude": -0.5184478687975703
+      "longitude": 176.0360075454949,
+      "latitude": 1.9342600314966703
     },
     {
       "norad": 26575,
       "name": "USA 153",
       "owner": "US",
-      "longitude": 133.99638910041352,
-      "latitude": -3.8093633643475133
+      "longitude": 134.85030790919166,
+      "latitude": 10.639901267286971
     },
     {
       "norad": 26580,
       "name": "AMC-6",
       "owner": "SES",
-      "longitude": -135.10392333858488,
-      "latitude": -0.05957675534404286
+      "longitude": -135.02451112747397,
+      "latitude": 0.01410570327459982
     },
     {
       "norad": 26715,
       "name": "USA 157 (MILSTAR-2 2)",
       "owner": "US",
-      "longitude": -149.25976895819434,
-      "latitude": -10.730820732863126
-    },
-    {
-      "norad": 26880,
-      "name": "USA 159 (DSP 21)",
-      "owner": "US",
-      "longitude": 73.70295759628974,
-      "latitude": 4.907470578371478
+      "longitude": -150.27549858810517,
+      "latitude": -4.802745229713729
     },
     {
       "norad": 26900,
       "name": "INTELSAT 902 (IS-902)",
       "owner": "ITSO",
-      "longitude": -49.98370926119959,
-      "latitude": -2.201679572947387
+      "longitude": -50.22653739346663,
+      "latitude": -5.7672085517615255
     },
     {
       "norad": 27168,
       "name": "USA 164 (MILSTAR-2 3)",
       "owner": "US",
-      "longitude": 20.22526381211096,
-      "latitude": 11.013722296546685
+      "longitude": 18.94038399225747,
+      "latitude": 2.233673785087505
     },
     {
       "norad": 27380,
       "name": "INTELSAT 904 (IS-904)",
       "owner": "ITSO",
-      "longitude": -31.447084347719,
-      "latitude": -0.037391031102166
+      "longitude": -31.524119894760155,
+      "latitude": -6.844284973593877
     },
     {
       "norad": 27426,
       "name": "DIRECTV 5 (TEMPO 1)",
       "owner": "US",
-      "longitude": -110.11893864987515,
-      "latitude": -4.740242256447142
+      "longitude": -110.14624510112974,
+      "latitude": -0.7467331703425372
     },
     {
       "norad": 27438,
       "name": "INTELSAT 905 (IS-905)",
       "owner": "ITSO",
-      "longitude": -137.3447434762272,
-      "latitude": -6.358129436068489
+      "longitude": -137.11630526637984,
+      "latitude": 1.4649274300431006
     },
     {
       "norad": 27445,
       "name": "GALAXY 3C (G-3C)",
       "owner": "US",
-      "longitude": -94.8449627489316,
-      "latitude": -3.4396418780182456
+      "longitude": -94.88537364590181,
+      "latitude": -1.343598260431632
     },
     {
       "norad": 27513,
       "name": "INTELSAT 906 (IS-906)",
       "owner": "ITSO",
-      "longitude": 64.19620248130548,
-      "latitude": 5.683825948237728
+      "longitude": 64.15456548362414,
+      "latitude": 0.5589301069539868
     },
     {
       "norad": 27632,
       "name": "NIMIQ 2",
       "owner": "CA",
-      "longitude": -108.91847225435812,
-      "latitude": -8.519720942303334
+      "longitude": -109.4992883018352,
+      "latitude": -4.429298702101571
     },
     {
       "norad": 27691,
       "name": "USA 167",
       "owner": "US",
-      "longitude": -121.67739096434609,
-      "latitude": -9.863375995128589
+      "longitude": -122.34678040372512,
+      "latitude": -5.272989194947331
     },
     {
       "norad": 27711,
       "name": "USA 169 (MILSTAR-2 4)",
       "owner": "US",
-      "longitude": 150.81817047418744,
-      "latitude": -8.20261066554582
+      "longitude": 153.71947477026848,
+      "latitude": 8.291563748038197
     },
     {
       "norad": 27718,
       "name": "ASIASAT 4",
       "owner": "AC",
-      "longitude": 147.57358705751312,
-      "latitude": 0.627393834420875
+      "longitude": 147.57383852453432,
+      "latitude": 4.622808804152244
     },
     {
       "norad": 27811,
       "name": "HELLAS-SAT 2",
       "owner": "GREC",
-      "longitude": -10.096379122747798,
-      "latitude": 2.765495915288467
+      "longitude": -9.824178277462462,
+      "latitude": -6.528743227945084
     },
     {
       "norad": 27825,
       "name": "THURAYA-2",
       "owner": "UAE",
-      "longitude": 44.28991268282082,
-      "latitude": 8.099403942663354
+      "longitude": 43.76028714563721,
+      "latitude": 3.921814454692916
     },
     {
       "norad": 27831,
       "name": "OPTUS C1",
       "owner": "AUS",
-      "longitude": 155.60377129432942,
-      "latitude": -0.7716842314591618
+      "longitude": 155.88364361115126,
+      "latitude": 6.707557809927059
     },
     {
       "norad": 27875,
       "name": "USA 170",
       "owner": "US",
-      "longitude": 23.935297124971463,
-      "latitude": 10.131199103353953
+      "longitude": 24.251387105524348,
+      "latitude": -1.7249899804024258
     },
     {
       "norad": 27954,
       "name": "GALAXY 13 (HORIZONS-1)",
       "owner": "US",
-      "longitude": -150.04480734755077,
-      "latitude": -0.9375732040845101
+      "longitude": -149.98508978874176,
+      "latitude": 0.8434086153230631
     },
     {
       "norad": 28089,
       "name": "YAMAL 202",
       "owner": "CIS",
-      "longitude": 163.4495427799049,
-      "latitude": -1.3881617016912302
+      "longitude": 163.69770891826175,
+      "latitude": 6.0018659657494595
     },
     {
       "norad": 28117,
       "name": "UFO 11 (USA 174)",
       "owner": "US",
-      "longitude": 75.7884706653201,
-      "latitude": 5.467733672168741
-    },
-    {
-      "norad": 28158,
-      "name": "USA 176 (DSP 22)",
-      "owner": "US",
-      "longitude": -68.89533462520653,
-      "latitude": 1.163081857115282
+      "longitude": 75.1665440341079,
+      "latitude": 7.422647315331313
     },
     {
       "norad": 28184,
       "name": "ABS-4 (MOBISAT-1)",
       "owner": "ABS",
-      "longitude": 61.08751562596872,
-      "latitude": 5.925647934634047
-    },
-    {
-      "norad": 28252,
-      "name": "AMC-11",
-      "owner": "SES",
-      "longitude": 176.6441968398171,
-      "latitude": -0.05959398271980517
+      "longitude": 60.99429304421269,
+      "latitude": 0.34777579720876967
     },
     {
       "norad": 28358,
       "name": "INTELSAT 10-02",
       "owner": "ITSO",
-      "longitude": -1.0450835988250227,
-      "latitude": 0.02436828312675819
+      "longitude": -0.9852557612463035,
+      "latitude": -0.008340681936524633
     },
     {
       "norad": 28378,
       "name": "ANIK F2",
       "owner": "CA",
-      "longitude": -111.1767702918476,
-      "latitude": -3.160790395681072
+      "longitude": -111.14271716927512,
+      "latitude": -0.21578003777238486
     },
     {
       "norad": 28446,
       "name": "AMC-15",
       "owner": "SES",
-      "longitude": -105.07686070588497,
-      "latitude": 0.0059215555040711
+      "longitude": -105.06755965872772,
+      "latitude": -0.026577704904600416
     },
     {
       "norad": 28526,
       "name": "NSS-10",
       "owner": "SES",
-      "longitude": -37.389674204957586,
-      "latitude": -0.8331476987093158
+      "longitude": -37.50489663433207,
+      "latitude": -6.373009541083333
     },
     {
       "norad": 28628,
       "name": "INMARSAT 4-F1",
       "owner": "IM",
-      "longitude": 177.99625772840255,
-      "latitude": -4.250428933352697
+      "longitude": 178.2321880312707,
+      "latitude": 2.560657375607708
     },
     {
       "norad": 28659,
       "name": "DIRECTV 8",
       "owner": "US",
-      "longitude": -119.08280651835386,
-      "latitude": 0.03198565336428806
+      "longitude": -119.04687243526382,
+      "latitude": -0.02458404520019905
     },
     {
       "norad": 28702,
       "name": "GALAXY 28 (G-28)",
       "owner": "ITSO",
-      "longitude": -27.03697765783044,
-      "latitude": -0.31047258421619517
+      "longitude": -27.13208041534637,
+      "latitude": -3.2235926627073974
     },
     {
       "norad": 28786,
       "name": "THAICOM 4",
       "owner": "THAI",
-      "longitude": 119.49691002840723,
-      "latitude": 0.0769381668245126
+      "longitude": 119.51984816716008,
+      "latitude": 0.13000598131217816
     },
     {
       "norad": 28868,
       "name": "ANIK F1R",
       "owner": "CA",
-      "longitude": -107.29125188630057,
-      "latitude": -4.164113044763211
+      "longitude": -107.33226996530647,
+      "latitude": -0.7731477590137821
     },
     {
       "norad": 28885,
       "name": "SYRACUSE 3A",
       "owner": "FR",
-      "longitude": 46.199998320160276,
-      "latitude": 4.269781406617046
+      "longitude": 46.29910760696622,
+      "latitude": -1.1977816952947509
     },
     {
       "norad": 28899,
       "name": "INMARSAT 4-F2",
       "owner": "IM",
-      "longitude": 143.40635483471848,
-      "latitude": -1.771792505673216
+      "longitude": 143.60904105016047,
+      "latitude": 4.613270808082364
     },
     {
       "norad": 28912,
       "name": "METEOSAT-9 (MSG-2)",
       "owner": "EUME",
-      "longitude": 45.86510882774464,
-      "latitude": 9.26315082165623
+      "longitude": 45.58918727626938,
+      "latitude": 0.9407805106565555
     },
     {
       "norad": 28924,
       "name": "EUTELSAT 174A",
       "owner": "EUTE",
-      "longitude": 173.95930770296377,
-      "latitude": -1.2530920694982952
+      "longitude": 174.08114524925185,
+      "latitude": 3.848502849677384
     },
     {
       "norad": 28935,
       "name": "ECHOSTAR 10",
       "owner": "US",
-      "longitude": -110.19589074703035,
-      "latitude": -0.024203623129271726
+      "longitude": -110.20900436572195,
+      "latitude": -0.03123777034949176
     },
     {
       "norad": 28945,
       "name": "SPAINSAT",
       "owner": "SPN",
-      "longitude": -30.13219274291992,
-      "latitude": -0.11910428482259205
+      "longitude": -30.269955681764543,
+      "latitude": -0.4720094258825206
     },
     {
       "norad": 29045,
       "name": "JCSAT-5A",
       "owner": "JPN",
-      "longitude": 132.0712109816393,
-      "latitude": 0.5126303058286006
+      "longitude": 132.06296667087724,
+      "latitude": 0.9156092069237562
     },
     {
       "norad": 29055,
       "name": "ASTRA 1KR",
       "owner": "SES",
-      "longitude": 19.023687713302806,
-      "latitude": 0.21118483555226564
+      "longitude": 18.976630946767262,
+      "latitude": -0.2892661337690803
     },
     {
       "norad": 29236,
       "name": "GALAXY 16 (G-16)",
       "owner": "US",
-      "longitude": -99.01123661663158,
-      "latitude": 0.014715209714840858
+      "longitude": -99.01763671270237,
+      "latitude": 0.001653396831399918
     },
     {
       "norad": 29270,
       "name": "EUTELSAT 33F",
       "owner": "EUTE",
-      "longitude": 33.11603485210062,
-      "latitude": 1.1982061397829795
+      "longitude": 33.093720767521766,
+      "latitude": -0.8942017409803984
     },
     {
       "norad": 29272,
       "name": "JCSAT-3A",
       "owner": "JPN",
-      "longitude": 128.00510147044156,
-      "latitude": -0.01225200326546923
-    },
-    {
-      "norad": 29273,
-      "name": "SYRACUSE 3B",
-      "owner": "FR",
-      "longitude": 25.35604322979597,
-      "latitude": 1.9848508766469963
+      "longitude": 128.00022801917717,
+      "latitude": 0.030267784107420575
     },
     {
       "norad": 29349,
       "name": "KOREASAT 5 (MUGUNGWHA 5)",
       "owner": "SKOR",
-      "longitude": 113.08736538435708,
-      "latitude": 1.259507065738948
+      "longitude": 113.05065280571773,
+      "latitude": 1.2017242270630697
     },
     {
       "norad": 29494,
       "name": "DIRECTV 9S",
       "owner": "US",
-      "longitude": -101.23392289743177,
-      "latitude": -2.27013982693123
+      "longitude": -101.21555681809659,
+      "latitude": -0.505598661226498
     },
     {
       "norad": 29495,
       "name": "OPTUS D1",
       "owner": "AUS",
-      "longitude": 151.99098292796324,
-      "latitude": 0.3694750789717315
+      "longitude": 152.0228920892341,
+      "latitude": 2.9552283131813906
     },
     {
       "norad": 29526,
       "name": "BADR-4",
       "owner": "AB",
-      "longitude": 26.4480803668037,
-      "latitude": 1.3469564911037464
+      "longitude": 26.379187796923297,
+      "latitude": -1.2405847866563804
     },
     {
       "norad": 29643,
       "name": "WILDBLUE-1",
       "owner": "US",
-      "longitude": -111.21336260672787,
-      "latitude": -2.676148720956214
+      "longitude": -111.20494049141182,
+      "latitude": -0.13408644856313257
     },
     {
       "norad": 30794,
       "name": "SKYNET 5A",
       "owner": "UK",
-      "longitude": 95.3583475101326,
-      "latitude": 4.401113205793974
+      "longitude": 95.13468041421308,
+      "latitude": 3.062542865214426
     },
     {
       "norad": 31102,
       "name": "ANIK F3",
       "owner": "CA",
-      "longitude": -118.73940718424222,
-      "latitude": -1.0446359155018312
+      "longitude": -118.71793016284028,
+      "latitude": 0.1480701800205684
     },
     {
       "norad": 31306,
       "name": "ASTRA 1L",
       "owner": "SES",
-      "longitude": -24.46392078090814,
-      "latitude": -0.10992877711774164
+      "longitude": -24.57625192574055,
+      "latitude": -1.2424301305956982
     },
     {
       "norad": 31307,
       "name": "GALAXY 17 (G-17)",
       "owner": "US",
-      "longitude": -85.00655657741213,
-      "latitude": -2.5722940939110654
+      "longitude": -85.06526027787812,
+      "latitude": -1.4287453614468015
     },
     {
       "norad": 32253,
       "name": "INTELSAT 11 (IS-11)",
       "owner": "ITSO",
-      "longitude": -47.112273925477396,
-      "latitude": -1.4776083941134408
+      "longitude": -116.34659901812829,
+      "latitude": 0.03424757276634639
     },
     {
       "norad": 32258,
       "name": "WGS F1 (USA 195)",
       "owner": "US",
-      "longitude": -42.48966690069317,
-      "latitude": -0.016626237095295246
+      "longitude": -42.50214089909181,
+      "latitude": -0.049160327935971145
     },
     {
       "norad": 32294,
       "name": "SKYNET 5B",
       "owner": "UK",
-      "longitude": 25.010902728540426,
-      "latitude": 4.041965114798059
+      "longitude": 25.232634803646825,
+      "latitude": -2.896581698381707
     },
     {
       "norad": 32299,
       "name": "ASTRA 4A",
       "owner": "SES",
-      "longitude": 4.845684326370798,
-      "latitude": 0.023198107063213652
+      "longitude": 4.777407303429302,
+      "latitude": 0.0032422493966478916
     },
     {
       "norad": 32388,
       "name": "HORIZONS-2",
       "owner": "ITSO",
-      "longitude": -73.8073983100434,
-      "latitude": -2.0044134493417993
+      "longitude": -73.85614263663646,
+      "latitude": -1.62594291241618
     },
     {
       "norad": 32404,
       "name": "THURAYA-3",
       "owner": "UAE",
-      "longitude": 98.59619571553439,
-      "latitude": 1.6644874350769634
+      "longitude": 98.40606137922533,
+      "latitude": 5.81071428361167
     },
     {
       "norad": 32487,
       "name": "THOR 5",
       "owner": "NOR",
-      "longitude": -0.7323601296661497,
-      "latitude": -0.010575371430503615
+      "longitude": -0.7817549843559409,
+      "latitude": 0.025706258626485158
     },
     {
       "norad": 32708,
       "name": "AMC-14",
       "owner": "US",
-      "longitude": 56.74934755487903,
-      "latitude": 17.056069591803684
+      "longitude": 55.842704868797966,
+      "latitude": 18.701706482384747
     },
     {
       "norad": 32729,
       "name": "DIRECTV 11",
       "owner": "US",
-      "longitude": -99.18427391892861,
-      "latitude": 0.006351096949713387
+      "longitude": -99.19350522525048,
+      "latitude": -0.01015329525417929
     },
     {
       "norad": 32763,
       "name": "ICO G1",
       "owner": "US",
-      "longitude": -92.76807030126645,
-      "latitude": -2.6178789666966735
+      "longitude": -92.97777699845264,
+      "latitude": -5.041457457941693
     },
     {
       "norad": 32767,
       "name": "VINASAT-1",
       "owner": "VTNM",
-      "longitude": 131.9676269148657,
-      "latitude": -0.01828488878254521
+      "longitude": 131.9567778756813,
+      "latitude": -0.006333693663518843
     },
     {
       "norad": 32768,
       "name": "STAR ONE C2",
       "owner": "BRAZ",
-      "longitude": -65.00209169865416,
-      "latitude": -0.8110609215479311
+      "longitude": -65.01171380975799,
+      "latitude": -0.8576604389351947
     },
     {
       "norad": 32794,
       "name": "AMOS-3",
       "owner": "ISRA",
-      "longitude": 9.154609217557189,
-      "latitude": 0.13198867810901865
+      "longitude": 19.790994991787052,
+      "latitude": -0.28666623049196877
     },
     {
       "norad": 32951,
       "name": "GALAXY 18 (G-18)",
       "owner": "US",
-      "longitude": -123.04700821269708,
-      "latitude": 0.02985009479959228
+      "longitude": -123.00558624215209,
+      "latitude": -0.02408391394525559
     },
     {
       "norad": 33051,
       "name": "ZHONGXING-9",
       "owner": "PRC",
-      "longitude": 92.40173638965183,
-      "latitude": 0.6097696701908741
+      "longitude": 92.43380372112665,
+      "latitude": 0.26287628098317917
     },
     {
       "norad": 33055,
       "name": "SKYNET 5C",
       "owner": "UK",
-      "longitude": -17.763811750096465,
-      "latitude": 0.35632890849642934
+      "longitude": -17.781470297987514,
+      "latitude": -3.664105371607889
     },
     {
       "norad": 33056,
       "name": "TURKSAT 3A",
       "owner": "TURK",
-      "longitude": 42.0644390087407,
-      "latitude": 0.04307076395562181
+      "longitude": 41.987915887277516,
+      "latitude": -0.012209151192775814
     },
     {
       "norad": 33153,
       "name": "INTELSAT 25 (IS-25)",
       "owner": "ITSO",
-      "longitude": -61.90883445381527,
-      "latitude": -1.7219215135286037
+      "longitude": -118.51789413119694,
+      "latitude": 0.19720876243034802
     },
     {
       "norad": 33207,
       "name": "ECHOSTAR 11",
       "owner": "US",
-      "longitude": -109.82220176609971,
-      "latitude": -0.8738601323002855
+      "longitude": -109.820884421669,
+      "latitude": -0.018075650713483056
     },
     {
       "norad": 33274,
       "name": "SUPERBIRD-C2",
       "owner": "JPN",
-      "longitude": 136.05498075495936,
-      "latitude": 0.937913174915258
+      "longitude": 136.02789385090847,
+      "latitude": 2.137036696671728
     },
     {
       "norad": 33278,
       "name": "INMARSAT 4-F3",
       "owner": "IM",
-      "longitude": -97.95956152380955,
-      "latitude": -2.0338635062913943
+      "longitude": -98.06778699727525,
+      "latitude": -3.8828943454152065
     },
     {
       "norad": 33373,
       "name": "NIMIQ 4",
       "owner": "CA",
-      "longitude": -82.00341749142545,
-      "latitude": 0.036039150257788206
+      "longitude": -81.9971201529828,
+      "latitude": -0.014117270022447122
     },
     {
       "norad": 33376,
       "name": "GALAXY 19 (G-19)",
       "owner": "US",
-      "longitude": -97.01673126460972,
-      "latitude": 0.023632137945351264
+      "longitude": -97.02485249963371,
+      "latitude": -0.019404513823263966
     },
     {
       "norad": 33436,
       "name": "ASTRA 1M",
       "owner": "SES",
-      "longitude": 19.396952843630956,
-      "latitude": 0.11111089378538011
+      "longitude": 19.33820147872091,
+      "latitude": -0.1491498331725035
     },
     {
       "norad": 33459,
       "name": "EUTELSAT HOTBIRD 13C",
       "owner": "EUTE",
-      "longitude": -50.243447667271816,
-      "latitude": -1.3719513294688501
+      "longitude": -50.348555735542746,
+      "latitude": -2.6055790982053435
     },
     {
       "norad": 33595,
       "name": "EXPRESS-AM44",
       "owner": "CIS",
-      "longitude": -10.971161848175578,
-      "latitude": 0.6378127654670865
+      "longitude": -11.010213078345515,
+      "latitude": -3.2730237068782744
     },
     {
       "norad": 33749,
       "name": "NSS-9",
       "owner": "SES",
-      "longitude": -176.96336820733728,
-      "latitude": -0.4069768197749102
+      "longitude": -176.91203516427444,
+      "latitude": 1.0676608764751154
     },
     {
       "norad": 34111,
       "name": "TELSTAR 11N",
       "owner": "CA",
-      "longitude": -37.545610609677425,
-      "latitude": 0.021018666487650606
+      "longitude": -37.568156545612744,
+      "latitude": 0.009069225529056929
     },
     {
       "norad": 34713,
       "name": "WGS F2 (USA 204)",
       "owner": "US",
-      "longitude": 57.503715666535555,
-      "latitude": -0.026973138519703798
+      "longitude": 57.52496375061182,
+      "latitude": 0.03223859532362237
     },
     {
       "norad": 34941,
       "name": "SES-7 (PROTOSTAR 2)",
       "owner": "SES",
-      "longitude": 108.23411745727938,
-      "latitude": 0.05303316732475302
+      "longitude": 108.24056616007195,
+      "latitude": 0.04591416397795598
     },
     {
       "norad": 35362,
       "name": "MEASAT-3A",
       "owner": "MALA",
-      "longitude": 159.9690986961579,
-      "latitude": -0.027089721955561114
+      "longitude": 160.02856569126232,
+      "latitude": -0.009605824002796541
     },
     {
       "norad": 35491,
       "name": "GOES 14",
       "owner": "US",
-      "longitude": 165.64915751801468,
-      "latitude": -0.08357073255678078
+      "longitude": 156.97420070010847,
+      "latitude": 1.6111833734769232
     },
     {
       "norad": 35493,
       "name": "FM-5",
       "owner": "US",
-      "longitude": -86.14667969229613,
-      "latitude": 0.03453405545054833
+      "longitude": -86.15559466327463,
+      "latitude": -0.0075832276566144335
     },
     {
       "norad": 35496,
       "name": "TERRESTAR-1",
       "owner": "US",
-      "longitude": -110.96615266271805,
-      "latitude": -4.4201715154618375
+      "longitude": -111.1481559449687,
+      "latitude": -2.9521662116538234
     },
     {
       "norad": 35696,
       "name": "ASIASAT 5",
       "owner": "AC",
-      "longitude": 100.49831392682329,
-      "latitude": -0.028008972201697263
+      "longitude": 100.512358874383,
+      "latitude": 0.02941467462095867
     },
     {
       "norad": 35755,
       "name": "JCSAT-12 (JCSAT-RA)",
       "owner": "JPN",
-      "longitude": 132.0484544091227,
-      "latitude": -0.018516263095057463
+      "longitude": 132.04224269288287,
+      "latitude": 0.0376336942745013
     },
     {
       "norad": 35756,
       "name": "OPTUS D3",
       "owner": "AUS",
-      "longitude": 156.11012173918493,
-      "latitude": -0.2036874704894158
+      "longitude": 156.1497103700985,
+      "latitude": -0.8495260754697657
     },
     {
       "norad": 35873,
       "name": "NIMIQ 5",
       "owner": "CA",
-      "longitude": -72.71546446931734,
-      "latitude": -0.00022092791229091292
+      "longitude": -72.72705113408036,
+      "latitude": -0.027493064266283816
     },
     {
       "norad": 35942,
       "name": "AMAZONAS 2",
       "owner": "SPN",
-      "longitude": -60.779937474673474,
-      "latitude": -1.1587944544606534
+      "longitude": -61.82587575592886,
+      "latitude": -1.3257584390143728
     },
     {
       "norad": 35943,
       "name": "COMSATBW-1",
       "owner": "GER",
-      "longitude": 63.079051850240866,
-      "latitude": 0.044997048649751285
+      "longitude": 63.011237794779326,
+      "latitude": 0.004557812429606678
     },
     {
       "norad": 36032,
       "name": "NSS-12",
       "owner": "SES",
-      "longitude": 57.04205312246852,
-      "latitude": 0.06387188153830745
+      "longitude": 57.03731116015552,
+      "latitude": 0.02751742807322071
     },
     {
       "norad": 36033,
       "name": "THOR 6",
       "owner": "NOR",
-      "longitude": -0.8294913145047191,
-      "latitude": -0.0015442261279428864
+      "longitude": -0.8560365861183392,
+      "latitude": 0.0012295915668343671
     },
     {
       "norad": 36097,
       "name": "INTELSAT 14 (IS-14)",
       "owner": "ITSO",
-      "longitude": -44.98860521344266,
-      "latitude": 0.00293556298185539
+      "longitude": -45.010048714943515,
+      "latitude": 0.015789118389953928
     },
     {
       "norad": 36101,
       "name": "EUTELSAT 36B",
       "owner": "EUTE",
-      "longitude": 50.57144405478265,
-      "latitude": 0.3464416370559526
+      "longitude": 50.547134495132845,
+      "latitude": -0.09644161458012278
     },
     {
       "norad": 36106,
       "name": "INTELSAT 15 (IS-15)",
       "owner": "ITSO",
-      "longitude": 85.16088331844533,
-      "latitude": -0.03693828203008927
+      "longitude": 85.15640733253748,
+      "latitude": 0.02332893499955008
     },
     {
       "norad": 36108,
       "name": "WGS F3 (USA 211)",
       "owner": "US",
-      "longitude": -129.99993006233188,
-      "latitude": -0.33228472056588404
+      "longitude": -129.9796299107306,
+      "latitude": 0.11256364731481168
     },
     {
       "norad": 36131,
       "name": "DIRECTV 12",
       "owner": "US",
-      "longitude": -102.72084284629888,
-      "latitude": -0.006714802356373508
+      "longitude": -102.71886033859573,
+      "latitude": -0.010949988701461215
     },
     {
       "norad": 36287,
       "name": "BEIDOU-2 G1",
       "owner": "PRC",
-      "longitude": 140.45282365466622,
-      "latitude": -0.060474419265162054
+      "longitude": 140.46930276442473,
+      "latitude": 4.217769566247555
     },
     {
       "norad": 36395,
       "name": "SDO",
       "owner": "US",
-      "longitude": -101.34871412472982,
-      "latitude": -34.556332899921635
+      "longitude": -102.85806706427176,
+      "latitude": -3.390990238300769
     },
     {
       "norad": 36397,
       "name": "INTELSAT 16 (IS-16)",
       "owner": "ITSO",
-      "longitude": -76.22583678681154,
-      "latitude": 0.03528933907490522
+      "longitude": -76.21805545831651,
+      "latitude": -0.013978973887464854
     },
     {
       "norad": 36411,
       "name": "EWS-G2 (GOES 15)",
       "owner": "US",
-      "longitude": 63.330936961620516,
-      "latitude": 1.1296146655471828
+      "longitude": 63.36124698068411,
+      "latitude": -0.0989165967929037
     },
     {
       "norad": 36499,
       "name": "ECHOSTAR 14",
       "owner": "US",
-      "longitude": -118.91717840754347,
-      "latitude": 0.0294365715539633
+      "longitude": -118.90636670113193,
+      "latitude": -0.023735220278733447
     },
     {
       "norad": 36516,
       "name": "SES-1",
       "owner": "SES",
-      "longitude": -101.02109529568142,
-      "latitude": 0.02013727728373724
+      "longitude": -101.01568178724165,
+      "latitude": -0.02752508440991744
     },
     {
       "norad": 36581,
       "name": "ASTRA 3B",
       "owner": "SES",
-      "longitude": 23.528038837344315,
-      "latitude": 0.8707680570910723
+      "longitude": 23.488775407736355,
+      "latitude": -0.9872414838968093
     },
     {
       "norad": 36582,
       "name": "COMSATBW-2",
       "owner": "GER",
-      "longitude": 13.170304246183203,
-      "latitude": -0.010775179889195559
+      "longitude": 13.136596079809886,
+      "latitude": 0.01364963879848426
     },
     {
       "norad": 36590,
       "name": "BEIDOU-2 G3",
       "owner": "PRC",
-      "longitude": 79.73061862478086,
-      "latitude": 3.8584114466909925
+      "longitude": 79.5835360220487,
+      "latitude": 2.4084514210828756
     },
     {
       "norad": 36592,
       "name": "BADR-5",
       "owner": "AB",
-      "longitude": 26.01111422446051,
-      "latitude": 0.006153526886091431
+      "longitude": 30.420859811275257,
+      "latitude": -0.03886645876576275
     },
     {
       "norad": 36744,
       "name": "COMS 1",
       "owner": "SKOR",
-      "longitude": 128.22494971593477,
-      "latitude": 2.11973284211232
+      "longitude": 128.08373965601834,
+      "latitude": 4.364264357284593
     },
     {
       "norad": 36745,
       "name": "ARABSAT-5A",
       "owner": "AB",
-      "longitude": 30.546377603226556,
-      "latitude": 0.07410564690016819
+      "longitude": 30.50322164339377,
+      "latitude": 0.018308562890842987
     },
     {
       "norad": 36792,
       "name": "ECHOSTAR 15",
       "owner": "US",
-      "longitude": -118.82366396830547,
-      "latitude": 0.006564425814545659
+      "longitude": -118.81285690555407,
+      "latitude": -0.02298741929093672
     },
     {
       "norad": 36828,
       "name": "BEIDOU-2 IGSO-1",
       "owner": "PRC",
-      "longitude": 92.23579475124109,
-      "latitude": 34.46560554148599
+      "longitude": 122.06517302676818,
+      "latitude": -31.95835784681155
     },
     {
       "norad": 36830,
       "name": "NILESAT 201",
       "owner": "EGYP",
-      "longitude": -6.976451715446296,
-      "latitude": -0.004140644102771225
+      "longitude": -7.00946866938051,
+      "latitude": 0.012231637515854507
     },
     {
       "norad": 36831,
       "name": "RASCOM-QAF 1R",
       "owner": "RASC",
-      "longitude": 2.957457801505978,
-      "latitude": -0.00024169546414103238
+      "longitude": 2.867139292634729,
+      "latitude": 0.03120490466425522
     },
     {
       "norad": 36868,
       "name": "AEHF-1 (USA 214)",
       "owner": "US",
-      "longitude": 29.791834074093266,
-      "latitude": 7.170952274723471
+      "longitude": 30.18404250403892,
+      "latitude": -3.285723983308044
     },
     {
       "norad": 37185,
       "name": "XM-5",
       "owner": "US",
-      "longitude": -115.1869278941349,
-      "latitude": 0.08034617059686863
+      "longitude": -115.1667182742483,
+      "latitude": -0.027840562541703327
     },
     {
       "norad": 37207,
       "name": "BSAT-3B",
       "owner": "JPN",
-      "longitude": 109.83497785369741,
-      "latitude": -0.054162404559504496
+      "longitude": 109.81183859873167,
+      "latitude": -0.04914165067848246
     },
     {
       "norad": 37210,
       "name": "BEIDOU-2 G4",
       "owner": "PRC",
-      "longitude": 159.89797990981472,
-      "latitude": -0.7114976766103364
+      "longitude": 159.9560487945631,
+      "latitude": 3.4461483964332906
     },
     {
       "norad": 37218,
       "name": "SKYTERRA 1",
       "owner": "US",
-      "longitude": -101.25729373682823,
-      "latitude": -3.927793942825007
+      "longitude": -101.43095431056199,
+      "latitude": -3.425181517586833
     },
     {
       "norad": 37237,
       "name": "HYLAS 1",
       "owner": "UK",
-      "longitude": 13.699810212640944,
-      "latitude": 3.631869898052868
+      "longitude": 13.959050499934374,
+      "latitude": -3.929316103470555
     },
     {
       "norad": 37238,
       "name": "INTELSAT 17 (IS-17)",
       "owner": "ITSO",
-      "longitude": 66.03110324628483,
-      "latitude": -0.03328169944826963
+      "longitude": 66.00721642478359,
+      "latitude": 0.009733213186388905
     },
     {
       "norad": 37256,
       "name": "BEIDOU-2 IGSO-2",
       "owner": "PRC",
-      "longitude": 115.69260325973765,
-      "latitude": -42.28700342532161
+      "longitude": 98.10694125210394,
+      "latitude": -20.9841931675429
     },
     {
       "norad": 37258,
       "name": "EUTELSAT KA-SAT 9A",
       "owner": "EUTE",
-      "longitude": 8.984434293124094,
-      "latitude": 0.05291406884306468
+      "longitude": 8.952538833932316,
+      "latitude": 0.03228384476131756
     },
     {
       "norad": 37264,
       "name": "HISPASAT 30W-5",
       "owner": "SPN",
-      "longitude": -29.970921984944066,
-      "latitude": -0.012268178071257588
+      "longitude": -30.036706697815852,
+      "latitude": -0.03796784449150689
     },
     {
       "norad": 37265,
       "name": "KOREASAT 6",
       "owner": "SKOR",
-      "longitude": 159.87962467165016,
-      "latitude": -0.013429560634718413
+      "longitude": 159.90832797982284,
+      "latitude": 0.0014327052994756206
     },
     {
       "norad": 37384,
       "name": "BEIDOU-2 IGSO-3",
       "owner": "PRC",
-      "longitude": 114.38511086677973,
-      "latitude": 10.389048939031131
+      "longitude": 98.9071740872889,
+      "latitude": 61.3579293287895
     },
     {
       "norad": 37392,
       "name": "INTELSAT 28 (IS-28)",
       "owner": "ITSO",
-      "longitude": -31.687848499947652,
-      "latitude": -0.40220881822377436
+      "longitude": -31.7416552019174,
+      "latitude": -1.7029877880943634
     },
     {
       "norad": 37393,
       "name": "YAHSAT 1A",
       "owner": "UAE",
-      "longitude": 52.509550320963505,
-      "latitude": -0.027130312226976042
+      "longitude": 52.50405518062413,
+      "latitude": 0.02899109010607826
     },
     {
       "norad": 37481,
       "name": "SBIRS GEO-1 (USA 230)",
       "owner": "US",
-      "longitude": 51.85332475835318,
-      "latitude": 4.375181295536398
+      "longitude": 51.778396272281896,
+      "latitude": 1.0375496499591959
     },
     {
       "norad": 37602,
       "name": "TELSTAR 14R",
       "owner": "CA",
-      "longitude": -62.99784229203651,
-      "latitude": 0.023408351670065178
+      "longitude": -63.026042143275404,
+      "latitude": -0.04399694379008114
     },
     {
       "norad": 37605,
       "name": "GSAT-8",
       "owner": "IND",
-      "longitude": 55.04225120236323,
-      "latitude": 1.9224965412373085
+      "longitude": 55.12788713078562,
+      "latitude": -0.4300336007714027
     },
     {
       "norad": 37606,
       "name": "ST-2",
       "owner": "STCT",
-      "longitude": 88.01567521140649,
-      "latitude": -0.034766852352346465
+      "longitude": 88.02710486126746,
+      "latitude": 0.020126040970791556
     },
     {
       "norad": 37677,
       "name": "ZHONGXING-10",
       "owner": "PRC",
-      "longitude": 85.59082289969436,
-      "latitude": 0.8975216603104503
+      "longitude": 85.50042014288319,
+      "latitude": 0.2724990165944759
     },
     {
       "norad": 37748,
       "name": "SES-3",
       "owner": "US",
-      "longitude": -103.02602321810976,
-      "latitude": -1.1940168865141638
+      "longitude": -103.01967027231383,
+      "latitude": -0.19080466346628916
     },
     {
       "norad": 37749,
       "name": "KAZSAT-2",
       "owner": "KAZ",
-      "longitude": 86.51923653714708,
-      "latitude": -0.0591468033475634
+      "longitude": 86.48014070034884,
+      "latitude": -0.00958041671244608
     },
     {
       "norad": 37763,
       "name": "BEIDOU-2 IGSO-4",
       "owner": "PRC",
-      "longitude": 81.58671081549384,
-      "latitude": 21.41946339350624
+      "longitude": 108.89469403079488,
+      "latitude": -43.54796090085758
     },
     {
       "norad": 37775,
       "name": "ASTRA 1N",
       "owner": "SES",
-      "longitude": 19.266897180714583,
-      "latitude": 0.09640935958658825
+      "longitude": 19.16234703802147,
+      "latitude": -0.021554317642210864
     },
     {
       "norad": 37776,
       "name": "BSAT-3C (JCSAT-110R)",
       "owner": "JPN",
-      "longitude": 109.96718093305034,
-      "latitude": -0.011176489067933585
+      "longitude": 109.96284606306656,
+      "latitude": 0.0242584756218927
     },
     {
       "norad": 37779,
       "name": "PAKSAT-1R",
       "owner": "PAKI",
-      "longitude": 37.988535445886754,
-      "latitude": 0.4536175814039401
+      "longitude": 38.04311980832186,
+      "latitude": -0.3120431965696624
     },
     {
       "norad": 37809,
       "name": "SES-2",
       "owner": "SES",
-      "longitude": -87.0173472038817,
-      "latitude": -0.04098490452225368
+      "longitude": -87.01973539619587,
+      "latitude": -0.01844408412998959
     },
     {
       "norad": 37810,
       "name": "ARABSAT-5C",
       "owner": "AB",
-      "longitude": 20.01162999724448,
-      "latitude": 0.04505666340031489
+      "longitude": 19.976605950509086,
+      "latitude": 0.03129157512639834
     },
     {
       "norad": 37816,
       "name": "EUTELSAT 7 WEST A",
       "owner": "EUTE",
-      "longitude": -7.269040975754916,
-      "latitude": 0.07276657995756021
+      "longitude": -7.344597232288794,
+      "latitude": -0.029191012879523803
     },
     {
       "norad": 37826,
       "name": "QUETZSAT 1",
       "owner": "MEX",
-      "longitude": -77.0226632170059,
-      "latitude": 0.014735833687559803
+      "longitude": -77.03168852281352,
+      "latitude": -0.037138267253673314
     },
     {
       "norad": 37834,
       "name": "INTELSAT 18 (IS-18)",
       "owner": "ITSO",
-      "longitude": 179.97747086062108,
-      "latitude": 0.0041037269287301755
+      "longitude": -179.98233975630762,
+      "latitude": -0.030652160406546957
     },
     {
       "norad": 37836,
       "name": "EUTELSAT 16A",
       "owner": "EUTE",
-      "longitude": 16.076645125477572,
-      "latitude": 0.051150095352424
+      "longitude": 15.988571931136692,
+      "latitude": 0.04916818902036058
     },
     {
       "norad": 37843,
       "name": "VIASAT-1",
       "owner": "US",
-      "longitude": -115.13058443813377,
-      "latitude": 0.03394632131670166
+      "longitude": -115.11887175222043,
+      "latitude": -0.022784914838930904
     },
     {
       "norad": 37933,
       "name": "ASIASAT 7",
       "owner": "AC",
-      "longitude": 105.51782436537286,
-      "latitude": -0.033559851910660334
+      "longitude": 105.53658907341394,
+      "latitude": 0.026455775313854714
     },
     {
       "norad": 37948,
       "name": "BEIDOU-2 IGSO-5",
       "owner": "PRC",
-      "longitude": 100.17676875063026,
-      "latitude": -46.22893744575984
+      "longitude": 87.01020466462049,
+      "latitude": -10.469119648575118
     },
     {
       "norad": 37951,
       "name": "LUCH-5A",
       "owner": "CIS",
-      "longitude": 166.8216174549684,
-      "latitude": -1.986983537063325
+      "longitude": 167.36837450623435,
+      "latitude": 8.282521156641046
     },
     {
       "norad": 38014,
       "name": "NIGCOMSAT 1R",
       "owner": "NIG",
-      "longitude": 42.512208928168626,
-      "latitude": -0.03281399957415727
+      "longitude": 42.52475107949487,
+      "latitude": -0.016260844661894185
     },
     {
       "norad": 38070,
       "name": "WGS F4 (USA 233)",
       "owner": "US",
-      "longitude": 88.39514079469107,
-      "latitude": -0.03316820719157464
+      "longitude": 88.41600096563035,
+      "latitude": 0.0145524700631917
     },
     {
       "norad": 38087,
       "name": "SES-4",
       "owner": "SES",
-      "longitude": -21.991290732351715,
-      "latitude": 0.014661634374117265
+      "longitude": -22.02110457815756,
+      "latitude": -0.0057630306645197246
     },
     {
       "norad": 38091,
       "name": "BEIDOU-2 G5",
       "owner": "PRC",
-      "longitude": 58.699631697998015,
-      "latitude": 3.4555293328075667
+      "longitude": 58.806815021570586,
+      "latitude": 0.22850191134812306
     },
     {
       "norad": 38093,
       "name": "MUOS-1",
       "owner": "US",
-      "longitude": -100.3102667349266,
-      "latitude": -3.921140886510009
+      "longitude": -100.53903724450348,
+      "latitude": -3.972791143252751
     },
     {
       "norad": 38098,
       "name": "INTELSAT 22 (IS-22)",
       "owner": "ITSO",
-      "longitude": 72.0974541617309,
-      "latitude": -0.02036142490945638
+      "longitude": 72.12412343716926,
+      "latitude": 0.006493724183595553
     },
     {
       "norad": 38107,
       "name": "APSTAR-7",
       "owner": "PRC",
-      "longitude": 76.52434794696205,
-      "latitude": -0.032971960619984406
+      "longitude": 76.52262723674976,
+      "latitude": 0.019512484038266633
     },
     {
       "norad": 38245,
       "name": "YAHSAT 1B",
       "owner": "UAE",
-      "longitude": 47.627060355549595,
-      "latitude": 0.05937221017601359
+      "longitude": 47.59352413463047,
+      "latitude": -0.02244334746483236
     },
     {
       "norad": 38254,
       "name": "AEHF-2 (USA 235)",
       "owner": "US",
-      "longitude": -16.611021956951276,
-      "latitude": 2.925357208733596
+      "longitude": -16.30852513754769,
+      "latitude": -5.681256416255756
     },
     {
       "norad": 38331,
       "name": "JCSAT-13",
       "owner": "JPN",
-      "longitude": 124.01351400368637,
-      "latitude": 0.019273025429358877
+      "longitude": 124.06425470501121,
+      "latitude": 0.03346842104384857
     },
     {
       "norad": 38332,
       "name": "VINASAT-2",
       "owner": "VTNM",
-      "longitude": 131.86263155814882,
-      "latitude": -0.01631512160622184
+      "longitude": 131.87710675380475,
+      "latitude": 0.007749338357905317
     },
     {
       "norad": 38342,
       "name": "NIMIQ 6",
       "owner": "CA",
-      "longitude": -91.12299369401802,
-      "latitude": 0.008484749708110704
+      "longitude": -91.12110887933251,
+      "latitude": -0.01992074144379959
     },
     {
       "norad": 38352,
       "name": "ZHONGXING-2A",
       "owner": "PRC",
-      "longitude": 98.2674017351639,
-      "latitude": 1.2031587047256385
+      "longitude": 98.24274693076359,
+      "latitude": 0.6693993432789204
     },
     {
       "norad": 38356,
       "name": "INTELSAT 19 (IS-19)",
       "owner": "ITSO",
-      "longitude": 165.97992320600557,
-      "latitude": -0.007767402237976873
+      "longitude": 166.045155432324,
+      "latitude": -0.025435481062472325
     },
     {
       "norad": 38551,
       "name": "ECHOSTAR 17",
       "owner": "US",
-      "longitude": -107.12935920057977,
-      "latitude": 0.03129456798632207
+      "longitude": -107.11158516754544,
+      "latitude": -0.022892250812967828
     },
     {
       "norad": 38552,
       "name": "METEOSAT-10 (MSG-3)",
       "owner": "EUME",
-      "longitude": 0.025918781234419964,
-      "latitude": 2.9190724912336137
+      "longitude": 0.14624646410300923,
+      "latitude": -3.3362308137690353
     },
     {
       "norad": 38652,
       "name": "SES-5",
       "owner": "SES",
-      "longitude": 5.004222996738914,
-      "latitude": 0.013524404559131809
+      "longitude": 4.9645184939327365,
+      "latitude": 0.06736691524278383
     },
     {
       "norad": 38740,
       "name": "INTELSAT 20 (IS-20)",
       "owner": "ITSO",
-      "longitude": 68.55461423522826,
-      "latitude": -0.026735160844912502
+      "longitude": 68.51081952549202,
+      "latitude": 0.019240085838995443
     },
     {
       "norad": 38741,
       "name": "HYLAS 2",
       "owner": "UK",
-      "longitude": -72.55703777538344,
-      "latitude": -1.8428145908752678
+      "longitude": -72.60473000319983,
+      "latitude": -1.5391028243270108
     },
     {
       "norad": 38749,
       "name": "INTELSAT 21 (IS-21)",
       "owner": "ITSO",
-      "longitude": -58.0071383334158,
-      "latitude": 0.017769784684407156
+      "longitude": -58.016668024011416,
+      "latitude": 0.009608591915526198
     },
     {
       "norad": 38778,
       "name": "ASTRA 2F",
       "owner": "SES",
-      "longitude": 28.174408749066128,
-      "latitude": -0.050752986252139545
+      "longitude": 28.185042686968554,
+      "latitude": 0.0417839635105317
     },
     {
       "norad": 38779,
       "name": "GSAT-10",
       "owner": "IND",
-      "longitude": 83.01515842359159,
-      "latitude": -0.036790011694662096
+      "longitude": 82.98355759743995,
+      "latitude": -0.006615482044879469
     },
     {
       "norad": 38867,
       "name": "INTELSAT 23 (IS-23)",
       "owner": "ITSO",
-      "longitude": -52.98391942871354,
-      "latitude": 0.028406123574933852
+      "longitude": -52.9981166225125,
+      "latitude": 0.01225874065081293
     },
     {
       "norad": 38953,
       "name": "BEIDOU-2 G6",
       "owner": "PRC",
-      "longitude": 84.1515802217534,
-      "latitude": 4.016192153872017
+      "longitude": 84.0923495675905,
+      "latitude": 1.8427056598574476
     },
     {
       "norad": 38977,
       "name": "LUCH-5B",
       "owner": "CIS",
-      "longitude": -16.708401158758523,
-      "latitude": 5.826407472709569
+      "longitude": -15.843414444152167,
+      "latitude": -8.197962503414006
     },
     {
       "norad": 38978,
       "name": "YAMAL 300K",
       "owner": "CIS",
-      "longitude": -177.06425127153585,
-      "latitude": 0.00791419769637553
+      "longitude": -177.02942053376472,
+      "latitude": -0.03371831460099339
     },
     {
       "norad": 38991,
       "name": "STAR ONE C3",
       "owner": "BRAZ",
-      "longitude": -75.02026215405114,
-      "latitude": 0.03413478247480343
+      "longitude": -75.00566833550265,
+      "latitude": -0.005738651856569714
     },
     {
       "norad": 38992,
       "name": "EUTELSAT 21B",
       "owner": "EUTE",
-      "longitude": 21.64435192908682,
-      "latitude": 0.059843298662246275
+      "longitude": 21.623333296970834,
+      "latitude": 0.06993417215871527
     },
     {
       "norad": 39008,
       "name": "ECHOSTAR 16",
       "owner": "US",
-      "longitude": -61.51888548025631,
-      "latitude": 0.02411272286987214
+      "longitude": -61.53056267168905,
+      "latitude": -0.0031731682435680356
     },
     {
       "norad": 39017,
       "name": "ZHONGXING-12",
       "owner": "PRC",
-      "longitude": 87.52078020862147,
-      "latitude": -0.0029289938828681843
+      "longitude": 87.51479144912307,
+      "latitude": 0.009865193908575725
     },
     {
       "norad": 39020,
       "name": "EUTELSAT 70B",
       "owner": "EUTE",
-      "longitude": 70.52195979516658,
-      "latitude": -0.010282355108164578
+      "longitude": 70.53479652700796,
+      "latitude": 0.07594195037295255
     },
     {
       "norad": 39022,
       "name": "YAMAL 402",
       "owner": "CIS",
-      "longitude": 54.93523242691239,
-      "latitude": 1.0763480342890777
+      "longitude": 54.91930798900343,
+      "latitude": -0.2940066017243131
     },
     {
       "norad": 39034,
       "name": "SKYNET 5D",
       "owner": "UK",
-      "longitude": 52.78451218300209,
-      "latitude": -0.0003841876999067307
+      "longitude": 52.754719379166374,
+      "latitude": 0.08248537197605303
     },
     {
       "norad": 39035,
       "name": "MEXSAT 3",
       "owner": "MEX",
-      "longitude": -114.82788583799218,
-      "latitude": 0.03271302156481695
+      "longitude": -114.81756452542328,
+      "latitude": -0.020251129182341662
     },
     {
       "norad": 39070,
       "name": "TDRS 11",
       "owner": "US",
-      "longitude": -174.4366703975437,
-      "latitude": -3.355152941732345
+      "longitude": -174.37153274019306,
+      "latitude": 0.6313309520803393
     },
     {
       "norad": 39078,
       "name": "AMAZONAS 3",
       "owner": "SPN",
-      "longitude": -60.989277460619874,
-      "latitude": 0.009499018859914964
+      "longitude": -60.992015778390204,
+      "latitude": 0.01266998347069035
     },
     {
       "norad": 39079,
       "name": "AZERSPACE 1",
       "owner": "AZER",
-      "longitude": 45.98641321801232,
-      "latitude": -0.003667079114818716
+      "longitude": 45.99097884585619,
+      "latitude": 0.013864504591703287
     },
     {
       "norad": 39120,
       "name": "SBIRS GEO-2 (USA 241)",
       "owner": "US",
-      "longitude": -49.79627757782976,
-      "latitude": -0.10401643255540813
+      "longitude": -49.80979040401857,
+      "latitude": -4.43185776397335
     },
     {
       "norad": 39122,
       "name": "EUTELSAT 117 WEST A",
       "owner": "EUTE",
-      "longitude": -116.82669310127275,
-      "latitude": 0.004427123043381862
+      "longitude": -116.81568063528519,
+      "latitude": -0.029189802882581658
     },
     {
       "norad": 39127,
       "name": "ANIK G1",
       "owner": "CA",
-      "longitude": -107.33491693685038,
-      "latitude": 0.031423211925591436
+      "longitude": -107.31477996805896,
+      "latitude": -0.011854397920533558
     },
     {
       "norad": 39157,
       "name": "ZHONGXING-11",
       "owner": "PRC",
-      "longitude": 97.91874211248026,
-      "latitude": -0.02387088814389805
+      "longitude": 97.8905374095339,
+      "latitude": 0.007045786948823869
     },
     {
       "norad": 39163,
       "name": "EUTELSAT 7B",
       "owner": "EUTE",
-      "longitude": 7.084443730197269,
-      "latitude": 0.0643692927248301
+      "longitude": 6.9963218196137555,
+      "latitude": 0.0320768031827408
     },
     {
       "norad": 39168,
       "name": "WGS F5 (USA 243)",
       "owner": "US",
-      "longitude": -52.513918953611984,
-      "latitude": 0.024912903992216927
+      "longitude": -52.50288198041159,
+      "latitude": 0.016379614055960307
     },
     {
       "norad": 39172,
       "name": "SES-6",
       "owner": "SES",
-      "longitude": -40.48690908029681,
-      "latitude": 0.03277714736674436
+      "longitude": -40.53058664053224,
+      "latitude": 0.00031203219874868955
     },
     {
       "norad": 39199,
       "name": "IRNSS-1A",
       "owner": "IND",
-      "longitude": 55.024437295609914,
-      "latitude": 35.662781800663694
+      "longitude": 54.16170531697829,
+      "latitude": 3.1620548684297893
     },
     {
       "norad": 39206,
       "name": "MUOS-2",
       "owner": "US",
-      "longitude": 172.24710561714812,
-      "latitude": -3.6332872899848234
+      "longitude": 171.79270516261116,
+      "latitude": 3.119770470786124
     },
     {
       "norad": 39215,
       "name": "ALPHASAT",
       "owner": "IM",
-      "longitude": 24.94134524931119,
-      "latitude": 2.4766121159073493
+      "longitude": 24.791363343004228,
+      "latitude": 1.8535180118742862
     },
     {
       "norad": 39216,
       "name": "INSAT-3D",
       "owner": "IND",
-      "longitude": 129.52082351977,
-      "latitude": 0.9691539234714343
+      "longitude": 129.5163656983738,
+      "latitude": 1.6256962654577436
     },
     {
       "norad": 39222,
       "name": "WGS F6 (USA 244)",
       "owner": "US",
-      "longitude": -135.1956531667821,
-      "latitude": 0.022509777391304994
+      "longitude": -135.194295364917,
+      "latitude": -0.03313657996220174
     },
     {
       "norad": 39233,
       "name": "ES'HAIL 1",
       "owner": "AB",
-      "longitude": 25.570512627062847,
-      "latitude": 0.026612912105367717
+      "longitude": 25.502862386567756,
+      "latitude": 0.05274945849487321
     },
     {
       "norad": 39234,
       "name": "GSAT-7",
       "owner": "IND",
-      "longitude": 73.95587678932966,
-      "latitude": 0.08960813041521587
+      "longitude": 74.04300246088867,
+      "latitude": 0.00797144073744024
     },
     {
       "norad": 39237,
       "name": "AMOS-4",
       "owner": "ISRA",
-      "longitude": 65.01974054201493,
-      "latitude": -0.006418932786417888
+      "longitude": 65.04335901304293,
+      "latitude": 0.015801887382798675
     },
     {
       "norad": 39256,
       "name": "AEHF-3 (USA 246)",
       "owner": "US",
-      "longitude": -123.27820172837049,
-      "latitude": -5.180265311881481
+      "longitude": -124.32059549330113,
+      "latitude": -0.26771193936380877
     },
     {
       "norad": 39285,
       "name": "ASTRA 2E",
       "owner": "SES",
-      "longitude": 28.501619329862297,
-      "latitude": 0.014343565806478544
+      "longitude": 28.495358833471503,
+      "latitude": 0.07648380063892134
     },
     {
       "norad": 39360,
       "name": "FM-6",
       "owner": "US",
-      "longitude": -116.39384744800927,
-      "latitude": 0.035070935580205034
+      "longitude": -116.35610671696838,
+      "latitude": -0.004327949554450922
     },
     {
       "norad": 39375,
       "name": "RADUGA-1M 3",
       "owner": "CIS",
-      "longitude": 34.88238927048269,
-      "latitude": 5.200405478212142
+      "longitude": 35.11796815019937,
+      "latitude": -2.300537501418964
     },
     {
       "norad": 39460,
       "name": "SES-8",
       "owner": "SES",
-      "longitude": 95.02189060969908,
-      "latitude": -0.0394175799521187
+      "longitude": 95.0102210713476,
+      "latitude": 0.002355602946644916
     },
     {
       "norad": 39476,
       "name": "INMARSAT 5-F1",
       "owner": "IM",
-      "longitude": 62.59590438909477,
-      "latitude": -0.027456024812669823
+      "longitude": 62.63405680858099,
+      "latitude": 0.029580473114840054
     },
     {
       "norad": 39481,
       "name": "TKSAT-1 (TUPAC KATARI)",
       "owner": "BOL",
-      "longitude": -87.20145989643181,
-      "latitude": -0.032520266437379576
+      "longitude": -87.25416637699522,
+      "latitude": 0.0010375173580482705
     },
     {
       "norad": 39487,
       "name": "EXPRESS-AM5",
       "owner": "CIS",
-      "longitude": 140.02499120414214,
-      "latitude": -0.018224682036663917
+      "longitude": 140.02714916003603,
+      "latitude": -0.02085813421416356
     },
     {
       "norad": 39498,
       "name": "GSAT-14",
       "owner": "IND",
-      "longitude": 73.99494307445057,
-      "latitude": 0.04110184106494274
+      "longitude": 74.02653035760197,
+      "latitude": 0.01369537761033677
     },
     {
       "norad": 39500,
       "name": "THAICOM 6",
       "owner": "THAI",
-      "longitude": 78.5650528468314,
-      "latitude": 0.04096826845989773
+      "longitude": 78.5409850034803,
+      "latitude": -0.0027006761033269927
     },
     {
       "norad": 39504,
       "name": "TDRS 12",
       "owner": "US",
-      "longitude": -41.08653610173812,
-      "latitude": 2.6120930581413644
+      "longitude": -40.89795200327951,
+      "latitude": -2.7968965296638926
     },
     {
       "norad": 39508,
       "name": "ABS-2",
       "owner": "ABS",
-      "longitude": 74.95990327022591,
-      "latitude": 0.04214632495831387
+      "longitude": 74.95592988069318,
+      "latitude": 0.016781489987696612
     },
     {
       "norad": 39509,
       "name": "ATHENA-FIDUS",
       "owner": "FRIT",
-      "longitude": 37.8129640088339,
-      "latitude": -0.01795844613884147
+      "longitude": 37.80131865900076,
+      "latitude": 0.012279805606934157
     },
     {
       "norad": 39522,
       "name": "TURKSAT 4A",
       "owner": "TURK",
-      "longitude": 42.02849956749846,
-      "latitude": -0.018270367218077923
+      "longitude": 42.03388502885735,
+      "latitude": 0.06268556349263733
     },
     {
       "norad": 39612,
       "name": "EXPRESS-AT1",
       "owner": "CIS",
-      "longitude": 58.28827702920596,
-      "latitude": 0.12287343415548009
+      "longitude": 59.52807280624198,
+      "latitude": -0.021382180704285273
     },
     {
       "norad": 39613,
       "name": "EXPRESS-AT2",
       "owner": "CIS",
-      "longitude": 55.99522661747348,
-      "latitude": -0.031100099884698973
+      "longitude": 55.996979024142355,
+      "latitude": 0.02732159627296759
     },
     {
       "norad": 39616,
       "name": "AMAZONAS 4A",
       "owner": "SPN",
-      "longitude": -74.02220122462951,
-      "latitude": -0.03376830445739161
+      "longitude": -74.02617666462466,
+      "latitude": 0.04293488925899167
     },
     {
       "norad": 39617,
       "name": "ASTRA 5B",
       "owner": "SES",
-      "longitude": 23.53107655238341,
-      "latitude": 0.00872778668813383
+      "longitude": 23.519632620077665,
+      "latitude": 0.08043163826173627
     },
     {
       "norad": 39635,
       "name": "IRNSS-1B",
       "owner": "IND",
-      "longitude": 55.914543389599785,
-      "latitude": -28.949419234535195
+      "longitude": 54.201540279514646,
+      "latitude": -4.307421438508228
     },
     {
       "norad": 39727,
       "name": "LUCH-5V",
       "owner": "CIS",
-      "longitude": 94.86657790434968,
-      "latitude": 4.087328737434283
+      "longitude": 94.66037702865289,
+      "latitude": 3.2172416937552604
     },
     {
       "norad": 39728,
       "name": "KAZSAT-3",
       "owner": "KAZ",
-      "longitude": 58.51013582985626,
-      "latitude": 0.031051645697770306
+      "longitude": 58.497354029510966,
+      "latitude": 0.010775013643773772
     },
     {
       "norad": 39773,
       "name": "EUTELSAT 3B",
       "owner": "EUTE",
-      "longitude": 3.129992091198032,
-      "latitude": 0.05892304232670396
+      "longitude": 3.0613983897058024,
+      "latitude": 0.029528674244730466
     },
     {
       "norad": 40107,
       "name": "ASIASAT 8 (AMOS-7)",
       "owner": "AC",
-      "longitude": 105.30506346210831,
-      "latitude": 0.03685661224814885
+      "longitude": 105.29643867504844,
+      "latitude": 0.013214555013560817
     },
     {
       "norad": 40141,
       "name": "ASIASAT 6",
       "owner": "AC",
-      "longitude": 119.91385047020606,
-      "latitude": -0.02874639649011489
+      "longitude": 119.92241508379222,
+      "latitude": 0.028646721950671614
     },
     {
       "norad": 40146,
       "name": "OPTUS 10",
       "owner": "AUS",
-      "longitude": 155.99384310448715,
-      "latitude": -0.018872247452685627
+      "longitude": 156.0352411730407,
+      "latitude": -0.04177963296149126
     },
     {
       "norad": 40147,
       "name": "MEASAT-3B",
       "owner": "MALA",
-      "longitude": 91.50483067405045,
-      "latitude": -0.004742159836350026
+      "longitude": 91.52698654764133,
+      "latitude": 0.04426131312416391
     },
     {
       "norad": 40267,
       "name": "HIMAWARI-8",
       "owner": "JPN",
-      "longitude": 140.67145264006245,
-      "latitude": -0.0058324597291409715
+      "longitude": 140.6695659784073,
+      "latitude": 0.015466837822185043
     },
     {
       "norad": 40269,
       "name": "IRNSS-1C",
       "owner": "IND",
-      "longitude": 83.1854683567182,
-      "latitude": 6.378458425049625
+      "longitude": 82.99835878375741,
+      "latitude": 0.9226172228154663
     },
     {
       "norad": 40271,
       "name": "INTELSAT 30 (IS-30)",
       "owner": "ITSO",
-      "longitude": -95.0526746836917,
-      "latitude": 0.017980950094354242
+      "longitude": -95.07839226823988,
+      "latitude": -0.027384942400383448
     },
     {
       "norad": 40272,
       "name": "ARSAT 1",
       "owner": "ARGN",
-      "longitude": -71.79877980987013,
-      "latitude": -0.02548937805542325
+      "longitude": -71.8207193866624,
+      "latitude": -0.0332159324139721
     },
     {
       "norad": 40277,
       "name": "EUTELSAT 53A",
       "owner": "EUTE",
-      "longitude": 52.99074247999312,
-      "latitude": -0.029211536749325095
+      "longitude": 53.00576058059691,
+      "latitude": 0.022752289857501624
     },
     {
       "norad": 40332,
       "name": "GSAT-16",
       "owner": "IND",
-      "longitude": 55.185946642405966,
-      "latitude": -0.042224449712796125
+      "longitude": 55.09508273403169,
+      "latitude": 0.011954517688776976
     },
     {
       "norad": 40333,
       "name": "DIRECTV 14",
       "owner": "US",
-      "longitude": -99.2497203735228,
-      "latitude": 0.030644601202279798
+      "longitude": -99.23352750828755,
+      "latitude": -0.019802923333624878
     },
     {
       "norad": 40345,
       "name": "YAMAL 401",
       "owner": "CIS",
-      "longitude": 89.95560516902593,
-      "latitude": -0.03613227647089042
+      "longitude": 89.96445916515832,
+      "latitude": 0.008642723611542138
     },
     {
       "norad": 40364,
       "name": "ASTRA 2G",
       "owner": "SES",
-      "longitude": 28.267819094744983,
-      "latitude": 0.03081804988918452
+      "longitude": 28.199544015710647,
+      "latitude": 0.0439721970933357
     },
     {
       "norad": 40367,
       "name": "FENGYUN 2G",
       "owner": "PRC",
-      "longitude": 99.90295992573714,
-      "latitude": 4.390800112297744
+      "longitude": 99.25722885760301,
+      "latitude": 3.6470128586811383
     },
     {
       "norad": 40374,
       "name": "MUOS-3",
       "owner": "US",
-      "longitude": -16.054541224027187,
-      "latitude": 2.945281213272643
+      "longitude": -14.976252728645104,
+      "latitude": -3.0937959568344167
     },
     {
       "norad": 40384,
       "name": "INMARSAT 5-F2",
       "owner": "IM",
-      "longitude": -55.03231397160699,
-      "latitude": 0.029317539085864448
+      "longitude": -55.021421328781045,
+      "latitude": -0.004703951315780357
     },
     {
       "norad": 40424,
       "name": "ABS-3A",
       "owner": "ABS",
-      "longitude": -2.9772121428524883,
-      "latitude": -0.0024581019913116195
+      "longitude": -2.9767760439297124,
+      "latitude": 0.028701814211703418
     },
     {
       "norad": 40425,
       "name": "EUTELSAT 115 WEST B",
       "owner": "EUTE",
-      "longitude": -114.91360802143092,
-      "latitude": -0.005666192221913999
+      "longitude": -114.88284364510737,
+      "latitude": 0.010020710880192515
     },
     {
       "norad": 40505,
       "name": "EXPRESS-AM7",
       "owner": "CIS",
-      "longitude": 40.02570567218361,
-      "latitude": -0.020563906606413395
+      "longitude": 39.98476943394296,
+      "latitude": 0.02647186431436763
     },
     {
       "norad": 40549,
       "name": "BEIDOU-3S IGSO-1S",
       "owner": "PRC",
-      "longitude": 89.75520205440624,
-      "latitude": -48.234322474448305
+      "longitude": 96.15845757076346,
+      "latitude": 5.903338284923808
     },
     {
       "norad": 40613,
       "name": "THOR 7",
       "owner": "NOR",
-      "longitude": -0.6307406655510526,
-      "latitude": 0.011939603126061002
+      "longitude": -0.6578205278787372,
+      "latitude": 0.024195932972212807
     },
     {
       "norad": 40617,
       "name": "TURKMENALEM52E/MONACOSAT",
       "owner": "TMMC",
-      "longitude": 52.042730527779135,
-      "latitude": -0.007596291668323249
+      "longitude": 52.015058462641676,
+      "latitude": 0.01241574070048477
     },
     {
       "norad": 40663,
       "name": "DIRECTV 15",
       "owner": "US",
-      "longitude": -102.8760956889158,
-      "latitude": -0.000999340160722758
+      "longitude": -102.892628058478,
+      "latitude": -0.020609536020389504
     },
     {
       "norad": 40664,
       "name": "SKY MEXICO-1",
       "owner": "MEX",
-      "longitude": -78.8128617737295,
-      "latitude": 0.03623041396257202
+      "longitude": -78.79884721363885,
+      "latitude": -0.017836122332776004
     },
     {
       "norad": 40732,
       "name": "METEOSAT-11 (MSG-4)",
       "owner": "EUME",
-      "longitude": 9.342218640663756,
-      "latitude": 1.9375263052260108
+      "longitude": 9.27914895658225,
+      "latitude": -2.2964473051515766
     },
     {
       "norad": 40733,
       "name": "STAR ONE C4",
       "owner": "BRAZ",
-      "longitude": -70.01457134923025,
-      "latitude": 0.010066602624915452
+      "longitude": -70.02509628205492,
+      "latitude": -0.04259326192183847
     },
     {
       "norad": 40746,
       "name": "WGS F7 (USA 263)",
       "owner": "US",
-      "longitude": 174.98434003300022,
-      "latitude": -0.005286230251072672
+      "longitude": 175.02648094521172,
+      "latitude": -0.023808545028555013
     },
     {
       "norad": 40874,
       "name": "INTELSAT 34 (IS-34)",
       "owner": "ITSO",
-      "longitude": -55.49575147929475,
-      "latitude": 0.03140048648241209
+      "longitude": -55.49537705980067,
+      "latitude": 0.0030358465521854736
     },
     {
       "norad": 40875,
       "name": "EUTELSAT 8 WEST B",
       "owner": "EUTE",
-      "longitude": -7.963683314538077,
-      "latitude": 0.06611372594361971
+      "longitude": -8.023454859487376,
+      "latitude": 0.037915784455937324
     },
     {
       "norad": 40880,
       "name": "GSAT-6",
       "owner": "IND",
-      "longitude": 82.57823078141126,
-      "latitude": 1.762560284086381
+      "longitude": 82.47787763319162,
+      "latitude": 0.46156147073483555
     },
     {
       "norad": 40882,
       "name": "INMARSAT 5-F3",
       "owner": "IM",
-      "longitude": 179.5670799473663,
-      "latitude": 0.0013602271773415515
+      "longitude": 179.56901189643372,
+      "latitude": -0.02554622642717179
     },
     {
       "norad": 40887,
       "name": "MUOS-4",
       "owner": "US",
-      "longitude": 75.560707408021,
-      "latitude": 3.030971951581651
+      "longitude": 75.39941202559645,
+      "latitude": 3.1904587230176236
     },
     {
       "norad": 40892,
       "name": "TJS-1",
       "owner": "PRC",
-      "longitude": 154.97776402523564,
-      "latitude": 0.02393929170275418
+      "longitude": 155.0587696578986,
+      "latitude": 0.24121307736710546
     },
     {
       "norad": 40895,
       "name": "EXPRESS-AM8",
       "owner": "CIS",
-      "longitude": -13.997130412279649,
-      "latitude": 0.0016402739855249406
+      "longitude": -13.997177434811698,
+      "latitude": 0.028923933756109313
     },
     {
       "norad": 40938,
       "name": "BEIDOU-3S IGSO-2S",
       "owner": "PRC",
-      "longitude": 108.76284554325689,
-      "latitude": -41.653690725541225
+      "longitude": 86.75054546620905,
+      "latitude": -23.699223663714818
     },
     {
       "norad": 40940,
       "name": "SKY MUSTER 1 (NBN1A)",
       "owner": "AUS",
-      "longitude": 140.2616199089581,
-      "latitude": -0.018653667072470296
+      "longitude": 140.26721582239958,
+      "latitude": -0.01897678733725817
     },
     {
       "norad": 40941,
       "name": "ARSAT 2",
       "owner": "ARGN",
-      "longitude": -81.00292918876332,
-      "latitude": -0.0329808748486279
+      "longitude": -81.02953137957101,
+      "latitude": -0.03316373329916842
     },
     {
       "norad": 40946,
       "name": "MORELOS 3",
       "owner": "MEX",
-      "longitude": -113.07466531299706,
-      "latitude": -1.3825474196385321
+      "longitude": -113.1502052867674,
+      "latitude": -2.9304173957620607
     },
     {
       "norad": 40982,
       "name": "APSTAR-9",
       "owner": "PRC",
-      "longitude": 142.0295014172079,
-      "latitude": -0.03779295817273733
+      "longitude": 142.01174509831387,
+      "latitude": 0.036220215368304685
     },
     {
       "norad": 40984,
       "name": "TURKSAT 4B",
       "owner": "TURK",
-      "longitude": 50.015259985234415,
-      "latitude": -0.024266579677635382
+      "longitude": 50.0095854141267,
+      "latitude": 0.03275662246556882
     },
     {
       "norad": 41021,
       "name": "ZHONGXING-2C",
       "owner": "PRC",
-      "longitude": 103.43304983119599,
-      "latitude": 0.1307637195915608
+      "longitude": 103.3549458992845,
+      "latitude": 0.09589914215487085
     },
     {
       "norad": 41028,
       "name": "GSAT-15",
       "owner": "IND",
-      "longitude": 93.51643595316315,
-      "latitude": -0.06182400482597092
+      "longitude": 93.52251980635738,
+      "latitude": -0.0044710138044556265
     },
     {
       "norad": 41029,
       "name": "BADR-7 (ARABSAT-6B)",
       "owner": "AB",
-      "longitude": 25.992782132125885,
-      "latitude": -0.04997390532592604
+      "longitude": 25.995091790386578,
+      "latitude": 0.033067351685832296
     },
     {
       "norad": 41034,
       "name": "LAOSAT 1",
       "owner": "LAOS",
-      "longitude": 128.49509174646306,
-      "latitude": -0.0006144601606420896
+      "longitude": 128.5086415124865,
+      "latitude": -0.010199510830018514
     },
     {
       "norad": 41036,
       "name": "TELSTAR 12V",
       "owner": "CA",
-      "longitude": -14.971761588068635,
-      "latitude": 0.008223921213560777
+      "longitude": -15.010571110269018,
+      "latitude": 0.02085200968517262
     },
     {
       "norad": 41105,
       "name": "ELEKTRO-L 2",
       "owner": "CIS",
-      "longitude": -14.604513690753391,
-      "latitude": 1.7300164132802927
+      "longitude": -14.366517068945994,
+      "latitude": -6.254675302391673
     },
     {
       "norad": 41121,
       "name": "COSMOS 2513",
       "owner": "CIS",
-      "longitude": 80.29073977989515,
-      "latitude": 0.04404854684852251
+      "longitude": 80.27610271093346,
+      "latitude": 0.004756560976847727
     },
     {
       "norad": 41191,
       "name": "EXPRESS-AMU1",
       "owner": "CIS",
-      "longitude": 36.14584108904755,
-      "latitude": -0.002237867976557662
+      "longitude": 36.12536150158832,
+      "latitude": 0.02871210747101425
     },
     {
       "norad": 41194,
       "name": "GAOFEN-4",
       "owner": "PRC",
-      "longitude": 105.69184288134966,
-      "latitude": 0.3117449630046957
+      "longitude": 105.6763999194101,
+      "latitude": 0.22010326975794325
     },
     {
       "norad": 41238,
       "name": "BELINTERSAT-1",
       "owner": "BELA",
-      "longitude": 51.50984183438392,
-      "latitude": -0.006576483602033993
+      "longitude": 51.4793137710058,
+      "latitude": 0.007127958124234527
     },
     {
       "norad": 41241,
       "name": "IRNSS-1E",
       "owner": "IND",
-      "longitude": 115.72355050609873,
-      "latitude": 14.848215939689211
+      "longitude": 107.57583365046808,
+      "latitude": 30.027414476441013
     },
     {
       "norad": 41310,
       "name": "EUTELSAT 9B",
       "owner": "EUTE",
-      "longitude": 9.024146912612794,
-      "latitude": 0.03580246915055913
+      "longitude": 8.99150472986475,
+      "latitude": -0.03647533571676448
     },
     {
       "norad": 41380,
       "name": "SES-9",
       "owner": "SES",
-      "longitude": 108.31099988434944,
-      "latitude": -0.02219473736376442
+      "longitude": 108.32294268812053,
+      "latitude": 0.013419378544693331
     },
     {
       "norad": 41382,
       "name": "EUTELSAT 65 WEST A",
       "owner": "EUTE",
-      "longitude": -65.21411101899326,
-      "latitude": 0.012176510744326371
+      "longitude": -65.24203463636626,
+      "latitude": -0.05538212964658778
     },
     {
       "norad": 41434,
       "name": "BEIDOU-2 IGSO-6",
       "owner": "PRC",
-      "longitude": 105.59280549789987,
-      "latitude": 20.2775157545503
+      "longitude": 77.93027443586963,
+      "latitude": 54.77941242070092
     },
     {
       "norad": 41469,
       "name": "IRNSS-1G",
       "owner": "IND",
-      "longitude": 129.82880818209284,
-      "latitude": 3.769064631466084
+      "longitude": 129.39487165083665,
+      "latitude": 3.684675179303564
     },
     {
       "norad": 41471,
       "name": "JCSAT-2B",
       "owner": "JPN",
-      "longitude": 153.97864005254175,
-      "latitude": -0.014216446595207788
+      "longitude": 154.01758305762672,
+      "latitude": -0.019173578380684068
     },
     {
       "norad": 41552,
       "name": "THAICOM 8",
       "owner": "THAI",
-      "longitude": 78.56838520290142,
-      "latitude": 0.040433946865800055
+      "longitude": 78.56682510474477,
+      "latitude": 0.055785538475782694
     },
     {
       "norad": 41581,
       "name": "INTELSAT 31 (IS-31)",
       "owner": "ITSO",
-      "longitude": -95.02132494179088,
-      "latitude": 0.02180878395409344
+      "longitude": -95.05807776581247,
+      "latitude": -0.0010960611054766651
     },
     {
       "norad": 41586,
       "name": "BEIDOU-2 G7",
       "owner": "PRC",
-      "longitude": 110.61974619050876,
-      "latitude": 0.9670100466560492
+      "longitude": 110.50846856798599,
+      "latitude": 1.3749960593800659
     },
     {
       "norad": 41588,
       "name": "ABS-2A (MONGOLSAT-1)",
       "owner": "ABS",
-      "longitude": 74.72760979784323,
-      "latitude": -0.04086991025799864
+      "longitude": 74.73985410625136,
+      "latitude": 0.02253622602052526
     },
     {
       "norad": 41589,
       "name": "EUTELSAT 117 WEST B",
       "owner": "EUTE",
-      "longitude": -117.0094950933832,
-      "latitude": -0.004616155096365792
+      "longitude": -116.98654123209667,
+      "latitude": 0.009851292901413457
     },
     {
       "norad": 41591,
       "name": "BRISAT",
       "owner": "INDO",
-      "longitude": 150.4864149940777,
-      "latitude": -0.0148799170029243
+      "longitude": 150.51540734314418,
+      "latitude": -0.024933107298592116
     },
     {
       "norad": 41592,
       "name": "ECHOSTAR 18",
       "owner": "US",
-      "longitude": -61.38690164186946,
-      "latitude": 0.02638874039847299
+      "longitude": -61.38337626620552,
+      "latitude": -0.0015408721346557067
     },
     {
       "norad": 41622,
       "name": "MUOS-5",
       "owner": "US",
-      "longitude": -103.9725623366983,
-      "latitude": 1.9228341596758665
+      "longitude": -103.0025750817182,
+      "latitude": -1.1304496253379575
     },
     {
       "norad": 41725,
       "name": "TIANTONG-1 1",
       "owner": "PRC",
-      "longitude": 101.51671307955584,
-      "latitude": 1.324046525741862
+      "longitude": 101.44445697142136,
+      "latitude": 3.6386676678076673
     },
     {
       "norad": 41729,
       "name": "JCSAT-16",
       "owner": "JPN",
-      "longitude": 143.94771702270728,
-      "latitude": -0.02035584602740749
+      "longitude": 143.95458884650455,
+      "latitude": -0.01596931645574035
     },
     {
       "norad": 41744,
       "name": "USA 270",
       "owner": "US",
-      "longitude": -176.07062348471575,
-      "latitude": -1.856417718416302
+      "longitude": -176.096515829975,
+      "latitude": 3.533306115445959
     },
     {
       "norad": 41745,
       "name": "USA 271",
       "owner": "US",
-      "longitude": 121.4771291984947,
-      "latitude": 2.349608871785237
+      "longitude": 122.80604415746944,
+      "latitude": 3.547371856053962
     },
     {
       "norad": 41747,
       "name": "INTELSAT 36 (IS-36)",
       "owner": "ITSO",
-      "longitude": 68.50020145146674,
-      "latitude": -0.017626626584054943
+      "longitude": 68.51939228317028,
+      "latitude": 0.025713355698251016
     },
     {
       "norad": 41752,
       "name": "INSAT-3DR",
       "owner": "IND",
-      "longitude": 73.88020063404063,
-      "latitude": 0.11509555172423866
+      "longitude": 74.02489415276905,
+      "latitude": 0.016695016587736942
     },
     {
       "norad": 41793,
       "name": "GSAT-18",
       "owner": "IND",
-      "longitude": 74.06540873883596,
-      "latitude": 0.06526665980018999
+      "longitude": 74.03536718854826,
+      "latitude": 0.0037280370100529017
     },
     {
       "norad": 41794,
       "name": "SKY MUSTER 2 (NBN1B)",
       "owner": "AUS",
-      "longitude": 144.81112099936698,
-      "latitude": -0.015813965026691933
+      "longitude": 144.815541587517,
+      "latitude": -0.020426469367155597
     },
     {
       "norad": 41836,
       "name": "HIMAWARI-9",
       "owner": "JPN",
-      "longitude": 140.77941369152668,
-      "latitude": 0.00934769362255021
+      "longitude": 140.77568189344674,
+      "latitude": -0.017193341596909748
     },
     {
       "norad": 41838,
       "name": "SHIJIAN-17 (SJ-17)",
       "owner": "PRC",
-      "longitude": -60.35739299830251,
-      "latitude": -3.0455390099989015
+      "longitude": -84.03631493023362,
+      "latitude": -3.4850889785271306
     },
     {
       "norad": 41866,
       "name": "GOES 16",
       "owner": "US",
-      "longitude": -104.71846978743581,
-      "latitude": -0.21316973365799005
+      "longitude": -104.68557736644152,
+      "latitude": -0.03291365050517687
     },
     {
       "norad": 41869,
       "name": "TIANLIAN 1-04",
       "owner": "PRC",
-      "longitude": 177.28442781075182,
-      "latitude": -0.19647341380457564
+      "longitude": 176.93139372369959,
+      "latitude": 0.7409514923306768
     },
     {
       "norad": 41879,
       "name": "WGS F8 (USA 272)",
       "owner": "US",
-      "longitude": 149.80496049764284,
-      "latitude": -0.02065419447050333
+      "longitude": 149.79601640538624,
+      "latitude": -0.0028941780086596987
     },
     {
       "norad": 41882,
       "name": "FENGYUN 4A",
       "owner": "PRC",
-      "longitude": 123.74502850309085,
-      "latitude": 1.2944784896019927
+      "longitude": 123.55477098158842,
+      "latitude": 1.9033786650273432
     },
     {
       "norad": 41893,
       "name": "ECHOSTAR 19",
       "owner": "US",
-      "longitude": -97.11500060863058,
-      "latitude": 0.03088906597800268
+      "longitude": -97.10880808946868,
+      "latitude": -0.022859746559869137
     },
     {
       "norad": 41903,
       "name": "JCSAT-110A (JCSAT-15)",
       "owner": "JPN",
-      "longitude": 110.06426357110749,
-      "latitude": -0.031073061396906628
+      "longitude": 110.0707506944918,
+      "latitude": 0.008442998838576842
     },
     {
       "norad": 41904,
       "name": "STAR ONE D1",
       "owner": "BRAZ",
-      "longitude": -84.02644009713056,
-      "latitude": 0.0032120578275108913
+      "longitude": -83.99347620920744,
+      "latitude": -0.028007903139301862
     },
     {
       "norad": 41911,
       "name": "TJS-2",
       "owner": "PRC",
-      "longitude": 66.53159369649633,
-      "latitude": 0.6963195647062664
+      "longitude": 66.5684905124312,
+      "latitude": -0.04594570951935431
     },
     {
       "norad": 41937,
       "name": "SBIRS GEO-4 (USA 273)",
       "owner": "US",
-      "longitude": 20.924991601032076,
-      "latitude": 2.123134700109614
+      "longitude": 20.902263910394836,
+      "latitude": -0.2548422828663195
     },
     {
       "norad": 41942,
       "name": "HISPASAT 36W-1",
       "owner": "SPN",
-      "longitude": -35.98708127552803,
-      "latitude": 0.01516861439811215
+      "longitude": -36.00621781043948,
+      "latitude": 0.0009972169004755945
     },
     {
       "norad": 41944,
       "name": "TELKOM 3S",
       "owner": "INDO",
-      "longitude": 118.01507706661,
-      "latitude": -0.006269095454816161
+      "longitude": 118.02344834744814,
+      "latitude": -0.014695328721017652
     },
     {
       "norad": 41945,
       "name": "INTELSAT 32E (IS-32E)",
       "owner": "ITSO",
-      "longitude": -43.175722785436896,
-      "latitude": 0.024734614441960037
+      "longitude": -43.18273012991816,
+      "latitude": -0.0001236629737831342
     },
     {
       "norad": 42070,
       "name": "ECHOSTAR 23",
       "owner": "US",
-      "longitude": -109.9123877658601,
-      "latitude": 0.038187629877351484
+      "longitude": -109.91054025099042,
+      "latitude": -0.024946565710786458
     },
     {
       "norad": 42075,
       "name": "WGS F9 (USA 275)",
       "owner": "US",
-      "longitude": -11.980480837647097,
-      "latitude": -0.0019519953426832312
+      "longitude": -12.001671121739301,
+      "latitude": 0.03267262510782456
     },
     {
       "norad": 42432,
       "name": "SES-10",
       "owner": "SES",
-      "longitude": -66.9091341648508,
-      "latitude": 0.017984523757478083
+      "longitude": -66.92877258883928,
+      "latitude": -0.024020727433330964
     },
     {
       "norad": 42662,
       "name": "CHINASAT 16 (SJ-13)",
       "owner": "PRC",
-      "longitude": 110.50420984543894,
-      "latitude": 0.06558084501607152
+      "longitude": 110.43122757140378,
+      "latitude": 0.05674388383337638
     },
     {
       "norad": 42691,
       "name": "KOREASAT 7",
       "owner": "SKOR",
-      "longitude": 115.88355514446614,
-      "latitude": -0.04736729534425124
+      "longitude": 115.89796543780446,
+      "latitude": 0.005906843266050329
     },
     {
       "norad": 42692,
       "name": "SGDC",
       "owner": "BRAZ",
-      "longitude": -74.88315831239723,
-      "latitude": 0.014350200087444556
+      "longitude": -74.87778539250675,
+      "latitude": -0.020698871715193454
     },
     {
       "norad": 42695,
       "name": "GSAT-9",
       "owner": "IND",
-      "longitude": 97.35886609704514,
-      "latitude": 0.02776274153795943
+      "longitude": 97.34123582598616,
+      "latitude": -0.024411360643984005
     },
     {
       "norad": 42698,
       "name": "INMARSAT 5-F4",
       "owner": "IM",
-      "longitude": 56.50775118512923,
-      "latitude": -0.03097447963369142
+      "longitude": 56.50608454620554,
+      "latitude": 0.032079259936107926
     },
     {
       "norad": 42709,
       "name": "SES-15",
       "owner": "SES",
-      "longitude": -129.16716543137503,
-      "latitude": 0.013719491416853706
+      "longitude": -129.15599355614418,
+      "latitude": -0.03666587189719649
     },
     {
       "norad": 42738,
       "name": "QZS-2 (MICHIBIKI-2)",
       "owner": "JPN",
-      "longitude": 146.8018480238666,
-      "latitude": 3.0825947894325054
+      "longitude": 141.16216849681015,
+      "latitude": -39.51800210411235
     },
     {
       "norad": 42740,
       "name": "VIASAT-2",
       "owner": "US",
-      "longitude": -69.8866144555206,
-      "latitude": 0.0335650870448887
+      "longitude": -69.8681552844033,
+      "latitude": 0.005188714691137543
     },
     {
       "norad": 42741,
       "name": "EUTELSAT 172B",
       "owner": "EUTE",
-      "longitude": 172.0076353701589,
-      "latitude": 0.010060994539703638
+      "longitude": 172.00513260178522,
+      "latitude": -0.012990933769045759
     },
     {
       "norad": 42747,
       "name": "GSAT-19",
       "owner": "IND",
-      "longitude": 47.96851006752822,
-      "latitude": -0.00904306582631393
+      "longitude": 47.89313220806882,
+      "latitude": -0.016376685978410674
     },
     {
       "norad": 42749,
       "name": "ECHOSTAR 21",
       "owner": "US",
-      "longitude": 10.318517239960391,
-      "latitude": 1.5644587797833955
+      "longitude": 10.238594326649466,
+      "latitude": 0.9268011975555994
     },
     {
       "norad": 42801,
       "name": "BULGARIASAT-1",
       "owner": "BUL",
-      "longitude": 1.931372079389227,
-      "latitude": 0.010092978574704394
+      "longitude": 1.8663524528735715,
+      "latitude": -0.008006579302772087
     },
     {
       "norad": 42814,
       "name": "HELLAS-SAT 3",
       "owner": "GREC",
-      "longitude": 39.04436073464806,
-      "latitude": 0.04772904854455401
+      "longitude": 39.00377676294004,
+      "latitude": -0.00023035538428067056
     },
     {
       "norad": 42815,
       "name": "GSAT-17",
       "owner": "IND",
-      "longitude": 93.5146003942405,
-      "latitude": -0.025445723059517915
+      "longitude": 93.52285581484294,
+      "latitude": 0.024627857834166766
     },
     {
       "norad": 42818,
       "name": "INTELSAT 35E (IS-35E)",
       "owner": "ITSO",
-      "longitude": -34.48703923698594,
-      "latitude": 0.018907078050872987
+      "longitude": -34.52838921782902,
+      "latitude": 0.011709121444476805
     },
     {
       "norad": 42907,
       "name": "COSMOS 2520",
       "owner": "CIS",
-      "longitude": 45.01465374224666,
-      "latitude": -0.0019496276948521326
+      "longitude": 44.998757181563256,
+      "latitude": 0.0025898846282297276
     },
     {
       "norad": 42915,
       "name": "TDRS 13",
       "owner": "US",
-      "longitude": -11.502262698477145,
-      "latitude": 3.445395677163245
+      "longitude": -11.617280971784718,
+      "latitude": 0.060887065312883445
     },
     {
       "norad": 42917,
       "name": "QZS-3 (MICHIBIKI-3)",
       "owner": "JPN",
-      "longitude": 126.94236321799588,
-      "latitude": 0.03440685958089481
+      "longitude": 127.05752871734772,
+      "latitude": 0.019373083233272862
     },
     {
       "norad": 42934,
       "name": "AMAZONAS 5",
       "owner": "SPN",
-      "longitude": -60.98032798720822,
-      "latitude": 0.04992649940240132
+      "longitude": -61.01822848646241,
+      "latitude": -0.002631234654242523
     },
     {
       "norad": 42942,
       "name": "ASIASAT 9",
       "owner": "AC",
-      "longitude": 122.10922592370565,
-      "latitude": -0.028478715840827645
+      "longitude": 122.1319671072103,
+      "latitude": 0.009118565406575544
     },
     {
       "norad": 42950,
       "name": "INTELSAT 37E (IS-37E)",
       "owner": "ITSO",
-      "longitude": -17.99696599302549,
-      "latitude": 0.009445681079019283
+      "longitude": -18.011214678910456,
+      "latitude": 0.0244753790409949
     },
     {
       "norad": 42951,
       "name": "BSAT-4A",
       "owner": "JPN",
-      "longitude": 109.8251907693106,
-      "latitude": 0.0020903625918784587
+      "longitude": 109.89096939254607,
+      "latitude": 0.044691477970893866
     },
     {
       "norad": 42965,
       "name": "QZS-4 (MICHIBIKI-4)",
       "owner": "JPN",
-      "longitude": 132.84736953022883,
-      "latitude": -38.31088249408298
+      "longitude": 134.8927232601389,
+      "latitude": 11.886551320114538
     },
     {
       "norad": 42967,
       "name": "SES-11 (ECHOSTAR 105)",
       "owner": "SES",
-      "longitude": -104.98429859066114,
-      "latitude": -0.04532841876990583
+      "longitude": -104.92298863410886,
+      "latitude": -0.02755069911058802
     },
     {
       "norad": 42984,
       "name": "KOREASAT 5A",
       "owner": "SKOR",
-      "longitude": 113.16322280275149,
-      "latitude": -0.016294870812354673
+      "longitude": 113.15668404361685,
+      "latitude": -0.006004742799643419
     },
     {
       "norad": 43039,
       "name": "ALCOMSAT 1",
       "owner": "ALG",
-      "longitude": -24.78200371556984,
-      "latitude": -0.02454123525022188
+      "longitude": -24.793429787196906,
+      "latitude": 0.030039727407128194
     },
     {
       "norad": 43162,
       "name": "SBIRS GEO-3 (USA 282)",
       "owner": "US",
-      "longitude": -159.4103396854202,
-      "latitude": -2.004538125962032
+      "longitude": -159.40430703004404,
+      "latitude": -0.910076937856206
     },
     {
       "norad": 43174,
       "name": "AL YAH 3",
       "owner": "UAE",
-      "longitude": -20.062538178913716,
-      "latitude": -0.06664610777432775
+      "longitude": -20.144220989693494,
+      "latitude": -1.4722186342747965
     },
     {
       "norad": 43175,
       "name": "SES-14",
       "owner": "SES",
-      "longitude": -47.497026913125616,
-      "latitude": 0.019945053597433312
+      "longitude": -47.50957673922971,
+      "latitude": -0.019309004295941276
     },
     {
       "norad": 43226,
       "name": "GOES 17",
       "owner": "US",
-      "longitude": -89.49518621439765,
-      "latitude": -0.7806890135573665
+      "longitude": -89.49031298781138,
+      "latitude": -0.2916036403347049
     },
     {
       "norad": 43228,
       "name": "HISPASAT 30W-6",
       "owner": "SPN",
-      "longitude": -29.971953158589255,
-      "latitude": 0.029932369136936466
+      "longitude": -30.06691374911914,
+      "latitude": -0.029156678722557654
     },
     {
       "norad": 43271,
       "name": "SUPERBIRD-B3",
       "owner": "JPN",
-      "longitude": 161.99455948831692,
-      "latitude": -0.011997495059779496
+      "longitude": 162.0161610285758,
+      "latitude": -0.004690098981762189
     },
     {
       "norad": 43272,
       "name": "HYLAS 4",
       "owner": "UK",
-      "longitude": -33.49061215685552,
-      "latitude": 0.00027693468619714067
+      "longitude": -33.545510815951516,
+      "latitude": -0.02300814572646748
     },
     {
       "norad": 43286,
       "name": "IRNSS-1I",
       "owner": "IND",
-      "longitude": 53.71756989687275,
-      "latitude": 28.699729726904256
+      "longitude": 55.680082654061906,
+      "latitude": -2.454091434932189
     },
     {
       "norad": 43339,
       "name": "USA 283",
       "owner": "US",
-      "longitude": 134.0608268063953,
-      "latitude": -0.018341597556031253
+      "longitude": 134.08622466873481,
+      "latitude": -0.007135064431262053
     },
     {
       "norad": 43432,
       "name": "COSMOS 2526",
       "owner": "CIS",
-      "longitude": 128.05542335113245,
-      "latitude": -0.001874246000007546
+      "longitude": 128.05571807980255,
+      "latitude": 0.004064040607798018
     },
     {
       "norad": 43450,
       "name": "APSTAR-6C",
       "owner": "PRC",
-      "longitude": 133.9829103156035,
-      "latitude": -0.02954772915430823
+      "longitude": 133.99190033467053,
+      "latitude": 0.026779611818970737
     },
     {
       "norad": 43463,
       "name": "BANGABANDHUSAT-1",
       "owner": "BGD",
-      "longitude": 119.10413483261368,
-      "latitude": -0.023840981978855244
+      "longitude": 119.11681216061062,
+      "latitude": 0.009791280420042342
     },
     {
       "norad": 43488,
       "name": "SES-12",
       "owner": "SES",
-      "longitude": 94.98843080305362,
-      "latitude": 0.009600446350384841
+      "longitude": 95.01524367367527,
+      "latitude": 0.03413991023248081
     },
     {
       "norad": 43491,
       "name": "FENGYUN 2H",
       "owner": "PRC",
-      "longitude": 79.35293494671704,
-      "latitude": 2.8563656616597832
+      "longitude": 79.4041258011433,
+      "latitude": 0.7576951609256859
     },
     {
       "norad": 43539,
       "name": "BEIDOU-2 IGSO-7",
       "owner": "PRC",
-      "longitude": 96.7673772513585,
-      "latitude": 38.79204162152783
+      "longitude": 126.31355723321825,
+      "latitude": -28.809316817155572
     },
     {
       "norad": 43562,
       "name": "TELSTAR 19V",
       "owner": "CA",
-      "longitude": -63.02925404758537,
-      "latitude": 0.004360299685732441
+      "longitude": -63.02437964213831,
+      "latitude": 0.014576411179447087
     },
     {
       "norad": 43587,
       "name": "TELKOM 4 (MERAH PUTIH)",
       "owner": "INDO",
-      "longitude": 108.0140925392833,
-      "latitude": -0.0023286002919236126
+      "longitude": 108.00392774703575,
+      "latitude": -0.008379484937015319
     },
     {
       "norad": 43611,
       "name": "TELSTAR 18V",
       "owner": "CA",
-      "longitude": 138.00503631483124,
-      "latitude": -0.020412309387549246
+      "longitude": 138.007379366543,
+      "latitude": -0.01715683541436623
     },
     {
       "norad": 43632,
       "name": "AZERSPACE 2 (IS-38)",
       "owner": "AZER",
-      "longitude": 45.13542582746002,
-      "latitude": -0.028797439928102263
+      "longitude": 45.10858353851906,
+      "latitude": 0.0337321286975422
     },
     {
       "norad": 43633,
       "name": "HORIZONS-3E",
       "owner": "ITSO",
-      "longitude": 168.9788733918591,
-      "latitude": -9.318078117745804e-06
+      "longitude": 168.9803378183583,
+      "latitude": -0.003021974065555593
     },
     {
       "norad": 43651,
       "name": "AEHF-4 (USA 288)",
       "owner": "US",
-      "longitude": -67.19048963920775,
-      "latitude": 0.8006906027093826
+      "longitude": -68.07309671063624,
+      "latitude": -1.1746408096081744
     },
     {
       "norad": 43683,
       "name": "BEIDOU-3 G1",
       "owner": "PRC",
-      "longitude": 159.9599944541317,
-      "latitude": 0.9019469143668237
+      "longitude": 160.04818797419418,
+      "latitude": 2.712773733321766
     },
     {
       "norad": 43698,
       "name": "GSAT-29",
       "owner": "IND",
-      "longitude": 55.153197787046594,
-      "latitude": -0.06912440512839281
+      "longitude": 55.068344963446656,
+      "latitude": 0.009996545495018926
     },
     {
       "norad": 43700,
       "name": "ES'HAIL 2",
       "owner": "AB",
-      "longitude": 25.82039127572108,
-      "latitude": -0.019949134566207033
+      "longitude": 25.77985657738814,
+      "latitude": 0.029930852877061345
     },
     {
       "norad": 43823,
       "name": "GEO-KOMPSAT-2A",
       "owner": "SKOR",
-      "longitude": 128.27947837368015,
-      "latitude": 0.012198053775959413
+      "longitude": 128.29006648858226,
+      "latitude": 0.020848804456290528
     },
     {
       "norad": 43824,
       "name": "GSAT-11",
       "owner": "IND",
-      "longitude": 74.08846722144064,
-      "latitude": -0.0823045498767951
+      "longitude": 74.01669513032749,
+      "latitude": 0.0031962797062082523
     },
     {
       "norad": 43864,
       "name": "GSAT-7A",
       "owner": "IND",
-      "longitude": 62.83209929892358,
-      "latitude": 0.047761735254048795
+      "longitude": 62.7750230325612,
+      "latitude": 0.016991360900599384
     },
     {
       "norad": 43867,
       "name": "COSMOS 2533",
       "owner": "CIS",
-      "longitude": 70.01844643229603,
-      "latitude": 0.009566111610618017
+      "longitude": 69.99776176102993,
+      "latitude": -0.0038790118805678443
     },
     {
       "norad": 43874,
       "name": "TJS-3",
       "owner": "PRC",
-      "longitude": 149.28725328548728,
-      "latitude": 0.45323693656260133
+      "longitude": 148.19763561434462,
+      "latitude": 2.445854971492353
     },
     {
       "norad": 43920,
       "name": "ZHONGXING-2D",
       "owner": "PRC",
-      "longitude": 130.00986355590152,
-      "latitude": -0.03014218224592928
+      "longitude": 130.0095262520425,
+      "latitude": -0.00934249447013781
     },
     {
       "norad": 44034,
       "name": "HELLAS-SAT 4 & SGS-1",
       "owner": "GRSA",
-      "longitude": 39.00436939372091,
-      "latitude": 0.0025698950964915318
+      "longitude": 38.99478696364493,
+      "latitude": -0.045669407895138604
     },
     {
       "norad": 44035,
       "name": "GSAT-31",
       "owner": "IND",
-      "longitude": 47.909457503972995,
-      "latitude": -0.02897278614528849
+      "longitude": 47.91337784809596,
+      "latitude": -0.004403842775990259
     },
     {
       "norad": 44048,
       "name": "NUSANTARA SATU",
       "owner": "INDO",
-      "longitude": 146.04698059881997,
-      "latitude": 0.016812610793252677
+      "longitude": 146.05219220809565,
+      "latitude": 0.009818588085955258
     },
     {
       "norad": 44067,
       "name": "ZHONGXING-6C",
       "owner": "PRC",
-      "longitude": 130.38759992777327,
-      "latitude": 0.018249903811201524
+      "longitude": 130.57144959608038,
+      "latitude": 0.08226791095503605
     },
     {
       "norad": 44071,
       "name": "WGS 10 (USA 291)",
       "owner": "US",
-      "longitude": 60.29219180250962,
-      "latitude": -0.025733257585440265
+      "longitude": 60.3113556894918,
+      "latitude": 0.02946645652315303
     },
     {
       "norad": 44076,
       "name": "TIANLIAN 2-01",
       "owner": "PRC",
-      "longitude": 77.0249554580807,
-      "latitude": 0.4076849738933103
+      "longitude": 77.04135905965947,
+      "latitude": 0.08243649634145886
     },
     {
       "norad": 44186,
       "name": "ARABSAT-6A",
       "owner": "AB",
-      "longitude": 30.462092476021418,
-      "latitude": 0.0322284994318017
+      "longitude": 30.5295370819496,
+      "latitude": 0.047723430880774804
     },
     {
       "norad": 44204,
       "name": "BEIDOU-3 IGSO-1",
       "owner": "PRC",
-      "longitude": 116.52698592632733,
-      "latitude": 1.462194268994349
+      "longitude": 115.02881899290126,
+      "latitude": 58.703126203898066
     },
     {
       "norad": 44231,
       "name": "BEIDOU-2 G8",
       "owner": "PRC",
-      "longitude": 144.327972044074,
-      "latitude": 0.24033005026915602
+      "longitude": 144.55749375492294,
+      "latitude": 1.576940085609733
     },
     {
       "norad": 44307,
       "name": "YAMAL 601",
       "owner": "CIS",
-      "longitude": 49.029322511030024,
-      "latitude": -0.01732794949363188
+      "longitude": 49.00977091649908,
+      "latitude": 0.01815476532701583
     },
     {
       "norad": 44333,
       "name": "AT&T T-16",
       "owner": "US",
-      "longitude": -100.86062298208587,
-      "latitude": 0.0019873825270951737
+      "longitude": -100.8531972844462,
+      "latitude": -0.020675401688183714
     },
     {
       "norad": 44334,
       "name": "EUTELSAT 7C",
       "owner": "EUTE",
-      "longitude": 7.029951032035035,
-      "latitude": -0.0730768462917877
+      "longitude": 6.996549015279019,
+      "latitude": -0.009917990755765764
     },
     {
       "norad": 44337,
       "name": "BEIDOU-3 IGSO-2",
       "owner": "PRC",
-      "longitude": 104.31256612908186,
-      "latitude": 45.8942841926955
+      "longitude": 130.17242981583,
+      "latitude": -19.7537259960005
     },
     {
       "norad": 44457,
       "name": "COSMOS 2539",
       "owner": "CIS",
-      "longitude": 12.004774442688266,
-      "latitude": 0.004716035838037271
+      "longitude": 11.994749780108558,
+      "latitude": 0.0006306658347577189
     },
     {
       "norad": 44475,
       "name": "EDRS-C",
       "owner": "ESA",
-      "longitude": 142.49059229769387,
-      "latitude": 0.017109671156077172
+      "longitude": 142.5073825952879,
+      "latitude": -0.017440031869054982
     },
     {
       "norad": 44476,
       "name": "INTELSAT 39 (IS-39)",
       "owner": "ITSO",
-      "longitude": 61.93867187079163,
-      "latitude": -0.03157312489898379
+      "longitude": 61.95211017419436,
+      "latitude": 0.02648638047358176
     },
     {
       "norad": 44479,
       "name": "AMOS-17",
       "owner": "ISRA",
-      "longitude": 17.009135800301422,
-      "latitude": 0.004302439958522547
+      "longitude": 16.982607126675504,
+      "latitude": 0.038909182767371334
     },
     {
       "norad": 44481,
       "name": "AEHF-5 (USA 292)",
       "owner": "US",
-      "longitude": 92.58776159850228,
-      "latitude": -0.9882309685552393
+      "longitude": 93.65796969382377,
+      "latitude": 1.071314058128089
     },
     {
       "norad": 44624,
       "name": "EUTELSAT 5 WEST B",
       "owner": "EUTE",
-      "longitude": -4.965967221299868,
-      "latitude": 0.07075049340509369
+      "longitude": -5.011371983426968,
+      "latitude": 0.05885963827311857
     },
     {
       "norad": 44637,
       "name": "TJS-4",
       "owner": "PRC",
-      "longitude": 83.47603846126394,
-      "latitude": 0.07380359727797509
+      "longitude": 83.56744108241298,
+      "latitude": -0.002239692407718766
     },
     {
       "norad": 44709,
       "name": "BEIDOU-3 IGSO-3",
       "owner": "PRC",
-      "longitude": 130.6163866864706,
-      "latitude": -47.473887564978355
+      "longitude": 103.57530246310053,
+      "latitude": -22.475416833328556
     },
     {
       "norad": 44800,
       "name": "TIBA-1",
       "owner": "EGYP",
-      "longitude": 35.50734701836595,
-      "latitude": 0.02981516199956913
+      "longitude": 35.47726509860624,
+      "latitude": 0.051485217828123674
     },
     {
       "norad": 44801,
       "name": "INMARSAT GX5",
       "owner": "IM",
-      "longitude": 11.033364089350886,
-      "latitude": 0.02777677455299916
+      "longitude": 11.037246905556996,
+      "latitude": 0.03657720209613308
     },
     {
       "norad": 44868,
       "name": "JCSAT-18 (KACIFIC 1)",
       "owner": "JPN",
-      "longitude": 149.98739974855033,
-      "latitude": -0.023341415437754396
+      "longitude": 149.9960150399164,
+      "latitude": -0.014279438566725023
     },
     {
       "norad": 44903,
       "name": "ELEKTRO-L 3",
       "owner": "CIS",
-      "longitude": 75.95722318272169,
-      "latitude": 0.1244323449342301
+      "longitude": 75.94681579636423,
+      "latitude": 0.04677013360079341
     },
     {
       "norad": 44910,
       "name": "SHIJIAN-20 (SJ-20)",
       "owner": "PRC",
-      "longitude": 44.723126196243314,
-      "latitude": 4.5102567353820255
+      "longitude": 44.75910393219552,
+      "latitude": -1.333813235392381
     },
     {
       "norad": 44978,
       "name": "TJS-5",
       "owner": "PRC",
-      "longitude": 107.51713710237257,
-      "latitude": -0.1247211008112945
+      "longitude": 107.6115100787039,
+      "latitude": -0.03502537062195277
     },
     {
       "norad": 45026,
       "name": "GSAT-30",
       "owner": "IND",
-      "longitude": 83.03030937883817,
-      "latitude": 0.034011129913296176
+      "longitude": 83.03527584262058,
+      "latitude": 0.0004656959087128148
     },
     {
       "norad": 45027,
       "name": "EUTELSAT KONNECT",
       "owner": "EUTE",
-      "longitude": 7.217819024697933,
-      "latitude": 0.017360476690815075
+      "longitude": 7.230210276837336,
+      "latitude": -0.04859116598756617
     },
     {
       "norad": 45245,
       "name": "JCSAT-17",
       "owner": "JPN",
-      "longitude": 135.87429919767547,
-      "latitude": -4.695113368285788
+      "longitude": 136.14124676848758,
+      "latitude": 2.366062980405651
     },
     {
       "norad": 45246,
       "name": "GEO-KOMPSAT-2B",
       "owner": "SKOR",
-      "longitude": 128.25808333209014,
-      "latitude": -0.021926436347879746
+      "longitude": 128.26320581287612,
+      "latitude": -0.015283172857873496
     },
     {
       "norad": 45344,
       "name": "BEIDOU-3 G2",
       "owner": "PRC",
-      "longitude": 80.09680147553561,
-      "latitude": 1.978172956683957
+      "longitude": 80.03098856953515,
+      "latitude": 2.0903719861681487
     },
     {
       "norad": 45465,
       "name": "AEHF-6 (USA 298)",
       "owner": "US",
-      "longitude": 137.2144297094727,
-      "latitude": -2.3637363891520193
+      "longitude": 137.65381891818612,
+      "latitude": -1.3664167018774218
     },
     {
       "norad": 45807,
       "name": "BEIDOU-3 G3",
       "owner": "PRC",
-      "longitude": 110.47824633262961,
-      "latitude": 1.3645533713503233
+      "longitude": 110.56827355594056,
+      "latitude": 2.0191043305638585
     },
     {
       "norad": 45863,
       "name": "APSTAR-6D",
       "owner": "PRC",
-      "longitude": 133.98246157073606,
-      "latitude": 0.0028316827154836566
+      "longitude": 134.05997562446026,
+      "latitude": 0.0432148118231391
     },
     {
       "norad": 45920,
       "name": "KOREASAT 116",
       "owner": "SKOR",
-      "longitude": 116.21401485538162,
-      "latitude": -0.04030648422680363
+      "longitude": 116.18842353565202,
+      "latitude": -0.010086244605811798
     },
     {
       "norad": 45985,
       "name": "EXPRESS 103",
       "owner": "CIS",
-      "longitude": 96.5016060828828,
-      "latitude": -0.03441470611664097
+      "longitude": 96.50766307413384,
+      "latitude": 0.001082112980091016
     },
     {
       "norad": 45986,
       "name": "EXPRESS 80",
       "owner": "CIS",
-      "longitude": 79.99823185054355,
-      "latitude": -0.03352456839750536
+      "longitude": 80.00434721469286,
+      "latitude": 0.015684144877183732
     },
     {
       "norad": 46112,
       "name": "BSAT-4B",
       "owner": "JPN",
-      "longitude": 109.8646271967601,
-      "latitude": 0.038917356677520915
+      "longitude": 109.85299049871931,
+      "latitude": -0.010104057991726124
     },
     {
       "norad": 46113,
       "name": "MEV-2",
       "owner": "US",
-      "longitude": -1.0450835988250227,
-      "latitude": 0.02436828312675819
+      "longitude": -0.9852557612463035,
+      "latitude": -0.008340681936524633
     },
     {
       "norad": 46114,
       "name": "GALAXY 30 (G-30)",
       "owner": "US",
-      "longitude": -125.0265439049564,
-      "latitude": 0.023460400904965012
+      "longitude": -125.0032903500356,
+      "latitude": -0.01717583529383637
     },
     {
       "norad": 46610,
       "name": "GAOFEN-13 01",
       "owner": "PRC",
-      "longitude": 118.33550156924353,
-      "latitude": 0.27717158638997724
+      "longitude": 117.77009154023582,
+      "latitude": 0.33252211473246085
     },
     {
       "norad": 46916,
       "name": "TIANTONG-1 2",
       "owner": "PRC",
-      "longitude": 124.93328813423874,
-      "latitude": -0.8624203958364557
+      "longitude": 124.98739084841058,
+      "latitude": 0.05887454393239066
     },
     {
       "norad": 47202,
       "name": "LUCAS (JDRS-1)",
       "owner": "JPN",
-      "longitude": 90.79374262875739,
-      "latitude": -0.03817222195751456
+      "longitude": 90.82616418049435,
+      "latitude": 0.004897441057067776
     },
     {
       "norad": 47240,
       "name": "SXM-7",
       "owner": "US",
-      "longitude": -85.19767108291214,
-      "latitude": 0.008340071406029506
+      "longitude": -85.12583201131042,
+      "latitude": -0.017631181153049114
     },
     {
       "norad": 47256,
       "name": "CMS-01",
       "owner": "IND",
-      "longitude": 82.95641190731172,
-      "latitude": 0.06122066660667431
+      "longitude": 83.00246836893378,
+      "latitude": 0.017790888097976576
     },
     {
       "norad": 47306,
       "name": "TURKSAT 5A",
       "owner": "TURK",
-      "longitude": 30.919443988816177,
-      "latitude": -0.003697618521660794
+      "longitude": 30.930125683503867,
+      "latitude": 0.013253651994556784
     },
     {
       "norad": 47321,
       "name": "TIANTONG-1 3",
       "owner": "PRC",
-      "longitude": 81.55279699861751,
-      "latitude": -0.7939585171089756
+      "longitude": 81.57184249292769,
+      "latitude": 1.5759544063207158
     },
     {
       "norad": 47613,
       "name": "TJS-6",
       "owner": "PRC",
-      "longitude": 178.48313846828893,
-      "latitude": -0.09312741095603765
+      "longitude": 178.5942698921933,
+      "latitude": 0.4956360878101453
     },
     {
       "norad": 48618,
       "name": "SBIRS GEO-5 (USA 315)",
       "owner": "US",
-      "longitude": 93.69549541929622,
-      "latitude": -3.7102250544212976
+      "longitude": 93.9265467883481,
+      "latitude": 3.350173409171694
     },
     {
       "norad": 48808,
       "name": "FENGYUN 4B",
       "owner": "PRC",
-      "longitude": 104.52554138666432,
-      "latitude": 0.008648055456096364
+      "longitude": 104.79985627937955,
+      "latitude": 0.06858107067976156
     },
     {
       "norad": 48838,
       "name": "SXM-8",
       "owner": "US",
-      "longitude": -85.1453832802275,
-      "latitude": 0.0137428619597956
+      "longitude": -85.19346743477053,
+      "latitude": -0.02974765850776337
     },
     {
       "norad": 49011,
       "name": "TIANLIAN 1-05",
       "owner": "PRC",
-      "longitude": 16.793943151774613,
-      "latitude": 0.8777469371591392
+      "longitude": 16.78877576838943,
+      "latitude": -1.144502140409709
     },
     {
       "norad": 49055,
       "name": "STAR ONE D2",
       "owner": "BRAZ",
-      "longitude": -69.99980712568707,
-      "latitude": 0.014734066338809417
+      "longitude": -70.09084509909593,
+      "latitude": -0.001355448048045187
     },
     {
       "norad": 49056,
       "name": "EUTELSAT QUANTUM",
       "owner": "EUTE",
-      "longitude": 47.731334372250586,
-      "latitude": 0.001703144574825172
+      "longitude": 47.7112811422191,
+      "latitude": 0.028747830067372127
     },
     {
       "norad": 49062,
       "name": "ZHONGXING-2E",
       "owner": "PRC",
-      "longitude": 98.08844006421178,
-      "latitude": -0.012786649921359214
+      "longitude": 98.05288183412797,
+      "latitude": 0.00047999688104457096
     },
     {
       "norad": 49115,
       "name": "TJS-7",
       "owner": "PRC",
-      "longitude": -99.51988695644961,
-      "latitude": -0.37671720257501784
+      "longitude": -99.47178861932383,
+      "latitude": -0.07803312729803981
     },
     {
       "norad": 49125,
       "name": "CHINASAT 9B",
       "owner": "PRC",
-      "longitude": 101.40715049306569,
-      "latitude": -0.03053175081905037
+      "longitude": 101.40043832668027,
+      "latitude": 0.02608640110434612
     },
     {
       "norad": 49330,
       "name": "SHIJIAN-21 (SJ-21)",
       "owner": "PRC",
-      "longitude": 127.96138375851231,
-      "latitude": 1.0936705043149588
+      "longitude": 127.23895024553322,
+      "latitude": 4.9857963592068675
     },
     {
       "norad": 49332,
       "name": "SES-17",
       "owner": "SES",
-      "longitude": -67.10579452248429,
-      "latitude": 0.018488797183214913
+      "longitude": -67.1004139603996,
+      "latitude": -0.025371340272813864
     },
     {
       "norad": 49333,
       "name": "SYRACUSE 4A",
       "owner": "FR",
-      "longitude": 45.523567919979925,
-      "latitude": -0.0201483010873706
+      "longitude": 45.50448129899527,
+      "latitude": 0.02888372721026246
     },
     {
       "norad": 49336,
       "name": "QZS-1R (MICHIBIKI-1R)",
       "owner": "JPN",
-      "longitude": 133.72134812611594,
-      "latitude": 18.375053618085452
+      "longitude": 134.12311540905418,
+      "latitude": 35.503911083212635
     },
     {
       "norad": 49505,
       "name": "ZHONGXING-1D",
       "owner": "PRC",
-      "longitude": 130.1825626456463,
-      "latitude": 0.0006482485966056783
+      "longitude": 130.1447157391153,
+      "latitude": -0.00866940985630726
     },
     {
       "norad": 49817,
       "name": "STPSAT-6",
       "owner": "US",
-      "longitude": -111.83345329231152,
-      "latitude": -0.18900305322455926
-    },
-    {
-      "norad": 49818,
-      "name": "LDPE-1",
-      "owner": "US",
-      "longitude": -98.148280555152,
-      "latitude": -4.8663241332761
+      "longitude": -111.79973364744065,
+      "latitude": -0.002621992453840173
     },
     {
       "norad": 50001,
       "name": "EXPRESS AMU-7",
       "owner": "CIS",
-      "longitude": 144.98673466627923,
-      "latitude": -0.017547785466845947
+      "longitude": 145.0015307684828,
+      "latitude": -0.022005573748863114
     },
     {
       "norad": 50002,
       "name": "EXPRESS AMU-3",
       "owner": "CIS",
-      "longitude": 102.99727130103348,
-      "latitude": -0.03912420901387321
+      "longitude": 101.41694108679361,
+      "latitude": -0.007612410011088351
     },
     {
       "norad": 50005,
       "name": "TIANLIAN 2-02",
       "owner": "PRC",
-      "longitude": 170.95784772561265,
-      "latitude": -0.06234884410032954
+      "longitude": 170.94745931094434,
+      "latitude": 0.7082319969654279
     },
     {
       "norad": 50212,
       "name": "TURKSAT 5B",
       "owner": "TURK",
-      "longitude": 42.0374900397133,
-      "latitude": 0.010361339660747204
+      "longitude": 42.028096942204044,
+      "latitude": 0.08422975487965435
     },
     {
       "norad": 50319,
       "name": "INMARSAT 6-F1",
       "owner": "IM",
-      "longitude": 83.75265142685483,
-      "latitude": -0.03052591550273765
+      "longitude": 83.75758489768123,
+      "latitude": 0.012256249785752064
     },
     {
       "norad": 50321,
       "name": "SHIYAN-12 01 (SY-12 01)",
       "owner": "PRC",
-      "longitude": 95.333123506589,
-      "latitude": 3.1988432705827092
+      "longitude": 82.65668440794744,
+      "latitude": 1.0627987928205587
     },
     {
       "norad": 50322,
       "name": "SHIYAN-12 02 (SY-12 02)",
       "owner": "PRC",
-      "longitude": 55.694398039579674,
-      "latitude": 3.445588774135808
+      "longitude": 67.65076030595905,
+      "latitude": 0.13418837910083686
     },
     {
       "norad": 50574,
       "name": "TJS-9",
       "owner": "PRC",
-      "longitude": 137.19249128876203,
-      "latitude": -0.029322748478539266
+      "longitude": 137.286802029606,
+      "latitude": 0.0567491232054022
     },
     {
       "norad": 51850,
       "name": "GOES 18",
       "owner": "US",
-      "longitude": -137.0020993691538,
-      "latitude": -0.027160862879079567
+      "longitude": -137.0026329959972,
+      "latitude": -0.0024819369004064626
     },
     {
       "norad": 52255,
       "name": "ZHONGXING-6D",
       "owner": "PRC",
-      "longitude": 125.06719203399952,
-      "latitude": -0.003900804939789511
+      "longitude": 125.09709858827563,
+      "latitude": -0.015588191422723835
     },
     {
       "norad": 52817,
       "name": "NILESAT 301",
       "owner": "EGYP",
-      "longitude": -6.915715542812093,
-      "latitude": 0.05123904299883946
+      "longitude": -7.041571324943428,
+      "latitude": -0.0023529053749092193
     },
     {
       "norad": 52903,
       "name": "CMS-02 (GSAT-24)",
       "owner": "IND",
-      "longitude": 82.98753943595212,
-      "latitude": -0.017784260966525044
+      "longitude": 83.03326998292823,
+      "latitude": -0.002717915123453621
     },
     {
       "norad": 52904,
       "name": "MEASAT 3D",
       "owner": "MALA",
-      "longitude": 91.50857403758343,
-      "latitude": -0.030898307686914633
+      "longitude": 91.52843019703303,
+      "latitude": 0.0355271039714939
     },
     {
       "norad": 52933,
       "name": "SES-22",
       "owner": "SES",
-      "longitude": -139.03447812162966,
-      "latitude": 0.019860112442541704
+      "longitude": -139.01449345680663,
+      "latitude": -0.03046348192765433
     },
     {
       "norad": 52940,
       "name": "WFOV (USA 332)",
       "owner": "US",
-      "longitude": 119.29352840475704,
-      "latitude": 2.254619523395297
+      "longitude": 119.20408678944924,
+      "latitude": 2.9844655876722332
     },
     {
       "norad": 53100,
       "name": "TIANLIAN 2-03",
       "owner": "PRC",
-      "longitude": 10.602917927304926,
-      "latitude": 0.3232115295273198
+      "longitude": 10.580264878418852,
+      "latitude": -0.45227583490428824
     },
     {
       "norad": 53355,
       "name": "SBIRS GEO-6 (USA 336)",
       "owner": "US",
-      "longitude": 139.0114548475952,
-      "latitude": -3.260512211809686
+      "longitude": 138.99691143370362,
+      "latitude": -0.9443396612343106
     },
     {
       "norad": 53765,
       "name": "EUTELSAT KONNECT VHTS",
       "owner": "EUTE",
-      "longitude": 2.762518044380965,
-      "latitude": 0.008924950414097292
+      "longitude": 2.71627153486286,
+      "latitude": -0.03840618531715894
     },
     {
       "norad": 53813,
       "name": "ZHONGXING-1E",
       "owner": "PRC",
-      "longitude": 81.4014417718761,
-      "latitude": -0.004190259731777868
+      "longitude": 81.40790305547046,
+      "latitude": 0.0025935815546734736
     },
     {
       "norad": 53960,
       "name": "SES-20",
       "owner": "SES",
-      "longitude": -103.13589538310063,
-      "latitude": -0.02916085111620444
+      "longitude": -103.10619376090753,
+      "latitude": -0.018819777399264284
     },
     {
       "norad": 53961,
       "name": "SES-21",
       "owner": "SES",
-      "longitude": -131.00475974699526,
-      "latitude": 0.0026118847924190744
+      "longitude": -131.00260066470432,
+      "latitude": -0.028096921008275735
     },
     {
       "norad": 54026,
       "name": "GALAXY 33 (G-33)",
       "owner": "ITSO",
-      "longitude": -133.01842609717363,
-      "latitude": 0.017598166677336873
+      "longitude": -132.99468023747045,
+      "latitude": -0.020701934583447008
     },
     {
       "norad": 54027,
       "name": "GALAXY 34 (G-34)",
       "owner": "ITSO",
-      "longitude": -129.01950859044214,
-      "latitude": 0.027282171476680567
+      "longitude": -128.915224798743,
+      "latitude": -0.03201039855128574
     },
     {
       "norad": 54033,
       "name": "ANGOSAT 2",
       "owner": "ANG",
-      "longitude": 22.999878511813403,
-      "latitude": 0.007116382287234562
+      "longitude": 22.994986089283834,
+      "latitude": 0.0090139498758496
     },
     {
       "norad": 54048,
       "name": "EUTELSAT HOTBIRD 13F",
       "owner": "EUTE",
-      "longitude": 13.035174571954778,
-      "latitude": -0.010847902222882077
+      "longitude": 13.016667375866254,
+      "latitude": 0.0682634194839253
     },
     {
       "norad": 54219,
       "name": "LDPE-2",
       "owner": "US",
-      "longitude": 163.66654521643832,
-      "latitude": -1.9351897035613632
+      "longitude": 177.99523749671786,
+      "latitude": 4.332484518309618
     },
     {
       "norad": 54225,
       "name": "EUTELSAT HOTBIRD 13G",
       "owner": "EUTE",
-      "longitude": 12.974815216817738,
-      "latitude": -0.040296807811395774
+      "longitude": 12.988777711393984,
+      "latitude": 0.037793216330460434
     },
     {
       "norad": 54230,
       "name": "ZHONGXING-19",
       "owner": "PRC",
-      "longitude": 163.20975212901467,
-      "latitude": -0.013978403010387675
+      "longitude": 163.21594766321883,
+      "latitude": -0.026893403484667
     },
     {
       "norad": 54243,
       "name": "GALAXY 31 (G-31)",
       "owner": "ITSO",
-      "longitude": -121.01459394441525,
-      "latitude": 0.025802068370994014
+      "longitude": -120.99473445776701,
+      "latitude": -0.017355984095952782
     },
     {
       "norad": 54244,
       "name": "GALAXY 32 (G-32)",
       "owner": "ITSO",
-      "longitude": -91.01534541046476,
-      "latitude": 0.028127554106751055
+      "longitude": -91.02119584104732,
+      "latitude": -0.01818630685941256
     },
     {
       "norad": 54259,
       "name": "EUTELSAT 10B",
       "owner": "EUTE",
-      "longitude": 9.981810737726882,
-      "latitude": 0.01620060545484571
+      "longitude": 10.007259316578562,
+      "latitude": -0.038050238928937836
     },
     {
       "norad": 54741,
       "name": "GALAXY 35 (G-35)",
       "owner": "ITSO",
-      "longitude": -93.1135266148853,
-      "latitude": 0.035971159940432824
+      "longitude": -93.12102391535632,
+      "latitude": -0.016709795294696503
     },
     {
       "norad": 54742,
       "name": "GALAXY 36 (G-36)",
       "owner": "ITSO",
-      "longitude": -89.03047439723488,
-      "latitude": 0.028552632189622073
+      "longitude": -89.01882614919046,
+      "latitude": 0.004462592276701408
     },
     {
       "norad": 54743,
       "name": "METEOSAT-12 (MTG-I1)",
       "owner": "EUME",
-      "longitude": -0.3601740483370818,
-      "latitude": 0.7134925114099131
+      "longitude": -0.31976176848203647,
+      "latitude": -0.14056657611286127
     },
     {
       "norad": 55131,
       "name": "SHIJIAN-23 (SJ-23)",
       "owner": "PRC",
-      "longitude": 175.209117265615,
-      "latitude": -1.0659042884942247
+      "longitude": 165.6631330643277,
+      "latitude": 3.567382797901256
     },
     {
       "norad": 55239,
       "name": "APSTAR-6E",
       "owner": "PRC",
-      "longitude": 134.0142862622487,
-      "latitude": -0.01605588354828791
+      "longitude": 133.98102959759933,
+      "latitude": -0.019827018398502563
     },
     {
       "norad": 55263,
       "name": "USA 342",
       "owner": "US",
-      "longitude": 23.785281594419093,
-      "latitude": -0.015922013702980367
+      "longitude": 23.911122881612783,
+      "latitude": 0.006473377042562025
     },
     {
       "norad": 55264,
       "name": "LDPE-3A",
       "owner": "US",
-      "longitude": 62.998888014066324,
-      "latitude": 2.1961052380314383
+      "longitude": -0.5842805487172497,
+      "latitude": -2.0996638667375946
     },
     {
       "norad": 55506,
       "name": "ELEKTRO-L 4",
       "owner": "CIS",
-      "longitude": 165.71037934498293,
-      "latitude": -0.04982702055031035
+      "longitude": 165.78954422284707,
+      "latitude": -0.06589788369510513
     },
     {
       "norad": 55508,
       "name": "AMAZONAS NEXUS",
       "owner": "SPN",
-      "longitude": -60.96877088068286,
-      "latitude": 0.019776382900698657
+      "longitude": -61.057930285294155,
+      "latitude": -0.039138918061495505
     },
     {
       "norad": 55686,
       "name": "ZHONGXING-26",
       "owner": "PRC",
-      "longitude": 125.14240327453776,
-      "latitude": 0.007461829344123857
+      "longitude": 125.1693027157596,
+      "latitude": 0.0608384760236339
     },
     {
       "norad": 55841,
       "name": "LUCH-5X (OLYMP-K 2)",
       "owner": "CIS",
-      "longitude": 61.97799678341797,
-      "latitude": -0.006698511670027064
+      "longitude": 61.96867388746654,
+      "latitude": 0.022907180083937644
     },
     {
       "norad": 55912,
       "name": "GAOFEN-13 02",
       "owner": "PRC",
-      "longitude": 148.17082137794964,
-      "latitude": -0.9862772992291484
+      "longitude": 148.23371261172937,
+      "latitude": 0.2533711226414785
     },
     {
       "norad": 55970,
       "name": "SES-18",
       "owner": "SES",
-      "longitude": -103.09954216936558,
-      "latitude": 0.037752212731013646
+      "longitude": -103.09688064125243,
+      "latitude": -0.015687642516760365
     },
     {
       "norad": 55971,
       "name": "SES-19",
       "owner": "SES",
-      "longitude": -134.92844952052403,
-      "latitude": 0.00945312436743771
+      "longitude": -134.89995477909324,
+      "latitude": -0.024248837860511137
     },
     {
       "norad": 56174,
       "name": "INTELSAT 40E (IS-40E)",
       "owner": "ITSO",
-      "longitude": -91.01063651222589,
-      "latitude": 0.03173282729002428
+      "longitude": -90.99775851007175,
+      "latitude": -0.011762644695053337
     },
     {
       "norad": 56370,
       "name": "VIASAT-3 F1",
       "owner": "US",
-      "longitude": -88.92078483833866,
-      "latitude": 0.03489455922656633
+      "longitude": -88.91176245538358,
+      "latitude": -0.017437839962036537
     },
     {
       "norad": 56371,
       "name": "ARCTURUS",
       "owner": "US",
-      "longitude": 72.46624190962133,
-      "latitude": 2.646585486557937
+      "longitude": 72.49888160978082,
+      "latitude": 0.33233485491050174
     },
     {
       "norad": 56372,
       "name": "GS-1",
       "owner": "US",
-      "longitude": 88.06015745758941,
-      "latitude": 2.4643142708015935
+      "longitude": 88.78828923039438,
+      "latitude": 1.0565857386160866
     },
     {
       "norad": 56564,
       "name": "BEIDOU-3 G4",
       "owner": "PRC",
-      "longitude": 140.09287802163135,
-      "latitude": -0.5498005698545597
+      "longitude": 140.06826940734004,
+      "latitude": -0.09453932646717421
     },
     {
       "norad": 56757,
       "name": "ARABSAT-7B (BADR-8)",
       "owner": "AB",
-      "longitude": 26.062194674287955,
-      "latitude": 0.070765717549549
+      "longitude": 26.027696850173673,
+      "latitude": 0.0338106462227568
     },
     {
       "norad": 56759,
       "name": "NVS-01 (IRNSS-1J)",
       "owner": "IND",
-      "longitude": 129.49550088432468,
-      "latitude": -0.6417174794321525
+      "longitude": 129.4497161493078,
+      "latitude": -2.192083022551219
     },
     {
       "norad": 57045,
       "name": "NUSANTARA TIGA (SATRIA)",
       "owner": "INDO",
-      "longitude": 145.9483117438211,
-      "latitude": -0.05128306706299726
+      "longitude": 145.99599480098985,
+      "latitude": -0.015249712304391858
     },
     {
       "norad": 57213,
       "name": "H2SAT (HEINRICH HERTZ)",
       "owner": "GER",
-      "longitude": 0.6917322648976227,
-      "latitude": -0.011076213456785156
+      "longitude": 0.676911854136212,
+      "latitude": 0.012708752176722677
     },
     {
       "norad": 57214,
       "name": "SYRACUSE 4B",
       "owner": "FR",
-      "longitude": -6.471390716860085,
-      "latitude": 6.159375075479533e-05
+      "longitude": -6.470754466831877,
+      "latitude": 0.028493915561375538
     },
     {
       "norad": 57479,
       "name": "JUPITER 3 (ECHOSTAR 24)",
       "owner": "US",
-      "longitude": -95.20430439717602,
-      "latitude": 0.031536552550451444
+      "longitude": -95.17906847532062,
+      "latitude": -0.018220832862458288
     },
     {
       "norad": 57493,
       "name": "GALAXY 37 (G-37)",
       "owner": "ITSO",
-      "longitude": -127.011573198018,
-      "latitude": 0.027766595179668212
+      "longitude": -126.99112934991003,
+      "latitude": -0.02645062774886359
     },
     {
       "norad": 57624,
       "name": "LUDI TANCE-4 01A",
       "owner": "PRC",
-      "longitude": 89.47414442105601,
-      "latitude": -1.344150033923224
+      "longitude": 89.56694787218778,
+      "latitude": -15.122346423287507
     },
     {
       "norad": 58204,
       "name": "TJS-10",
       "owner": "PRC",
-      "longitude": 92.4121179798632,
-      "latitude": 2.2368599142053878
+      "longitude": 92.39127305262635,
+      "latitude": 1.1000889057746963
     },
     {
       "norad": 58253,
       "name": "ZHONGXING-6E",
       "owner": "PRC",
-      "longitude": 115.53711815627229,
-      "latitude": -0.029397141327435615
+      "longitude": 115.5422604553265,
+      "latitude": 0.027358209403523237
     },
     {
       "norad": 58582,
       "name": "YAOGAN-41",
       "owner": "PRC",
-      "longitude": 123.35391006552197,
-      "latitude": -3.223885283681096
+      "longitude": 123.17910242679586,
+      "latitude": -0.27788988898746153
     },
     {
       "norad": 58698,
       "name": "OVZON-3",
       "owner": "SWED",
-      "longitude": 59.72675875130076,
-      "latitude": -0.01806136015393214
+      "longitude": 59.6720361629696,
+      "latitude": 0.011907358362332707
     },
     {
       "norad": 58990,
       "name": "INSAT-3DS",
       "owner": "IND",
-      "longitude": 82.08142811374822,
-      "latitude": 0.09090337110410258
+      "longitude": 82.0663695097283,
+      "latitude": -0.008015168734704663
     },
     {
       "norad": 58995,
       "name": "MERAH PUTIH 2",
       "owner": "INDO",
-      "longitude": 112.97210131848128,
-      "latitude": -0.005670956524171361
+      "longitude": 112.97219156053382,
+      "latitude": -0.012388389798326396
     },
     {
       "norad": 59020,
       "name": "TJS-11",
       "owner": "PRC",
-      "longitude": 120.3397022844601,
-      "latitude": -4.119219262698979
+      "longitude": 120.30897625657501,
+      "latitude": 0.8762388437635262
     },
     {
       "norad": 59069,
       "name": "HULIANWAN GAOGUI-01 (HG-01)",
       "owner": "PRC",
-      "longitude": 33.6608081956355,
-      "latitude": 0.0039093802975530756
+      "longitude": 33.67433561679129,
+      "latitude": 0.08095055883021643
     },
     {
       "norad": 59346,
       "name": "EUTELSAT 36D",
       "owner": "EUTE",
-      "longitude": 35.851864500585314,
-      "latitude": -0.02021562768018211
+      "longitude": 35.874076472139905,
+      "latitude": 0.034240677256845556
     },
     {
       "norad": 59915,
       "name": "PAKSAT-MM1",
       "owner": "PAKI",
-      "longitude": 38.17659558108944,
-      "latitude": -0.02532759321005026
+      "longitude": 38.191614819015285,
+      "latitude": 0.03022681810254153
     },
     {
       "norad": 60086,
       "name": "ASTRA 1P (SES-24)",
       "owner": "SES",
-      "longitude": 19.211395645058037,
-      "latitude": 0.07184082259955886
+      "longitude": 19.213748775587124,
+      "latitude": 0.015964729486088194
     },
     {
       "norad": 60133,
       "name": "GOES 19",
       "owner": "US",
-      "longitude": -75.19909581753504,
-      "latitude": 0.006589832046607218
+      "longitude": -75.18704018654503,
+      "latitude": -0.019032818758209974
     },
     {
       "norad": 60179,
       "name": "ZHONGXING-3A",
       "owner": "PRC",
-      "longitude": 101.57178107564157,
-      "latitude": 0.0030200525545241003
+      "longitude": 101.59278643095601,
+      "latitude": 0.026924364173808592
     },
     {
       "norad": 60233,
       "name": "TURKSAT 6A",
       "owner": "TURK",
-      "longitude": 42.07289763465166,
-      "latitude": -0.037900779656204794
+      "longitude": 41.99572026046067,
+      "latitude": -0.008301297677200933
     },
     {
       "norad": 60327,
       "name": "HULIANWAN GAOGUI-02 (HG-02)",
       "owner": "PRC",
-      "longitude": 153.01783124984223,
-      "latitude": -0.046855535199061646
+      "longitude": 153.2096268823835,
+      "latitude": -0.0024564349558872153
     },
     {
       "norad": 60606,
       "name": "ZHONGXING-4A",
       "owner": "PRC",
-      "longitude": 118.23141475764386,
-      "latitude": -1.1471909514725627
+      "longitude": 118.23022840531422,
+      "latitude": -0.9203059529226835
     },
     {
       "norad": 61503,
       "name": "HULIANWAN GAOGUI-03 (HG-03)",
       "owner": "PRC",
-      "longitude": -77.14269161138029,
-      "latitude": 0.03204030595168923
+      "longitude": -77.14252841528915,
+      "latitude": -0.04568787989059919
     },
     {
       "norad": 61733,
       "name": "DSN-3 (KIRAMEKI-3)",
       "owner": "JPN",
-      "longitude": 144.06166285574758,
-      "latitude": -0.01621002142476474
+      "longitude": 144.07060379267566,
+      "latitude": 0.0023819682472508243
     },
     {
       "norad": 61910,
       "name": "KOREASAT 6A",
       "owner": "SKOR",
-      "longitude": 116.0122970152422,
-      "latitude": -0.014512354598135034
+      "longitude": 116.02394827086371,
+      "latitude": 0.0012598560592838794
     },
     {
       "norad": 62006,
       "name": "OPTUS-X (ADS-01)",
       "owner": "AUS",
-      "longitude": 156.39187086701278,
-      "latitude": -0.013986416935913293
+      "longitude": 156.413576019197,
+      "latitude": -0.028045848681325446
     },
     {
       "norad": 62028,
       "name": "GSAT-N2 (GSAT-20)",
       "owner": "IND",
-      "longitude": 67.98717495625719,
-      "latitude": 0.032374326696331945
+      "longitude": 67.95122649003703,
+      "latitude": 0.004431163978661348
     },
     {
       "norad": 62259,
       "name": "SXM-9",
       "owner": "US",
-      "longitude": -85.11809770683831,
-      "latitude": 0.0305321266867067
+      "longitude": -85.1772989436831,
+      "latitude": -0.017862209695705223
     },
     {
       "norad": 62374,
       "name": "TJS-12",
       "owner": "PRC",
-      "longitude": 146.49654625836695,
-      "latitude": -0.5828321788121971
+      "longitude": 146.52384205789147,
+      "latitude": -0.5200237350424889
     },
     {
       "norad": 62455,
       "name": "NUVIEW ALPHA",
       "owner": "UK",
-      "longitude": -83.1068826635229,
-      "latitude": -0.00798716369194389
+      "longitude": -83.09394661009523,
+      "latitude": -0.06532276770081547
     },
     {
       "norad": 62456,
       "name": "AGILA",
       "owner": "RP",
-      "longitude": 152.1742053198726,
-      "latitude": 0.022399899780270415
+      "longitude": 152.18089905200458,
+      "latitude": 0.03843315446644293
     },
     {
       "norad": 62457,
       "name": "NUVIEW BRAVO",
       "owner": "UK",
-      "longitude": -83.12844479409624,
-      "latitude": -0.035571551737683386
+      "longitude": -83.11859559858617,
+      "latitude": 0.028237235786596048
     },
     {
       "norad": 62483,
       "name": "THURAYA-4",
       "owner": "UAE",
-      "longitude": 44.34750714243649,
-      "latitude": -0.007353520729711882
+      "longitude": 44.322302342838235,
+      "latitude": 0.014591901284832991
     },
     {
       "norad": 62485,
       "name": "SHIJIAN-25 (SJ-25)",
       "owner": "PRC",
-      "longitude": 127.27024636317255,
-      "latitude": 1.152278752343023
+      "longitude": 126.81989830015695,
+      "latitude": 4.979643092933446
     },
     {
       "norad": 62804,
       "name": "TJS-14",
       "owner": "PRC",
-      "longitude": 18.464498662958732,
-      "latitude": -0.10389490554037162
+      "longitude": 18.36830864320933,
+      "latitude": 0.8527427502840988
     },
     {
       "norad": 62852,
       "name": "SPAINSAT NG I",
       "owner": "SPN",
-      "longitude": 28.96872270926885,
-      "latitude": -0.01845046088024076
+      "longitude": 28.98979029354862,
+      "latitude": 0.03466404155135652
     },
     {
       "norad": 62876,
       "name": "QZS-6 (MICHIBIKI-6)",
       "owner": "JPN",
-      "longitude": 90.5386624143723,
-      "latitude": 0.037972287866871256
+      "longitude": 90.5417580883772,
+      "latitude": 0.011717033932908105
     },
     {
       "norad": 63075,
       "name": "ZHONGXING-10R",
       "owner": "PRC",
-      "longitude": 110.5619420511606,
-      "latitude": -0.05585592996770785
+      "longitude": 110.52234584454158,
+      "latitude": -0.013256972324817847
     },
     {
       "norad": 63157,
       "name": "TJS-15",
       "owner": "PRC",
-      "longitude": 94.38304755004768,
-      "latitude": 0.23901025154227917
+      "longitude": 94.43748966857132,
+      "latitude": 0.12270299089318276
     },
     {
       "norad": 63361,
       "name": "TIANLIAN 2-04",
       "owner": "PRC",
-      "longitude": 79.60268282037427,
-      "latitude": -4.4946938110687755
+      "longitude": 80.16375930769122,
+      "latitude": 0.021005680223761845
     },
     {
       "norad": 63397,
       "name": "TJS-16",
       "owner": "PRC",
-      "longitude": 160.49207603717707,
-      "latitude": 5.053886270724201e-05
+      "longitude": 160.56762156343265,
+      "latitude": 1.0158523361549265
     },
     {
       "norad": 63524,
       "name": "TJS-17",
       "owner": "PRC",
-      "longitude": 164.49838467767964,
-      "latitude": -0.04288261181197912
+      "longitude": 164.51125446355317,
+      "latitude": 0.976758440195907
     },
     {
       "norad": 63662,
       "name": "TIANLIAN 2-05",
       "owner": "PRC",
-      "longitude": 20.393189888673206,
-      "latitude": -1.633904647323041
+      "longitude": 20.392145014609753,
+      "latitude": 4.128157082813387
     },
     {
       "norad": 63924,
       "name": "TJS-19",
       "owner": "PRC",
-      "longitude": 141.2915728222025,
-      "latitude": -3.254177108502399
+      "longitude": 141.13810258406872,
+      "latitude": -1.0744548067764337
     },
     {
       "norad": 64062,
       "name": "CHINASAT 3B",
       "owner": "PRC",
-      "longitude": 167.2782693140654,
-      "latitude": -0.024932483115722735
+      "longitude": 167.34512922140235,
+      "latitude": 0.0021239938758246973
     },
     {
       "norad": 64290,
       "name": "SXM-10",
       "owner": "US",
-      "longitude": -116.17837441179617,
-      "latitude": 0.006498291359977612
+      "longitude": -116.18889481125721,
+      "latitude": -0.028856153947656792
     },
     {
       "norad": 64470,
       "name": "CHINASAT 9C",
       "owner": "PRC",
-      "longitude": 92.21390935103041,
-      "latitude": 0.029550149149047553
+      "longitude": 92.22090452273162,
+      "latitude": 0.011335831998555373
     },
     {
       "norad": 64723,
       "name": "MTG-S1",
       "owner": "EUME",
-      "longitude": -3.3425827001204915,
-      "latitude": 0.5193445170884252
+      "longitude": -3.403983071311665,
+      "latitude": 0.4018583528395226
     },
     {
       "norad": 64784,
       "name": "DROR 1",
       "owner": "ISRA",
-      "longitude": -3.964387437033023,
-      "latitude": 0.01815793522694634
+      "longitude": -4.006284742375221,
+      "latitude": -0.00921859346654717
     },
     {
       "norad": 65486,
       "name": "SHIYAN-29",
       "owner": "PRC",
-      "longitude": 95.86605798060648,
-      "latitude": 1.3894782475105627
+      "longitude": 95.01082110197626,
+      "latitude": 28.82345127919918
     },
     {
       "norad": 66142,
       "name": "TJS-20",
       "owner": "PRC",
-      "longitude": 62.29065013370275,
-      "latitude": -3.843052442311231
+      "longitude": 62.57936699833903,
+      "latitude": 3.763125714745668
     },
     {
       "norad": 66311,
       "name": "CMS-03 (GSAT-7R)",
       "owner": "IND",
-      "longitude": 74.00145953384254,
-      "latitude": -0.05733044862835078
+      "longitude": 73.99108061372633,
+      "latitude": 0.013946835933122285
     },
     {
       "norad": 66454,
       "name": "VIASAT-3 F2",
       "owner": "US",
-      "longitude": -78.97725318012492,
-      "latitude": 0.016372174920537365
+      "longitude": -78.98367527431239,
+      "latitude": 0.017827795890687906
     },
     {
       "norad": 66549,
       "name": "SHIJIAN-28 (SJ-28)",
       "owner": "PRC",
-      "longitude": 116.84631100616478,
-      "latitude": -3.8420635255360374
+      "longitude": 116.68219487436866,
+      "latitude": -2.886143806673092
     },
     {
       "norad": 66990,
       "name": "TJS-22",
       "owner": "PRC",
-      "longitude": 66.4118937806138,
-      "latitude": -1.4505551435200732
+      "longitude": 66.52843169466135,
+      "latitude": 0.6925864308999893
     },
     {
       "norad": 67226,
       "name": "TJS-23",
       "owner": "PRC",
-      "longitude": 175.54470475824186,
-      "latitude": -2.084279600371567
+      "longitude": 175.50240673442738,
+      "latitude": -5.407447941636233
     },
     {
       "norad": 67246,
       "name": "FENGYUN 4C",
       "owner": "PRC",
-      "longitude": 133.00622204192567,
-      "latitude": 0.004154941400750743
+      "longitude": 133.01024406000514,
+      "latitude": -0.00014663812221209238
     },
     {
       "norad": 67302,
       "name": "SHIJIAN-29A (SJ-29A)",
       "owner": "PRC",
-      "longitude": 73.60477199884767,
-      "latitude": 3.2022869103701472
+      "longitude": 73.82386485612548,
+      "latitude": -0.41705732305002063
     },
     {
       "norad": 67403,
       "name": "SHIJIAN-29B (SJ-29B)",
       "owner": "PRC",
-      "longitude": 73.73391656223546,
-      "latitude": 3.2030863630007924
+      "longitude": 73.89397541484733,
+      "latitude": -0.4126444012712928
     },
     {
       "norad": 67756,
       "name": "ELEKTRO-L 5",
       "owner": "CIS",
-      "longitude": 76.07782857550474,
-      "latitude": -0.3074644678652234
+      "longitude": 76.06478540562944,
+      "latitude": 0.1731297423361399
     },
     {
       "norad": 67757,
       "name": "JAM-E JAM 1",
       "owner": "IRAN",
-      "longitude": 33.83325970585573,
-      "latitude": -0.14614062734612634
+      "longitude": 33.970210272797516,
+      "latitude": 0.31219624315669264
     },
     {
       "norad": 68126,
       "name": "ECHOSTAR 25",
       "owner": "US",
-      "longitude": -123.25111842803275,
-      "latitude": 0.0027065828901217943
+      "longitude": -110.01443487381337,
+      "latitude": -0.02259417966922153
     }
   ]
 }
