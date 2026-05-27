@@ -10,6 +10,26 @@ body {
   overflow-x: hidden;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: url("assets/satellite.jpg") center 38% / cover no-repeat;
+  opacity: 0.72;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(5, 8, 20, 0.68), rgba(5, 8, 20, 0.38) 48%, rgba(5, 8, 20, 0.72)),
+    linear-gradient(180deg, rgba(5, 8, 20, 0.16), #050814 92%);
+  pointer-events: none;
+}
+
 .top-nav {
   height: 72px;
   padding: 0 56px;
@@ -87,6 +107,8 @@ body {
 }
 
 .overflight-page {
+  position: relative;
+  z-index: 1;
   width: min(1420px, calc(100% - 48px));
   margin: 0 auto;
   padding: 52px 0 72px;
