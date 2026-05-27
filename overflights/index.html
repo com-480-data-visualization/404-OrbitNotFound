@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Overflights | Atlas of Space Activity</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="top-nav">
+    <a href="../" class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <ellipse cx="32" cy="32" rx="27" ry="10" stroke="currentColor" stroke-width="3" transform="rotate(-30 32 32)" />
+          <ellipse cx="32" cy="32" rx="27" ry="9" stroke="currentColor" stroke-width="3" transform="rotate(30 32 32)" />
+          <circle cx="32" cy="32" r="5" fill="currentColor" />
+        </svg>
+      </div>
+
+      <span class="brand-name">404 ORBITNOTFOUND</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="../orbital-structure/">Orbital Structure</a>
+      <a href="../space-actors/">Space Actors</a>
+      <a href="../overflights/" class="active">Overflights</a>
+    </nav>
+  </header>
+
+  <main class="overflight-page">
+    <section class="intro-panel">
+      <p class="hero-eyebrow">CELESTRAK SATCAT OVERFLIGHTS</p>
+      <h1>Satellite overflights by country</h1>
+      <p>
+        Based on the satellite catalogue provided by CelesTrak, this visualization
+        estimates which objects pass above a selected country during a user-defined
+        time period. Click a country, adjust the horizon, then select a satellite to
+        inspect its trajectory and orbital details.
+      </p>
+    </section>
+
+    <section class="overflight-workspace" aria-label="Satellite overflight explorer">
+      <div class="map-panel">
+        <div class="toolbar">
+          <div>
+            <span class="label">Selected country</span>
+            <strong id="selectedCountry">Click the map</strong>
+          </div>
+
+          <label class="range-control" for="timeRange">
+            <span>Time period</span>
+            <input id="timeRange" type="range" min="1" max="48" value="24" />
+            <strong><span id="timeValue">24</span> h</strong>
+          </label>
+        </div>
+
+        <div id="map" class="map-canvas"></div>
+
+        <aside id="satelliteDetails" class="satellite-details" aria-live="polite">
+          <span>Launch date</span>
+          <strong>--</strong>
+          <span>Launch site</span>
+          <strong>--</strong>
+          <span>Country</span>
+          <strong>--</strong>
+          <span>Speed</span>
+          <strong>--</strong>
+          <span>Altitude</span>
+          <strong>--</strong>
+        </aside>
+      </div>
+
+      <aside class="results-panel">
+        <div class="results-header">
+          <span class="label">Country</span>
+          <strong id="resultCountry">--</strong>
+        </div>
+
+        <div id="loadingState" class="loading-state">Loading SATCAT data...</div>
+        <div id="satelliteList" class="satellite-list"></div>
+
+        <div class="period-readout">
+          <span>1 h</span>
+          <strong id="periodLabel">24 h</strong>
+          <span>48 h</span>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="script.js"></script>
+</body>
+</html>
