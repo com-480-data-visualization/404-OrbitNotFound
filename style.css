@@ -385,3 +385,254 @@ body {
     font-size: 44px;
   }
 }
+
+/* ==================================================
+   Hero orbit animation
+   ================================================== */
+
+.landing-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.orbit-showcase {
+  position: absolute;
+  right: 0%;
+  top: 50%;
+
+  width: 360px;
+  height: 360px;
+
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+/* Planet */
+
+
+
+.planet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 92px;
+  height: 92px;
+
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: #07142f;
+
+  box-shadow:
+    0 0 40px rgba(76, 201, 240, 0.35),
+    inset -18px -20px 28px rgba(0, 0, 0, 0.45);
+
+  z-index: 3;
+}
+
+.planet svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.earth-ocean {
+  fill: #07142f;
+}
+
+.earth-land {
+  fill: #1e9bd1;
+}
+
+.earth-glow {
+  fill: none;
+  stroke: rgba(125, 211, 252, 0.75);
+  stroke-width: 1.2;
+}
+
+.earth-shade {
+  fill: rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+
+/* Orbit paths */
+
+.orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  border: 1px solid rgba(125, 211, 252, 0.42);
+  border-radius: 50%;
+
+  transform-style: preserve-3d;
+
+  z-index: 2;
+}
+
+/* Fixed orbit 1 */
+
+.orbit-one {
+  width: 190px;
+  height: 78px;
+
+  margin-left: -95px;
+  margin-top: -39px;
+
+  transform: rotate(-18deg);
+}
+
+/* Fixed orbit 2 */
+
+.orbit-two {
+  width: 270px;
+  height: 112px;
+
+  margin-left: -135px;
+  margin-top: -56px;
+
+  border-color: rgba(157, 140, 255, 0.42);
+
+  transform: rotate(28deg);
+}
+
+/* Fixed orbit 3 */
+
+.orbit-three {
+  width: 340px;
+  height: 142px;
+
+  margin-left: -170px;
+  margin-top: -71px;
+
+  border-color: rgba(244, 162, 97, 0.35);
+
+  transform: rotate(-38deg);
+}
+
+/* Satellite dots */
+
+.satellite-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #4cc9f0;
+
+  box-shadow: 0 0 14px rgba(76, 201, 240, 0.9);
+
+  offset-anchor: center;
+  offset-rotate: 0deg;
+
+  animation: satelliteMove 8s linear infinite;
+}
+
+/* Satellite on orbit 1 */
+
+.orbit-one .satellite-dot {
+  offset-path: path(
+    "M 190 39 C 190 60.5 147.5 78 95 78 C 42.5 78 0 60.5 0 39 C 0 17.5 42.5 0 95 0 C 147.5 0 190 17.5 190 39"
+  );
+
+  animation-duration: 8s;
+}
+
+/* Satellite on orbit 2 */
+
+.orbit-two .satellite-dot {
+  background: #9d8cff;
+  box-shadow: 0 0 14px rgba(157, 140, 255, 0.9);
+
+  offset-path: path(
+    "M 270 56 C 270 86.9 209.6 112 135 112 C 60.4 112 0 86.9 0 56 C 0 25.1 60.4 0 135 0 C 209.6 0 270 25.1 270 56"
+  );
+
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+/* Satellite on orbit 3 */
+
+.orbit-three .satellite-dot {
+  background: #f4a261;
+  box-shadow: 0 0 14px rgba(244, 162, 97, 0.9);
+
+  offset-path: path(
+    "M 340 71 C 340 110.2 263.9 142 170 142 C 76.1 142 0 110.2 0 71 C 0 31.8 76.1 0 170 0 C 263.9 0 340 31.8 340 71"
+  );
+
+  animation-duration: 16s;
+}
+
+/* Satellite movement */
+
+@keyframes satelliteMove {
+  from {
+    offset-distance: 0%;
+  }
+
+  to {
+    offset-distance: 100%;
+  }
+}
+
+/* Pulse triggered by JS */
+
+body.exploration-started .orbit-showcase {
+  animation: orbitShowcasePulse 0.85s ease;
+}
+
+@keyframes orbitShowcasePulse {
+  0% {
+    transform: translateY(-50%) scale(1);
+    filter: brightness(1);
+  }
+
+  45% {
+    transform: translateY(-50%) scale(1.04);
+    filter: brightness(1.25);
+  }
+
+  100% {
+    transform: translateY(-50%) scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .orbit-showcase {
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    opacity: 0.55;
+  }
+}
+
+@media (max-width: 650px) {
+  .orbit-showcase {
+    right: -120px;
+    top: 42%;
+    width: 260px;
+    height: 260px;
+    opacity: 0.35;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .satellite-dot,
+  body.exploration-started .orbit-showcase {
+    animation: none;
+  }
+}
