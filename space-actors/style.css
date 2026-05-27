@@ -419,3 +419,62 @@ svg {
 .legend-dot.unknown {
   background: #94a3b8;
 }
+
+/* =========================
+   Image
+   ========================= */
+
+.actors-hero {
+  position: relative;
+  min-height: 620px;
+  padding: 120px 56px 80px;
+  overflow: hidden;
+}
+
+/* Rocket image in the background */
+.actors-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("assets/rocket3.jpg");
+  background-size: cover;
+  background-position: right top;
+  background-repeat: no-repeat;
+
+  opacity: 0.65;
+  z-index: 0;
+}
+
+/* Dark gradient over the image */
+.actors-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #030614 0%,
+      rgba(3, 6, 20, 0.98) 28%,
+      rgba(3, 6, 20, 0.78) 48%,
+      rgba(3, 6, 20, 0.28) 72%,
+      rgba(3, 6, 20, 0.45) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 6, 20, 0.15) 0%,
+      rgba(3, 6, 20, 0.05) 55%,
+      #030614 100%
+    );
+
+  z-index: 1;
+}
+
+/* Text above image and gradient */
+.actors-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
