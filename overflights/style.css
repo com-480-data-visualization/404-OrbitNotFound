@@ -224,9 +224,10 @@ input[type="range"] {
 
 .satellite-details {
   position: absolute;
-  left: 38px;
-  bottom: 38px;
-  width: 190px;
+  left: 18px;
+  bottom: 18px;
+  z-index: 3;
+  width: min(220px, calc(100% - 36px));
   padding: 14px;
   background: rgba(255, 255, 255, 0.9);
   border: 2px solid #111827;
@@ -236,6 +237,7 @@ input[type="range"] {
   gap: 3px;
   transform: rotate(-0.8deg);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
 }
 
 .satellite-details span {
@@ -393,9 +395,10 @@ input[type="range"] {
   }
 
   .satellite-details {
-    position: static;
-    width: 100%;
-    margin-top: 12px;
+    left: 10px;
+    bottom: 10px;
+    width: min(190px, calc(100% - 20px));
+    margin-top: 0;
     transform: none;
   }
 }
