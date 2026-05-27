@@ -19,9 +19,13 @@ h1 {
 }
 
 main {
+  position: relative;
+  z-index: 5;
+
   width: 92%;
   max-width: 1200px;
-  margin: 0 auto;
+
+  margin: -245px auto 0;
 }
 
 /* =========================
@@ -424,14 +428,15 @@ svg {
    Image
    ========================= */
 
+
 .actors-hero {
   position: relative;
-  min-height: 620px;
-  padding: 120px 56px 80px;
+  min-height: 650px;
+  padding: 120px 56px 180px;
   overflow: hidden;
 }
 
-/* Rocket image in the background */
+/* Image as background */
 .actors-hero::before {
   content: "";
   position: absolute;
@@ -442,36 +447,35 @@ svg {
   background-position: right top;
   background-repeat: no-repeat;
 
-  opacity: 0.65;
+  opacity: 0.6;
   z-index: 0;
 }
 
-/* Dark gradient over the image */
+/* Dark overlay + fade to page background */
 .actors-hero::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
 
   background:
     linear-gradient(
       90deg,
       #030614 0%,
       rgba(3, 6, 20, 0.98) 28%,
-      rgba(3, 6, 20, 0.78) 48%,
-      rgba(3, 6, 20, 0.28) 72%,
+      rgba(3, 6, 20, 0.78) 52%,
+      rgba(3, 6, 20, 0.30) 78%,
       rgba(3, 6, 20, 0.45) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(3, 6, 20, 0.15) 0%,
-      rgba(3, 6, 20, 0.05) 55%,
+      rgba(3, 6, 20, 0.00) 0%,
+      rgba(3, 6, 20, 0.10) 55%,
+      rgba(3, 6, 20, 0.65) 78%,
       #030614 100%
     );
-
-  z-index: 1;
 }
 
-/* Text above image and gradient */
 .actors-hero .hero-content {
   position: relative;
   z-index: 2;
