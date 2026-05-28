@@ -23,8 +23,7 @@ const path = d3.geoPath(projection);
 const line = d3.line()
   .defined(point => point)
   .x(point => point[0])
-  .y(point => point[1])
-  .curve(d3.curveCatmullRom.alpha(0.5));
+  .y(point => point[1]);
 
 const svg = d3.select(mapNode)
   .append("svg")
@@ -122,7 +121,11 @@ function splitTrack(points) {
   let segment = [];
 
   points.forEach((point, index) => {
-    if (index > 0 && Math.abs(point.xy[0] - points[index - 1].xy[0]) > width * 0.42) {
+    const previousPoint = points[index - 1];
+    const crossesAntimeridian = previousPoint && Math.abs(point.lon - previousPoint.lon) > 180;
+    const jumpsAcrossProjection = previousPoint && Math.abs(point.xy[0] - previousPoint.xy[0]) > width * 0.42;
+
+    if (crossesAntimeridian || jumpsAcrossProjection) {
       if (segment.length > 1) {
         segments.push(segment);
       }
