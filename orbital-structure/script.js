@@ -27,6 +27,9 @@ Promise.all([
     const zoomYes = document.getElementById("orbit-zoom-yes");
     const zoomNo = document.getElementById("orbit-zoom-no");
     const ownerTooltip = document.getElementById("owner-tooltip");
+    const plotImportanceButton = document.getElementById("plot-importance-button");
+    const plotImportancePopup = document.getElementById("plot-importance-popup");
+    const plotImportanceClose = document.getElementById("plot-importance-close");
     let activeOrbitTarget = null;
     let activeOrbitClass = null;
 
@@ -220,6 +223,36 @@ Promise.all([
     });
 
     zoomNo.addEventListener("click", hideOrbitPopup); //close popup button
+
+    // First-plot explanation popup.
+    // It is separate from the orbit zoom popup because it explains the visualization,
+    // rather than navigating to another section.
+    function showPlotImportancePopup() {
+        hideOwnerTooltip();
+        hideOrbitPopup();
+        plotImportancePopup.classList.add("visible");
+        plotImportancePopup.setAttribute("aria-hidden", "false");
+    }
+
+    function hidePlotImportancePopup() {
+        plotImportancePopup.classList.remove("visible");
+        plotImportancePopup.setAttribute("aria-hidden", "true");
+    }
+
+    plotImportanceButton.addEventListener("click", showPlotImportancePopup);
+    plotImportanceClose.addEventListener("click", hidePlotImportancePopup);
+
+    plotImportancePopup.addEventListener("click", event => {
+        if (event.target === plotImportancePopup) {
+            hidePlotImportancePopup();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            hidePlotImportancePopup();
+        }
+    });
 
     // Close the popup when the user scrolls away from the first/orbit overview plot.
     // The threshold makes it disappear before the plot is completely off-screen.

@@ -71,9 +71,8 @@
         </h1>
 
         <p class="hero-description">
-        An interactive visualization of satellite populations across LEO, MEO
-        and GEO, highlighting how orbital altitude, ownership and geostationary
-        longitude structure the space around Earth.
+        Satellites are not distributed evenly around Earth. Their position depends on mission requirements, orbital constraints, ownership, and strategic priorities.
+        This visualization explores how satellites are organized across Low Earth Orbit, Medium Earth Orbit, and Geostationary Orbit, highlighting the relationship between altitude, density, and geopolitical or commercial presence in space.
         </p>
 
     </div>  
@@ -114,6 +113,9 @@
         Selecting an owner reveals how its satellites are distributed across these orbital
         regions.
         </p>
+        <button id="plot-importance-button" class="plot-info-button" type="button">
+            Why is this plot important?
+        </button>
     </div>
     </section>
     </section>
@@ -217,6 +219,34 @@
                 <button id="orbit-zoom-yes" class="popup-primary">Yes, zoom in</button>
                 <button id="orbit-zoom-no" class="popup-secondary">Not now</button>
             </div>
+        </div>
+    </div>
+
+    <div id="plot-importance-popup" class="plot-info-popup" aria-hidden="true">
+        <div class="plot-info-panel" role="dialog" aria-modal="true" aria-labelledby="plot-importance-title">
+            <button id="plot-importance-close" class="plot-info-close" type="button" aria-label="Close explanation">
+                &times;
+            </button>
+
+            <p class="popup-focus">
+                <span></span>
+                CONTEXT
+                <span></span>
+            </p>
+
+            <h3 id="plot-importance-title">Why This Plot Matters</h3>
+
+            <p>
+                Space is often described as a global commons: no country can claim sovereignty over an orbital region in the same way it can claim territory on Earth. However, orbital space is not unlimited in practice. Satellites require specific altitudes, trajectories, and separation from other objects to operate safely.
+            </p>
+
+            <p>
+                This means that access to useful orbital regions can become constrained. When many satellites are placed in similar orbital bands, those regions become more crowded, increasing collision risks and making future deployments more complex. In this sense, orbital occupation can create a practical form of control: even without legal ownership, actors with large satellite fleets can shape who is able to use certain parts of near-Earth space.
+            </p>
+
+            <p>
+                This plot is therefore important because it shows more than where satellites are located. It reveals how orbital presence can translate into strategic advantage, and why the distribution of satellites across LEO, MEO, and GEO matters for the future accessibility of space.
+            </p>
         </div>
     </div>
 

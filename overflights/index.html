@@ -36,13 +36,13 @@
 
   <main class="overflight-page">
     <section class="intro-panel">
-      <p class="hero-eyebrow">CELESTRAK SATCAT OVERFLIGHTS</p>
+      <p class="hero-eyebrow">CELESTRAK TLE OVERFLIGHTS</p>
       <h1>Satellite overflights by country</h1>
       <p>
-        Based on the satellite catalogue provided by CelesTrak, this visualization
-        estimates which objects pass above a selected country during a user-defined
-        time period. Click a country, adjust the horizon, then select a satellite to
-        inspect its trajectory and orbital details.
+        Based on active CelesTrak TLEs, this visualization estimates which objects
+        pass above a selected country during a user-defined time period. Click a
+        country, adjust the horizon, then select a satellite to inspect its
+        trajectory and orbital details.
       </p>
     </section>
 
@@ -79,11 +79,18 @@
 
       <aside class="results-panel">
         <div class="results-header">
-          <span class="label">Country</span>
-          <strong id="resultCountry">--</strong>
+          <div>
+            <span class="label">Country</span>
+            <strong id="resultCountry">--</strong>
+          </div>
+
+          <div class="result-count">
+            <span class="label">Satellites</span>
+            <strong id="resultCount">0</strong>
+          </div>
         </div>
 
-        <div id="loadingState" class="loading-state">Loading SATCAT data...</div>
+        <div id="loadingState" class="loading-state">Loading TLE data...</div>
         <div id="satelliteList" class="satellite-list"></div>
 
         <div class="period-readout">
@@ -97,6 +104,7 @@
 
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/satellite.js@6.0.2/dist/satellite.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
