@@ -191,6 +191,9 @@
                 This use the current CelesTrak GEO snapshot, so they can differ from
                 the altitude-based overview above, which is derived from CelesTrak SATCAT.
             </p>
+            <button id="geo-info-button" class="plot-info-button" type="button">
+                More information
+            </button>
         </div>
 
         <div id="geo-viz"></div>
@@ -234,7 +237,7 @@
                 <span></span>
             </p>
 
-            <h3 id="plot-importance-title">Why This Plot Matters</h3>
+            <h3 id="plot-importance-title">The Strategic Value of Orbital Space</h3>
 
             <p>
                 Space is often described as a global commons: no country can claim sovereignty over an orbital region in the same way it can claim territory on Earth. However, orbital space is not unlimited in practice. Satellites require specific altitudes, trajectories, and separation from other objects to operate safely.
@@ -246,6 +249,34 @@
 
             <p>
                 This plot is therefore important because it shows more than where satellites are located. It reveals how orbital presence can translate into strategic advantage, and why the distribution of satellites across LEO, MEO, and GEO matters for the future accessibility of space.
+            </p>
+        </div>
+    </div>
+
+    <div id="geo-info-popup" class="plot-info-popup" aria-hidden="true">
+        <div class="plot-info-panel" role="dialog" aria-modal="true" aria-labelledby="geo-info-title">
+            <button id="geo-info-close" class="plot-info-close" type="button" aria-label="Close GEO explanation">
+                &times;
+            </button>
+
+            <p class="popup-focus">
+                <span></span>
+                CONTEXT
+                <span></span>
+            </p>
+
+            <h3 id="geo-info-title">GEO Coordination</h3>
+
+            <p>
+                Geostationary orbit is different from LEO and MEO because satellites are positioned along a limited equatorial belt. In practice, operators cannot place a satellite anywhere they want: GEO positions and associated radio frequencies must be coordinated internationally to avoid interference and orbital congestion.
+            </p>
+
+            <p>
+                As shown in the plot, many GEO satellites are located near longitudes that correspond to the regions they serve. This is especially important for telecommunications, broadcasting, weather monitoring, and regional coverage, since a GEO satellite remains fixed relative to the Earth’s surface.
+            </p>
+
+            <p>
+                However, GEO governance is more complex than a simple system of territorial ownership. Countries and operators do not “own” parts of GEO in the same way they own land. Instead, orbital slots and frequency rights are coordinated through international procedures. Enforcement can also be challenging, since regulation depends on cooperation between states, operators, and international institutions rather than direct physical control of space.
             </p>
         </div>
     </div>

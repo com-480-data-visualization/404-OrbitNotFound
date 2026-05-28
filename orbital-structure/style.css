@@ -28,7 +28,7 @@ select {
   padding: 5px 8px;
   background: rgba(5, 18, 42, 0.92);
   color: #cbd5e1;
-  border: 1px solid rgba(76, 201, 240, 0.28);
+  border: 1px solid rgba(76, 201, 240, 0.72);
   border-radius: 6px;
   font-family: inherit;
 }
@@ -449,8 +449,8 @@ svg {
 }
 
 .popup-meo .popup-orbit-ring {
-  width: 165px;
-  height: 165px;
+  width: 195px;
+  height: 195px;
   border-color: #9d4edd;
   box-shadow:
     0 0 22px rgba(157, 78, 221, 0.38),
@@ -464,6 +464,12 @@ svg {
   box-shadow:
     0 0 22px rgba(244, 162, 97, 0.38),
     inset 0 0 18px rgba(244, 162, 97, 0.1);
+}
+
+.popup-geo .popup-orbit-preview img {
+  width: 72px;
+  height: 72px;
+  transform: translate(-2px, 2px);
 }
 
 
@@ -771,7 +777,7 @@ svg {
 .zoom-controls select {
   background: rgba(5, 18, 42, 0.92);
   color: #cbd5e1;
-  border: px solid rgba(76, 201, 240, 0.28);
+  border: 1px solid rgba(76, 201, 240, 0.72);
   border-radius: 6px;
   padding: 5px 8px;
 }
@@ -864,6 +870,10 @@ svg {
   color: #94a3b8;
   font-size: 13px;
   line-height: 1.45;
+}
+
+.geo-copy .plot-info-button {
+  margin-top: 30px;
 }
 
 .geo-line {

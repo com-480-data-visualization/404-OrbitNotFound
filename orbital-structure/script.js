@@ -31,6 +31,9 @@ Promise.all([
     const plotImportanceButton = document.getElementById("plot-importance-button");
     const plotImportancePopup = document.getElementById("plot-importance-popup");
     const plotImportanceClose = document.getElementById("plot-importance-close");
+    const geoInfoButton = document.getElementById("geo-info-button");
+    const geoInfoPopup = document.getElementById("geo-info-popup");
+    const geoInfoClose = document.getElementById("geo-info-close");
     let activeOrbitTarget = null;
     let activeOrbitClass = null;
     let orbitPopupHideTimer = null;
@@ -148,28 +151,20 @@ Promise.all([
     // -------------------------
     // 3. Helper functions
     // -------------------------
-    // Pick a random point inside an annulus/ring.
-    // Used to scatter selected LEO and MEO satellites inside their visual zones.
-    function randomPositionInRing(rMin, rMax) {
-        const angle = Math.random() * 2 * Math.PI;
-        const radius = Math.sqrt(
-            Math.random() * (rMax * rMax - rMin * rMin) + rMin * rMin
-        );
-
-        const x = cx + radius * Math.cos(angle);
-        const y = cy + radius * Math.sin(angle);
-
-        return { x, y };
+    function altitudeToRadius(altitude, minAltitude, maxAltitude, minRadius, maxRadius) {
+        const t = Math.max(0, Math.min(1, (altitude - minAltitude) / (maxAltitude - minAltitude)));
+        return minRadius + t * (maxRadius - minRadius);
     }
 
-    // Pick a random point on a circle.
-    // Used for GEO satellites, which are drawn along one belt line around Earth.
-    function randomPositionOnCircle(radius) {
+    function positionByAltitude(satellite, minAltitude, maxAltitude, minRadius, maxRadius) {
+        const altitude = (satellite.perigee + satellite.apogee) / 2;
         const angle = Math.random() * 2 * Math.PI;
-        const x = cx + radius * Math.cos(angle);
-        const y = cy + radius * Math.sin(angle);
+        const radius = altitudeToRadius(altitude, minAltitude, maxAltitude, minRadius, maxRadius);
 
-        return { x, y };
+        return {
+            x: cx + radius * Math.cos(angle),
+            y: cy + radius * Math.sin(angle)
+        };
     }
 
     // Small helper so every SVG shape/text element is created with the SVG namespace.
@@ -328,8 +323,22 @@ Promise.all([
         plotImportancePopup.setAttribute("aria-hidden", "true");
     }
 
+    function showGeoInfoPopup() {
+        hideOwnerTooltip();
+        hideOrbitPopup();
+        geoInfoPopup.classList.add("visible");
+        geoInfoPopup.setAttribute("aria-hidden", "false");
+    }
+
+    function hideGeoInfoPopup() {
+        geoInfoPopup.classList.remove("visible");
+        geoInfoPopup.setAttribute("aria-hidden", "true");
+    }
+
     plotImportanceButton.addEventListener("click", showPlotImportancePopup);
     plotImportanceClose.addEventListener("click", hidePlotImportancePopup);
+    geoInfoButton.addEventListener("click", showGeoInfoPopup);
+    geoInfoClose.addEventListener("click", hideGeoInfoPopup);
 
     plotImportancePopup.addEventListener("click", event => {
         if (event.target === plotImportancePopup) {
@@ -337,9 +346,16 @@ Promise.all([
         }
     });
 
+    geoInfoPopup.addEventListener("click", event => {
+        if (event.target === geoInfoPopup) {
+            hideGeoInfoPopup();
+        }
+    });
+
     document.addEventListener("keydown", event => {
         if (event.key === "Escape") {
             hidePlotImportancePopup();
+            hideGeoInfoPopup();
         }
     });
 
@@ -530,16 +546,17 @@ Promise.all([
         );
 
         // --- Draw satellites.
-        // Dots are randomly placed within their conceptual orbit region.
+        // Angle stays random, but radius is based on average altitude
+        // computed from perigee and apogee.
         satellites.forEach(sat => {
             let pos;
 
             if (sat.ORBIT_CLASS === "LEO") {
-                pos = randomPositionInRing(leoInner + 2, leoOuter - 2);
+                pos = positionByAltitude(sat, 0, 2000, leoInner + 2, leoOuter - 2);
             } else if (sat.ORBIT_CLASS === "MEO") {
-                pos = randomPositionInRing(meoInner + 2, meoOuter - 2);
+                pos = positionByAltitude(sat, 2000, 35786, meoInner + 2, meoOuter - 2);
             } else if (sat.ORBIT_CLASS === "GEO") {
-                pos = randomPositionOnCircle(geoRadius);
+                pos = positionByAltitude(sat, 35286, 36286, geoRadius - 2, geoRadius + 2);
             }
 
             const dot = createSvgElement("circle");
