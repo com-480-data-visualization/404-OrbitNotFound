@@ -13,6 +13,7 @@ const height = 520;
 const earthRadiusKm = 6371;
 const maxSatellites = 700;
 const maxListedPasses = 90;
+const activeTleUrl = "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=tle";
 
 const projection = d3.geoNaturalEarth1()
   .scale(178)
@@ -67,33 +68,49 @@ function launchSiteName(code) {
 }
 
 function orbitalSpeedKmS(satellite) {
+  const velocity = satellite.track?.find(point => point.velocityKmS)?.velocityKmS;
+
+  if (velocity) {
+    return velocity;
+  }
+
   const altitude = (satellite.apogee + satellite.perigee) / 2;
   const radius = earthRadiusKm + altitude;
   return Math.sqrt(398600.4418 / radius);
 }
 
-function satelliteSeed(satellite) {
-  return (satellite.norad % 360) + (satellite.name.length % 31);
+function velocityMagnitudeKmS(velocity) {
+  return Math.sqrt((velocity.x ** 2) + (velocity.y ** 2) + (velocity.z ** 2));
 }
 
-function makeTrack(satellite, hours) {
-  const periodHours = Math.max(satellite.period / 60, 0.4);
-  const steps = Math.min(220, Math.max(48, Math.ceil(hours * 5)));
-  const seed = satelliteSeed(satellite);
-  const inclination = Math.min(Math.abs(satellite.inclination || 53), 88);
+function makeTrack(satelliteData, hours) {
+  const steps = Math.min(360, Math.max(72, Math.ceil(hours * 12)));
+  const startTime = Date.now();
+  const durationMs = hours * 60 * 60 * 1000;
   const points = [];
 
   for (let index = 0; index <= steps; index += 1) {
-    const t = (index / steps) * hours;
-    const anomaly = ((t / periodHours) * 360 + seed) % 360;
-    const radians = anomaly * Math.PI / 180;
-    const drift = t * 15.04;
-    const lon = ((((anomaly * 1.35) + seed * 2.1 - drift + 540) % 360) - 180);
-    const lat = Math.sin(radians) * inclination;
+    const date = new Date(startTime + ((index / steps) * durationMs));
+    const positionAndVelocity = satellite.propagate(satelliteData.satrec, date);
+
+    if (!positionAndVelocity.position || !positionAndVelocity.velocity) {
+      continue;
+    }
+
+    const gmst = satellite.gstime(date);
+    const geodetic = satellite.eciToGeodetic(positionAndVelocity.position, gmst);
+    const lon = satellite.degreesLong(geodetic.longitude);
+    const lat = satellite.degreesLat(geodetic.latitude);
     const projected = projection([lon, lat]);
 
     if (projected) {
-      points.push({ lon, lat, xy: projected });
+      points.push({
+        lon,
+        lat,
+        altitudeKm: geodetic.height,
+        velocityKmS: velocityMagnitudeKmS(positionAndVelocity.velocity),
+        xy: projected
+      });
     }
   }
 
@@ -122,23 +139,16 @@ function splitTrack(points) {
   return segments;
 }
 
-function pointInsideBounds(point, bounds) {
-  return point.xy[0] >= bounds[0][0]
-    && point.xy[0] <= bounds[1][0]
-    && point.xy[1] >= bounds[0][1]
-    && point.xy[1] <= bounds[1][1];
-}
-
 function passesOverCountry(satellite, feature, hours) {
-  const bounds = path.bounds(feature);
   const track = makeTrack(satellite, hours);
-  const hit = track.some(point => pointInsideBounds(point, bounds));
+  const hit = track.some(point => d3.geoContains(feature, [point.lon, point.lat]));
 
   return hit ? { ...satellite, track } : null;
 }
 
 function renderDetails(satellite) {
-  const altitude = Math.round((satellite.apogee + satellite.perigee) / 2);
+  const livePoint = satellite.track?.find(point => point.altitudeKm);
+  const altitude = Math.round(livePoint?.altitudeKm ?? ((satellite.apogee + satellite.perigee) / 2));
   const speed = orbitalSpeedKmS(satellite).toFixed(2);
 
   detailsNode.innerHTML = `
@@ -189,7 +199,7 @@ function renderList(overpasses) {
   }
 
   if (!overpasses.length) {
-    loadingState.textContent = "No estimated overflights for this period. Try a longer duration.";
+    loadingState.textContent = "No TLE-propagated overflights for this period. Try a longer duration.";
     loadingState.style.display = "block";
     return;
   }
@@ -309,27 +319,85 @@ function parseSatellites(rows) {
       const bAltitude = (b.apogee + b.perigee) / 2;
       return aAltitude - bAltitude;
     })
+}
+
+function parseActiveTles(tleText) {
+  const lines = tleText
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(Boolean);
+  const tleByNorad = new Map();
+
+  for (let index = 0; index < lines.length - 2; index += 3) {
+    const name = lines[index];
+    const line1 = lines[index + 1];
+    const line2 = lines[index + 2];
+
+    if (!line1.startsWith("1 ") || !line2.startsWith("2 ")) {
+      continue;
+    }
+
+    const norad = Number.parseInt(line1.slice(2, 7), 10);
+
+    if (!Number.isFinite(norad)) {
+      continue;
+    }
+
+    try {
+      tleByNorad.set(norad, {
+        name,
+        line1,
+        line2,
+        satrec: satellite.twoline2satrec(line1, line2)
+      });
+    } catch (error) {
+      console.warn("Unable to parse TLE:", name, error);
+    }
+  }
+
+  return tleByNorad;
+}
+
+function attachTles(satcatRows, tleByNorad) {
+  return parseSatellites(satcatRows)
+    .map(satcatSatellite => {
+      const tle = tleByNorad.get(satcatSatellite.norad);
+
+      if (!tle) {
+        return null;
+      }
+
+      return {
+        ...satcatSatellite,
+        tleName: tle.name,
+        tleLine1: tle.line1,
+        tleLine2: tle.line2,
+        satrec: tle.satrec
+      };
+    })
+    .filter(Boolean)
     .slice(0, maxSatellites);
 }
 
 async function boot() {
   try {
-    const [world, satcatRows, ownerData, siteRows] = await Promise.all([
+    const [world, satcatRows, ownerData, siteRows, activeTles] = await Promise.all([
       d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"),
       d3.csv("../data/raw/satcat_raw.csv"),
       d3.json("../data/satcat_owners.json"),
-      d3.csv("../data/launch_sites_coords.csv")
+      d3.csv("../data/launch_sites_coords.csv"),
+      d3.text(activeTleUrl)
     ]);
 
     owners = ownerData;
     launchSites = new Map(siteRows.map(site => [site.code, site]));
-    satellites = parseSatellites(satcatRows);
+    satellites = attachTles(satcatRows, parseActiveTles(activeTles));
 
     drawCountries(world);
-    loadingState.textContent = "Click a country to list satellites crossing it.";
+    loadingState.textContent = "Click a country to list TLE-propagated satellite passes.";
   } catch (error) {
     console.error("Unable to load overflight data:", error);
-    loadingState.textContent = "Unable to load the map or SATCAT data. Please run the page from a local web server.";
+    loadingState.textContent = "Unable to load the map, SATCAT, or CelesTrak TLE data. Please run the page from a local web server.";
   }
 }
 
