@@ -36,13 +36,13 @@
 
   <main class="overflight-page">
     <section class="intro-panel">
-      <p class="hero-eyebrow">CELESTRAK TLE OVERFLIGHTS</p>
+      <p class="hero-eyebrow">CELESTRAK SATCAT OVERFLIGHTS</p>
       <h1>Satellite overflights by country</h1>
       <p>
-        Based on active TLE data provided by CelesTrak, this visualization propagates
-        satellite positions over a user-defined time period. Click a country, adjust
-        the horizon, then select a satellite to inspect its trajectory and orbital
-        details.
+        Based on the satellite catalogue provided by CelesTrak, this visualization
+        estimates which objects pass above a selected country during a user-defined
+        time period. Click a country, adjust the horizon, then select a satellite to
+        inspect its trajectory and orbital details.
       </p>
     </section>
 
@@ -83,7 +83,7 @@
           <strong id="resultCountry">--</strong>
         </div>
 
-        <div id="loadingState" class="loading-state">Loading SATCAT and TLE data...</div>
+        <div id="loadingState" class="loading-state">Loading SATCAT data...</div>
         <div id="satelliteList" class="satellite-list"></div>
 
         <div class="period-readout">
@@ -97,7 +97,6 @@
 
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
-  <script src="https://cdn.jsdelivr.net/npm/satellite.js@5/dist/satellite.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
