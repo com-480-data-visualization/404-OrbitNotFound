@@ -250,8 +250,20 @@ function ownerGroups(overpasses) {
     groups.get(owner).push(satellite);
   });
 
+  groups.forEach(ownerSatellites => {
+    ownerSatellites.sort((a, b) => inclinationValue(a) - inclinationValue(b));
+  });
+
   return Array.from(groups.entries())
-    .sort((a, b) => b[1].length - a[1].length || ownerName(a[0]).localeCompare(ownerName(b[0])));
+    .sort((a, b) => ownerInclinationValue(a[1]) - ownerInclinationValue(b[1]));
+}
+
+function inclinationValue(satellite) {
+  return Number.isFinite(satellite.inclination) ? satellite.inclination : Number.POSITIVE_INFINITY;
+}
+
+function ownerInclinationValue(ownerSatellites) {
+  return ownerSatellites.length ? inclinationValue(ownerSatellites[0]) : Number.POSITIVE_INFINITY;
 }
 
 function renderOwnerList(overpasses) {
@@ -352,7 +364,7 @@ function updateOverpasses() {
   const overpasses = satellites
     .map(satellite => passesOverCountry(satellite, selectedFeature, hours))
     .filter(Boolean)
-    .sort((a, b) => orbitalSpeedKmS(b) - orbitalSpeedKmS(a));
+    .sort((a, b) => inclinationValue(a) - inclinationValue(b));
 
   currentOverpasses = overpasses;
   renderOwnerList(overpasses);

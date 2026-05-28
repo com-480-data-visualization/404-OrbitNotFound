@@ -123,10 +123,17 @@ body::after {
 .label {
   margin: 0 0 12px;
   color: #7dd3fc;
-  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.hero-eyebrow {
+  font-size: 15px;
+}
+
+.label {
+  font-size: 12px;
 }
 
 .intro-panel h1 {
@@ -141,6 +148,13 @@ body::after {
   color: #d6e2ef;
   font-size: clamp(18px, 2vw, 25px);
   line-height: 1.5;
+}
+
+.intro-panel .hero-eyebrow {
+  margin-bottom: 12px;
+  color: #7dd3fc;
+  font-size: 15px;
+  line-height: 1.2;
 }
 
 .overflight-workspace {
@@ -251,7 +265,7 @@ input[type="range"] {
   z-index: 3;
   width: min(220px, calc(100% - 36px));
   padding: 14px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.72);
   border: 2px solid #111827;
   color: #0f172a;
   display: grid;

@@ -4,9 +4,10 @@
 Promise.all([
     fetch("../data/satellites_clean.json").then(response => response.json()),
     fetch("../data/geo_celestrak_longitude.json").then(response => response.json()),
-    fetch("../data/satcat_owners.json").then(response => response.json())
+    fetch("../data/satcat_owners.json").then(response => response.json()),
+    fetch("../data/raw/satcat_raw.csv").then(response => response.text())
 ])
-.then(([data, geoSnapshot, ownerNames]) => {
+.then(([data, geoSnapshot, ownerNames, satcatRawCsv]) => {
     // The GEO file has metadata plus a "satellites" array, so keep only the array here.
     const geoSatellites = geoSnapshot.satellites;
     console.log("Loaded data:", data);
@@ -32,6 +33,7 @@ Promise.all([
     const plotImportanceClose = document.getElementById("plot-importance-close");
     let activeOrbitTarget = null;
     let activeOrbitClass = null;
+    let orbitPopupHideTimer = null;
 
     // Build a lookup table from NORAD ID to operational status.
     // The GEO longitude dataset does not contain status, so the GEO plot uses this table
@@ -40,6 +42,48 @@ Promise.all([
     data.forEach(sat => {
         if (sat.norad === null || sat.norad === undefined) return;
         statusByNorad[Number(sat.norad)] = sat.status;
+    });
+
+    function parseCsvLine(line) {
+        const values = [];
+        let value = "";
+        let insideQuotes = false;
+
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
+            const nextChar = line[i + 1];
+
+            if (char === '"' && insideQuotes && nextChar === '"') {
+                value += '"';
+                i++;
+            } else if (char === '"') {
+                insideQuotes = !insideQuotes;
+            } else if (char === "," && !insideQuotes) {
+                values.push(value);
+                value = "";
+            } else {
+                value += char;
+            }
+        }
+
+        values.push(value);
+        return values;
+    }
+
+    const launchDateByNorad = {};
+    const satcatLines = satcatRawCsv.trim().split(/\r?\n/);
+    const satcatHeaders = parseCsvLine(satcatLines[0]);
+    const noradColumn = satcatHeaders.indexOf("NORAD_CAT_ID");
+    const launchDateColumn = satcatHeaders.indexOf("LAUNCH_DATE");
+
+    satcatLines.slice(1).forEach(line => {
+        const values = parseCsvLine(line);
+        const norad = Number(values[noradColumn]);
+        const launchDate = values[launchDateColumn];
+
+        if (Number.isFinite(norad) && launchDate) {
+            launchDateByNorad[norad] = launchDate;
+        }
     });
 
     // Fill the GEO owner dropdown.
@@ -179,12 +223,56 @@ Promise.all([
         ownerTooltip.classList.remove("visible");
     }
 
+    function formatLongitude(longitude) {
+        const direction = longitude < 0 ? "W" : "E";
+        return `${Math.abs(longitude).toFixed(2)}°${direction}`;
+    }
+
+    function addTooltipRow(label, value) {
+        const row = document.createElement("span");
+        row.className = "tooltip-row";
+        row.textContent = `${label}: ${value || "--"}`;
+        ownerTooltip.appendChild(row);
+    }
+
+    function showGeoSatelliteTooltip(event, satellite) {
+        ownerTooltip.innerHTML = "";
+
+        const title = document.createElement("strong");
+        title.textContent = satellite.name || `NORAD ${satellite.norad}`;
+        ownerTooltip.appendChild(title);
+
+        addTooltipRow("NORAD", satellite.norad);
+        addTooltipRow("Longitude", formatLongitude(satellite.longitude));
+        addTooltipRow("Launch date", launchDateByNorad[Number(satellite.norad)]);
+
+        moveOwnerTooltip(event);
+        ownerTooltip.classList.add("visible");
+    }
+
     // -------------------------
     // 4. Orbit zoom popup
     // -------------------------
+    function clearOrbitPopupHideTimer() {
+        if (orbitPopupHideTimer) {
+            clearTimeout(orbitPopupHideTimer);
+            orbitPopupHideTimer = null;
+        }
+    }
+
+    function scheduleOrbitPopupHide() {
+        clearOrbitPopupHideTimer();
+
+        orbitPopupHideTimer = setTimeout(() => {
+            hideOrbitPopup();
+        }, 1500);
+    }
+
     // Show a modal-style popup when the user hovers near an orbit in the overview.
     // The popup remembers which zoom plot it should scroll to if the user clicks "Yes".
     function showOrbitPopup(event, orbitClass, targetId) {
+        clearOrbitPopupHideTimer();
+
         if (activeOrbitClass === orbitClass) return;
 
         activeOrbitClass = orbitClass;
@@ -205,6 +293,7 @@ Promise.all([
 
     // Hide the popup and reset the stored target orbit.
     function hideOrbitPopup() {
+        clearOrbitPopupHideTimer();
         zoomPopup.style.display = "none";
         activeOrbitTarget = null;
         activeOrbitClass = null;
@@ -307,7 +396,15 @@ Promise.all([
                 showOrbitPopup(event, "MEO", "meo-viz");
             } else if (distance > meoOuter && distance <= geoRadius + 10) {
                 showOrbitPopup(event, "GEO", "geo-viz");
-            } 
+            } else if (activeOrbitClass && !orbitPopupHideTimer) {
+                scheduleOrbitPopupHide();
+            }
+        });
+
+        svg.addEventListener("mouseleave", () => {
+            if (activeOrbitClass && !orbitPopupHideTimer) {
+                scheduleOrbitPopupHide();
+            }
         });
 
 
@@ -683,6 +780,7 @@ Promise.all([
     function drawGeoZoom(selectedOwner = null) {
         // Clear the previous GEO SVG before redrawing.
         geoViz.innerHTML = "";
+        hideOwnerTooltip();
 
         const width = 820;
         const height = 600;
@@ -804,6 +902,11 @@ Promise.all([
             beltDot.setAttribute("cy", 100);
             beltDot.setAttribute("r", 3);
             beltDot.setAttribute("class", "geo-satellite-dot");
+            beltDot.addEventListener("mouseenter", event => {
+                showGeoSatelliteTooltip(event, sat);
+            });
+            beltDot.addEventListener("mousemove", moveOwnerTooltip);
+            beltDot.addEventListener("mouseleave", hideOwnerTooltip);
             svg.appendChild(beltDot);
         });
         // Draw selected owner's satellites again in blue, so they appear on top.
@@ -822,6 +925,11 @@ Promise.all([
                     dot.setAttribute("cy", 100);
                     dot.setAttribute("r", 3.5);
                     dot.setAttribute("class", "geo-satellite-dot-selected");
+                    dot.addEventListener("mouseenter", event => {
+                        showGeoSatelliteTooltip(event, sat);
+                    });
+                    dot.addEventListener("mousemove", moveOwnerTooltip);
+                    dot.addEventListener("mouseleave", hideOwnerTooltip);
                     svg.appendChild(dot);
                 });
         }
@@ -855,6 +963,11 @@ Promise.all([
                 groundDot.setAttribute("cy", mapY + mapH / 2);
                 groundDot.setAttribute("r", 3);
                 groundDot.setAttribute("class", "geo-ground-dot");
+                groundDot.addEventListener("mouseenter", event => {
+                    showGeoSatelliteTooltip(event, sat);
+                });
+                groundDot.addEventListener("mousemove", moveOwnerTooltip);
+                groundDot.addEventListener("mouseleave", hideOwnerTooltip);
                 svg.appendChild(groundDot);
             });
         }
