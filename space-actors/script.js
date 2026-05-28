@@ -10,28 +10,6 @@ const categoryColors = {
   unknown: "#94a3b8"
 };
 
-const tooltip = d3.select("body")
-  .append("div")
-  .attr("class", "tooltip");
-
-function showTooltip(event, html) {
-  tooltip
-    .html(html)
-    .style("left", `${event.pageX + 12}px`)
-    .style("top", `${event.pageY - 35}px`)
-    .style("opacity", 1);
-}
-
-function moveTooltip(event) {
-  tooltip
-    .style("left", `${event.pageX + 12}px`)
-    .style("top", `${event.pageY - 35}px`);
-}
-
-function hideTooltip() {
-  tooltip.style("opacity", 0);
-}
-
 const metricLabels = {
   total: "Total objects",
   payloads: "Payloads",
@@ -134,6 +112,7 @@ function updateDashboard() {
 
   drawTimeChart(data);
   drawRankingChart();
+  drawTopActorsTimeline();
 }
 
 
@@ -150,18 +129,11 @@ function drawTimeChart(countryData) {
 
   const keys = ["payloads", "debris", "rocket_bodies", "unknown"];
 
-  const labels = {
-    payloads: "Payloads",
-    debris: "Debris",
-    rocket_bodies: "Rocket bodies",
-    unknown: "Unknown"
-  };
-
   const color = d3.scaleOrdinal()
     .domain(keys)
     .range(["#4cc9f0", "#f4a261", "#9d8cff", "#94a3b8"]);
 
-  const data = yearly.slice(-35).map(d => {
+  const data = yearly.slice().map(d => {
     const row = {
       year: d.year,
       payloads: d.payloads || 0,
@@ -245,13 +217,7 @@ function drawTimeChart(countryData) {
     .attr("y", d => y(d.y1))
     .attr("width", x.bandwidth())
     .attr("height", d => y(d.y0) - y(d.y1))
-    .attr("opacity", 0.88)
-    .append("title")
-    .text(d =>
-      `${d.year}
-${labels[d.key]}: ${d.value.toLocaleString()}
-Total: ${d.total.toLocaleString()}`
-    );
+    .attr("opacity", 0.88);
 
   g.append("text")
     .attr("class", "chart-note")
@@ -375,16 +341,6 @@ function drawRankingChart() {
         .attr("height", y.bandwidth())
         .attr("width", 0)
         .attr("opacity", 0)
-        .on("mouseover", (event, d) => {
-          showTooltip(
-            event,
-            `<strong>${d.display_name || d.country}</strong><br>
-             Rank: #${sorted.findIndex(x => x.country === d.country) + 1}<br>
-             ${metricLabels[selectedMetric]}: ${d[selectedMetric].toLocaleString()}`
-          );
-        })
-        .on("mousemove", moveTooltip)
-        .on("mouseout", hideTooltip)
         .call(enter => enter
           .transition(t)
           .attr("opacity", 1)
@@ -450,6 +406,285 @@ function drawRankingChart() {
     .attr("y", margin.top + innerHeight + 50)
     .attr("text-anchor", "middle")
     .text(metricLabels[selectedMetric]);
+}
+
+
+function drawTopActorsTimeline() {
+  const container = d3.select("#topActorsChart");
+  container.selectAll("*").remove();
+
+  if (!countries || countries.length === 0) return;
+
+  // Top 5 actors by total number of objects
+  const topActors = countries
+    .slice()
+    .sort((a, b) => d3.descending(a.total, b.total))
+    .slice(0, 5);
+
+  const allYears = topActors
+    .flatMap(actor => actor.yearly_activity || [])
+    .map(d => +d.year)
+    .filter(year => !Number.isNaN(year));
+
+  if (allYears.length === 0) {
+    container.text("No yearly data available.");
+    return;
+  }
+
+  const minYear = d3.min(allYears);
+  const maxYear = d3.max(allYears);
+  const years = d3.range(minYear, maxYear + 1);
+
+  const series = topActors.map(actor => {
+    const yearlyMap = new Map(
+      (actor.yearly_activity || []).map(d => [+d.year, +d.count || 0])
+    );
+
+    const values = years.map(year => ({
+      year,
+      count: yearlyMap.get(year) || 0
+    }));
+
+    return {
+      country: actor.country,
+      display_name: actor.display_name || actor.country,
+      full_name: actor.full_name || actor.display_name || actor.country,
+      values
+    };
+  });
+
+  const width = document.getElementById("topActorsChart").clientWidth;
+  const height = 520;
+
+  const margin = {
+    top: 30,
+    right: 45,
+    bottom: 135,
+    left: 70
+  };
+
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+
+  const svg = container
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  // Tooltip only for this chart
+  const topActorsTooltip = d3.select("body")
+    .selectAll(".top-actors-hover-tooltip")
+    .data([null])
+    .join("div")
+    .attr("class", "top-actors-hover-tooltip");
+
+  const g = svg
+    .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+  const x = d3.scaleLinear()
+    .domain([minYear, maxYear])
+    .range([0, innerWidth]);
+
+  const y = d3.scaleLinear()
+    .domain([
+      0,
+      d3.max(series, actor => d3.max(actor.values, d => d.count)) || 1
+    ])
+    .nice()
+    .range([innerHeight, 0]);
+
+  const color = d3.scaleOrdinal()
+    .domain(series.map(d => d.country))
+    .range([
+      "#4cc9f0",
+      "#f4a261",
+      "#9d8cff",
+      "#2a9d8f",
+      "#e76f51"
+    ]);
+
+  const line = d3.line()
+    .x(d => x(d.year))
+    .y(d => y(d.count))
+    .curve(d3.curveMonotoneX);
+
+  // X axis
+  g.append("g")
+    .attr("class", "axis")
+    .attr("transform", `translate(0, ${innerHeight})`)
+    .call(
+      d3.axisBottom(x)
+        .ticks(8)
+        .tickFormat(d3.format("d"))
+    );
+
+  // Y axis
+  g.append("g")
+    .attr("class", "axis")
+    .call(
+      d3.axisLeft(y)
+        .ticks(5)
+        .tickFormat(d3.format(","))
+    );
+
+  // Lines
+  g.selectAll(".actor-line")
+    .data(series, d => d.country)
+    .join("path")
+    .attr("class", d =>
+      d.country === selectedCountry
+        ? "actor-line selected-line"
+        : "actor-line"
+    )
+    .attr("fill", "none")
+    .attr("stroke", d => color(d.country))
+    .attr("d", d => line(d.values));
+
+  // Hover group: vertical line + dots
+  const hoverGroup = g
+    .append("g")
+    .attr("class", "hover-group")
+    .style("display", "none");
+
+  hoverGroup
+    .append("line")
+    .attr("class", "hover-line")
+    .attr("y1", 0)
+    .attr("y2", innerHeight);
+
+  const hoverDots = hoverGroup
+    .selectAll(".hover-dot")
+    .data(series)
+    .join("circle")
+    .attr("class", "hover-dot")
+    .attr("r", 5)
+    .attr("fill", d => color(d.country));
+
+  // Invisible rectangle to capture mouse movement
+  g.append("rect")
+    .attr("class", "hover-capture")
+    .attr("width", innerWidth)
+    .attr("height", innerHeight)
+    .attr("fill", "transparent")
+    .style("pointer-events", "all")
+    .on("mouseenter", () => {
+      hoverGroup.style("display", null);
+    })
+    .on("mousemove", function(event) {
+      const [mouseX] = d3.pointer(event, this);
+
+      const hoveredYear = Math.round(x.invert(mouseX));
+      const clampedYear = Math.max(minYear, Math.min(maxYear, hoveredYear));
+
+      const valuesAtYear = series
+        .map(actor => {
+          const value = actor.values.find(d => d.year === clampedYear);
+
+          return {
+            country: actor.country,
+            display_name: actor.display_name,
+            full_name: actor.full_name,
+            count: value ? value.count : 0
+          };
+        })
+        .sort((a, b) => d3.descending(a.count, b.count));
+
+      // Move vertical line
+      hoverGroup
+        .select(".hover-line")
+        .attr("x1", x(clampedYear))
+        .attr("x2", x(clampedYear));
+
+      // Move dots on each curve
+      hoverDots
+        .attr("cx", x(clampedYear))
+        .attr("cy", actor => {
+          const value = actor.values.find(d => d.year === clampedYear);
+          return y(value ? value.count : 0);
+        });
+
+      // Tooltip content
+      const tooltipHtml = `
+        <div class="tooltip-year">${clampedYear}</div>
+        ${valuesAtYear.map(d => `
+          <div class="tooltip-row">
+            <span class="tooltip-name">
+              <span class="tooltip-swatch" style="background:${color(d.country)}"></span>
+              ${d.display_name}
+            </span>
+            <span class="tooltip-value">${d.count.toLocaleString()}</span>
+          </div>
+        `).join("")}
+      `;
+
+      topActorsTooltip
+        .html(tooltipHtml)
+        .style("opacity", 1);
+
+      const tooltipWidth = topActorsTooltip.node().getBoundingClientRect().width;
+      const leftPosition = Math.max(12, event.pageX - tooltipWidth - 18);
+
+      topActorsTooltip
+        .style("left", `${leftPosition}px`)
+        .style("top", `${event.pageY + 18}px`);
+    })
+    .on("mouseleave", () => {
+      hoverGroup.style("display", "none");
+      topActorsTooltip.style("opacity", 0);
+    });
+
+  // X axis label
+  g.append("text")
+    .attr("class", "chart-note")
+    .attr("x", innerWidth / 2)
+    .attr("y", innerHeight + 55)
+    .attr("text-anchor", "middle")
+    .text("Launch year");
+
+  // Y axis label
+  g.append("text")
+    .attr("class", "chart-note")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -innerHeight / 2)
+    .attr("y", -52)
+    .attr("text-anchor", "middle")
+    .text("Catalogued objects per year");
+
+  // Legend below the x-axis label
+  const legend = g
+    .append("g")
+    .attr("class", "line-legend")
+    .attr("transform", `translate(0, ${innerHeight + 95})`);
+
+  const itemWidth = 190;
+  const itemsPerRow = Math.max(1, Math.floor(innerWidth / itemWidth));
+
+  const legendItems = legend
+    .selectAll(".legend-item")
+    .data(series)
+    .join("g")
+    .attr("class", "legend-item")
+    .attr("transform", (d, i) => {
+      const xPos = (i % itemsPerRow) * itemWidth;
+      const yPos = Math.floor(i / itemsPerRow) * 24;
+      return `translate(${xPos}, ${yPos})`;
+    });
+
+  legendItems.append("line")
+    .attr("x1", 0)
+    .attr("x2", 28)
+    .attr("y1", 0)
+    .attr("y2", 0)
+    .attr("stroke", d => color(d.country))
+    .attr("stroke-width", 4)
+    .attr("stroke-linecap", "round");
+
+  legendItems.append("text")
+    .attr("x", 38)
+    .attr("y", 5)
+    .attr("fill", d => color(d.country))
+    .text(d => d.display_name);
 }
 
 

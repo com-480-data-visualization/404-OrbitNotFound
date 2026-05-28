@@ -19,9 +19,13 @@ h1 {
 }
 
 main {
+  position: relative;
+  z-index: 5;
+
   width: 92%;
   max-width: 1200px;
-  margin: 0 auto;
+
+  margin: -245px auto 0;
 }
 
 /* =========================
@@ -418,4 +422,162 @@ svg {
 
 .legend-dot.unknown {
   background: #94a3b8;
+}
+
+/* =========================
+   Image
+   ========================= */
+
+
+.actors-hero {
+  position: relative;
+  min-height: 650px;
+  padding: 120px 56px 180px;
+  overflow: hidden;
+}
+
+/* Image as background */
+.actors-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("assets/rocket3.jpg");
+  background-size: cover;
+  background-position: right top;
+  background-repeat: no-repeat;
+
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Dark overlay + fade to page background */
+.actors-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      #030614 0%,
+      rgba(3, 6, 20, 0.98) 28%,
+      rgba(3, 6, 20, 0.78) 52%,
+      rgba(3, 6, 20, 0.30) 78%,
+      rgba(3, 6, 20, 0.45) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 6, 20, 0.00) 0%,
+      rgba(3, 6, 20, 0.10) 55%,
+      rgba(3, 6, 20, 0.65) 78%,
+      #030614 100%
+    );
+}
+
+.actors-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+
+
+
+/* =========================
+   Top actors page specific
+   ========================= */
+
+
+
+#topActorsChart {
+  width: 100%;
+  min-height: 500px;
+}
+
+.actor-line {
+  fill: none;
+  stroke-width: 2.6;
+  opacity: 0.9;
+}
+
+.actor-line.selected-line {
+  stroke-width: 4;
+  opacity: 1;
+}
+
+.line-legend text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.line-legend line {
+  stroke-linecap: round;
+}
+
+
+.hover-line {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.hover-dot {
+  stroke: #030614;
+  stroke-width: 2;
+}
+
+.top-actors-hover-tooltip {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+
+  min-width: 240px;
+
+  background: rgba(5, 10, 25, 0.96);
+  border: 1px solid rgba(76, 201, 240, 0.45);
+  border-radius: 12px;
+
+  padding: 12px 14px;
+  color: white;
+  font-size: 13px;
+  line-height: 1.4;
+
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.38);
+  z-index: 1000;
+}
+
+.tooltip-year {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tooltip-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 7px;
+}
+
+.tooltip-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5e1;
+}
+
+.tooltip-swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.tooltip-value {
+  font-weight: 700;
+  color: white;
 }
