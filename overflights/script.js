@@ -14,7 +14,6 @@ const earthRadiusKm = 6371;
 const maxSatellites = 700;
 const maxListedPasses = 90;
 const activeTleUrl = "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=tle";
-const trackStepSeconds = 20;
 
 const projection = d3.geoNaturalEarth1()
   .scale(178)
@@ -59,23 +58,6 @@ function countryName(feature) {
   return feature.properties.name || feature.properties.NAME || "Unknown country";
 }
 
-function primaryLandmass(feature) {
-  if (feature.geometry.type !== "MultiPolygon") {
-    return feature;
-  }
-
-  const polygons = feature.geometry.coordinates.map(coordinates => ({
-    type: "Feature",
-    properties: feature.properties,
-    geometry: {
-      type: "Polygon",
-      coordinates
-    }
-  }));
-
-  return polygons.sort((a, b) => d3.geoArea(b) - d3.geoArea(a))[0] || feature;
-}
-
 function ownerName(code) {
   return owners[code] || code || "Unknown";
 }
@@ -101,7 +83,7 @@ function velocityMagnitudeKmS(velocity) {
 }
 
 function makeTrack(satelliteData, hours) {
-  const steps = Math.min(4320, Math.max(90, Math.ceil((hours * 3600) / trackStepSeconds)));
+  const steps = Math.min(360, Math.max(72, Math.ceil(hours * 12)));
   const startTime = Date.now();
   const durationMs = hours * 60 * 60 * 1000;
   const points = [];
@@ -162,13 +144,9 @@ function splitTrack(points) {
 
 function passesOverCountry(satellite, feature, hours) {
   const track = makeTrack(satellite, hours);
-  const annotatedTrack = track.map(point => ({
-    ...point,
-    insideSelectedCountry: d3.geoContains(feature, [point.lon, point.lat])
-  }));
-  const overpassPoint = annotatedTrack.find(point => point.insideSelectedCountry);
+  const hit = track.some(point => d3.geoContains(feature, [point.lon, point.lat]));
 
-  return overpassPoint ? { ...satellite, track: annotatedTrack, overpassPoint } : null;
+  return hit ? { ...satellite, track } : null;
 }
 
 function renderDetails(satellite) {
@@ -203,13 +181,7 @@ function renderTrack(satellite) {
     .attr("class", "track")
     .attr("d", segment => line(segment));
 
-  tracksLayer.selectAll(".track-overpass")
-    .data(splitTrack(satellite.track.filter(point => point.insideSelectedCountry)))
-    .join("path")
-    .attr("class", "track-overpass")
-    .attr("d", segment => line(segment));
-
-  const firstPoint = satellite.overpassPoint?.xy;
+  const firstPoint = satellite.track[Math.floor(satellite.track.length * 0.2)]?.xy;
 
   if (firstPoint) {
     tracksLayer.append("circle")
@@ -286,7 +258,7 @@ function updateOverpasses() {
 }
 
 function chooseCountry(feature, node) {
-  selectedFeature = primaryLandmass(feature);
+  selectedFeature = feature;
   selectedCountry = countryName(feature);
   selectedCountryLabel.textContent = selectedCountry;
   resultCountry.textContent = selectedCountry;
