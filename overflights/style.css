@@ -235,7 +235,17 @@ input[type="range"] {
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
+  opacity: 0.48;
   filter: drop-shadow(0 2px 2px rgba(0, 70, 120, 0.24));
+}
+
+.track-overpass {
+  fill: none;
+  stroke: #00e5ff;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
 }
 
 .track-point {
