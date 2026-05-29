@@ -14,3 +14,4 @@ dependencies:
   - pyarrow
   - jupyterlab
   - geopandas
+  - skyfield
