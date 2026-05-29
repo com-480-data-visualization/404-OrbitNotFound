@@ -39,6 +39,58 @@
 
 ## Repository Structure
 
+```text
+404-OrbitNotFound/
+│
+├── data/
+│   ├── raw/
+│   ├── active_tles.json
+│   ├── geo_celestrak_longitude.json
+│   ├── launch_sites_coords.csv
+│   ├── satcat_owners.json
+│   ├── satellites_clean.json
+│   └── space_actors.json
+│
+├── env/
+│   └── environment.yml
+│
+├── orbital-structure/
+│   ├── assets/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── overflights/
+│   ├── assets/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── reports/
+│   ├── Milestone_1/
+│   ├── Milestone_2/
+│   └── Milestone_3/
+│
+├── scripts/
+│   ├── download_raw_data.py
+│   ├── fetch_active_tles.py
+│   ├── fetch_data.py
+│   ├── fetch_geo_celestrak.py
+│   └── prepare_space_actors.py
+│
+├── space-actors/
+│   ├── assets/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── .gitignore
+├── index.html
+├── README.md
+├── script.js
+└── style.css
+```
+
 The repository is organized around the final interactive website and the data pipeline used to build it. The root files (`index.html`, `script.js`, and `style.css`) define the landing page and connect the three visualization modules.
 
 The `orbital-structure/`, `space-actors/`, and `overflights/` folders each contain a self-contained visualization with its own HTML, JavaScript, CSS, and visual assets when needed. The `data/` folder stores the processed datasets consumed by the website, while `data/raw/` keeps the original downloaded source files.
